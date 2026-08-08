@@ -1,0 +1,62 @@
+.form {
+  display: flex;
+  align-items: flex-end;
+  gap: 1vw;
+  background: var(--color-background-black);
+  border: 0.01vw solid var(--color-red);
+  border-radius: 0.5vw;
+  padding: 1.5vw 1.5vw;
+  backdrop-filter: blur(0.3vw);
+  width: 100%;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vw;
+  flex: 1;
+
+  label {
+    color: var(--color-white);
+    font-size: 0.75vw;
+    font-family: var(--font-Inter);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--font-lineh-small);
+  }
+}
+
+.dateTime {
+  display: flex;
+  gap: 0.4vw;
+
+  input {
+    flex: 1;
+  }
+}
+
+.submit {
+  display: flex;
+  align-items: center;
+  background: var(--color-red-main);
+  border: 0;
+  gap: 0.35vw;
+  padding: 0.85vw 1.5vw;
+  border-radius: 0.5vw;
+  color: var(--color-white);
+  font-size: 0.75vw;
+  font-family: var(--font-Inter);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--font-lineh-small);
+  cursor: pointer;
+  border: 0.01vw solid var(--color-red-main);
+  transition: 0.2s ease-in-out;
+
+  & .submitIcon {
+    width: 1vw;
+    height: 1vw;
+  }
+
+  &:hover {
+    background: transparent;
+  }
+}

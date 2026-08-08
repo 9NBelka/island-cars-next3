@@ -1,0 +1,196 @@
+.wrapper {
+  position: relative;
+  flex: 1;
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  width: 10vw;
+  gap: 0.4vw;
+  padding: 0.85vw 0.9vw;
+  border: 0.01vw solid var(--color-darkGray);
+  border-radius: 0.5vw;
+  font-size: 0.75vw;
+  color: var(--color-white);
+  font-family: var(--font-Inter);
+  line-height: var(--font-lineh-normal);
+  font-weight: var(--font-weight-regular);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background: var(--color-black-grey);
+
+  & .iconCalendar {
+    width: 0.9vw;
+    height: 0.9vw;
+    color: var(--color-red-main);
+  }
+}
+
+.popover {
+  position: absolute;
+  top: calc(-627% + 0.3vw);
+  left: 0;
+  right: 0;
+
+  background: var(--color-black-grey);
+
+  border: 0.01vw solid var(--color-darkGray);
+  border-radius: 0.5vw;
+
+  box-shadow: 0 0.4vw 1vw rgba(0, 0, 0, 0.12);
+
+  padding: 1vw;
+  width: 16vw;
+  min-width: 16vw;
+
+  z-index: 100;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: translateY(-0.4vw);
+
+  transition:
+    opacity 0.22s ease,
+    transform 0.22s ease,
+    visibility 0.22s;
+}
+
+.popoverOpen {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.monthLabel {
+  font-size: 0.7vw;
+  color: var(--color-white);
+  font-family: var(--font-Inter);
+  line-height: var(--font-lineh-normal);
+  font-weight: var(--font-weight-regular);
+  text-transform: capitalize;
+}
+
+.navBtn {
+  display: flex;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+
+  & .navBtnIcon {
+    width: 0.75vw;
+    height: 0.75vw;
+    color: var(--color-white);
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+      color: var(--color-red-main);
+    }
+  }
+}
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+
+  margin-top: 0.8vw;
+
+  span {
+    text-align: center;
+    font-size: 0.6vw;
+    color: var(--color-lightGray);
+    font-family: var(--font-Inter);
+    line-height: var(--font-lineh-normal);
+    font-weight: var(--font-weight-regular);
+    text-transform: capitalize;
+  }
+
+  & .weekend {
+    color: var(--color-red-main) !important;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0;
+  margin-top: 0.4vw;
+}
+
+// обёртка ячейки — именно на ней рисуем сплошную чёрную плашку диапазона
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inBar {
+  border: 0.01vw solid rgba(255, 255, 255, 0.1);
+  border-left: 0;
+  border-right: 0;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.barRoundLeft {
+  border-top-left-radius: 999px; // ← это ЛЕВЫЙ угол
+  border-bottom-left-radius: 999px;
+}
+
+.barRoundRight {
+  border-top-right-radius: 999px; // ← это ПРАВЫЙ угол
+  border-bottom-right-radius: 999px;
+}
+
+.day {
+  width: 2vw; // фиксированный размер кружка вместо width: 100%
+  height: 2vw; // и вместо aspect-ratio — тоже фиксируем явно
+  border: none;
+  background: transparent;
+  border-radius: 50%;
+  font-size: 0.6vw;
+  color: var(--color-white);
+  font-family: var(--font-Inter);
+  line-height: var(--font-lineh-small);
+  font-weight: var(--font-weight-regular);
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  padding: 0;
+
+  &:hover:not(:disabled) {
+    background: #ffffff14;
+  }
+}
+
+.outMonth {
+  color: #ccc;
+}
+
+.disabled {
+  color: rgb(94, 93, 93);
+  cursor: not-allowed;
+}
+
+.today {
+  border: 0.01vw solid var(--color-red);
+}
+
+.endpoint {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-white);
+}
+
+// день внутри чёрной плашки, но сам не endpoint — текст белый
+.inBar .day:not(.endpoint) {
+  color: var(--color-white);
+}

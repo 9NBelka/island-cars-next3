@@ -1,0 +1,144 @@
+{
+  "header": {
+    "nav": {
+      "questions": "Preguntas frecuentes",
+      "rules": "Normas y condiciones",
+      "contacts": "Contactos"
+    },
+    "signIn": "Iniciar sesión"
+  },
+  "hero": {
+    "titleLine1": "Tu viaje",
+    "titleLine2": "comienza",
+    "titleAccent": "aquí.",
+    "subtitle1": "Descubre España a tu propio ritmo.",
+    "subtitle2": "Coches fiables, sin tarifas ocultas, libertad real.",
+    "features": {
+      "insurance": "Seguro a todo riesgo sin depósito",
+      "pickup": "Recogida y devolución 24/7",
+      "price": "Sin condiciones ocultas: el precio que ves es el final"
+    },
+    "contactUs": "Contáctanos"
+  },
+  "form": {
+    "fromPlace": "Lugar de recogida",
+    "toPlace": "Lugar de devolución",
+    "fromDate": "Fecha de recogida",
+    "toDate": "Fecha de devolución",
+    "submit": "Buscar vehículo",
+    "workingHours": "Horario laboral",
+    "offHours": "Fuera de horario +35€",
+    "places": {
+      "airport": "Alicante aeropuerto",
+      "office": "Oficina Guardamar del Segura",
+      "station": "Alicante estación de trenes +15€",
+      "camping": "La Marina Camping",
+      "hotel": "Hotel Poseidón Playas de Guardamar",
+      "myLocation": "Mi ubicación"
+    }
+  },
+  "stats": {
+    "locations": "50+ ubicaciones",
+    "locationsSub": "En toda España",
+    "cars": "1500+ coches",
+    "carsSub": "Para cada viaje",
+    "rating": "4.9 valoración",
+    "ratingSub": "De clientes satisfechos",
+    "support": "Soporte 24/7",
+    "supportSub": "Estamos aquí para ti"
+  },
+  "footer": {
+    "news": "Noticias",
+    "articles": "Artículos",
+    "copyright": "IslandCars. Todos los derechos reservados.",
+    "privacy": "Política de privacidad",
+    "cookies": "Política de cookies"
+  },
+  "auth": {
+    "register": {
+      "title": "Crea tu cuenta",
+      "subtitle": "Completa tus datos para empezar",
+      "firstName": "Nombre",
+      "firstNamePlaceholder": "Introduce el nombre",
+      "lastName": "Apellidos",
+      "lastNamePlaceholder": "Introduce los apellidos",
+      "email": "Correo electrónico",
+      "emailPlaceholder": "Introduce el correo",
+      "phone": "Teléfono",
+      "phoneHint": "con prefijo de país, ej. +34900800700",
+      "phonePlaceholder": "Introduce el teléfono",
+      "dateOfBirth": "Fecha de nacimiento",
+      "dateOfBirthPlaceholder": "Selecciona la fecha",
+      "language": "Idioma",
+      "country": "País",
+      "countryPlaceholder": "Introduce el país",
+      "city": "Ciudad",
+      "cityPlaceholder": "Introduce la ciudad",
+      "address": "Dirección",
+      "addressPlaceholder": "Introduce la dirección",
+      "postalCode": "Código postal",
+      "postalCodePlaceholder": "Introduce el código postal",
+      "licenseNumber": "Número de carnet de conducir",
+      "licenseNumberPlaceholder": "Introduce el número de carnet",
+      "documentType": "Tipo de documento",
+      "documentTypePlaceholder": "Selecciona el tipo de documento",
+      "documentTypes": {
+        "dni": "DNI",
+        "passport": "Pasaporte",
+        "nie": "NIE"
+      },
+      "documentNumber": "Número de documento",
+      "documentNumberPlaceholder": "Introduce el número de documento",
+      "submit": "Crear cuenta",
+      "haveAccount": "¿Ya tienes una cuenta?",
+      "logIn": "Iniciar sesión",
+      "password": "Contraseña",
+      "passwordPlaceholder": "Introduce la contraseña",
+      "confirmPassword": "Confirmar contraseña",
+      "confirmPasswordPlaceholder": "Repite la contraseña"
+    },
+    "login": {
+      "title": "Bienvenido de nuevo",
+      "subtitle": "Inicia sesión en tu cuenta",
+      "email": "Correo electrónico",
+      "emailPlaceholder": "Introduce el correo",
+      "password": "Contraseña",
+      "passwordPlaceholder": "Introduce la contraseña",
+      "forgotPassword": "¿Olvidaste tu contraseña?",
+      "submit": "Iniciar sesión",
+      "noAccount": "¿No tienes una cuenta?",
+      "signUp": "Regístrate"
+    },
+    "errors": {
+      "required": "Este campo es obligatorio",
+      "onlyLetters": "Solo se permiten letras",
+      "onlyDigits": "Solo se permiten dígitos",
+      "invalidEmail": "Introduce un correo válido",
+      "invalidPhone": "Introduce un teléfono válido",
+      "invalidPostalCode": "Introduce un código postal válido",
+      "invalidDocument": "Solo se permiten letras y números",
+      "invalidPassword": "Al menos 8 caracteres",
+      "underage": "Debes ser mayor de 18 años",
+      "invalidDate": "Introduce una fecha válida",
+      "passwordMinLength": "La contraseña debe tener al menos 8 caracteres",
+      "passwordDigit": "La contraseña debe contener al menos un dígito",
+      "passwordMatch": "Las contraseñas no coinciden"
+    }
+  },
+  "contacts": {
+    "label": "CONTÁCTANOS",
+    "title": "Contáctanos de cualquier forma",
+    "titleAccent": "¡que te resulte conveniente!",
+    "subtitle": "Siempre estamos listos para ayudarte con cualquier duda sobre el alquiler de coches en España.",
+    "workingHoursLabel": "HORARIO LABORAL",
+    "workingHoursDays": "Lunes - Domingo",
+    "workingHoursTime": "09:00 - 20:00",
+    "phone1": "+34 632 230 891",
+    "phone2": "+34 632 230 891",
+    "email": "rentcar@islandcars.es",
+    "address": "Avinguda de Cervantes, 19",
+    "addressCity": "03140 Guardamar del Segura, Spain",
+    "map": "Mapa",
+    "satellite": "Satélite"
+  }
+}

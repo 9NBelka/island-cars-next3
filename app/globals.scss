@@ -1,0 +1,134 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter/Inter-VariableFont_opsz_wght.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter/Inter-Italic-VariableFont_opsz_wght.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mulish';
+  src: url('/fonts/Mulish/Mulish-VariableFont_wght.woff2') format('woff2');
+  font-weight: 200 1000;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mulish';
+  src: url('/fonts/Mulish/Mulish-Italic-VariableFont_wght.woff2') format('woff2');
+  font-weight: 200 1000;
+  font-style: italic;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background: #000;
+  // overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+:root {
+  --font-Jakarta: 'Mulish';
+  --font-Inter: 'Inter';
+  --font-lineh-small: 1em;
+  --font-lineh-small2: 1.2em;
+  --font-lineh-normal: 1.4em;
+  --font-lineh-big: 1.7em;
+
+  --font-weight-thin: 100;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-smallStrong: 500;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+
+  --color-white: white;
+  --color-black-grey: #0f0e0f;
+  --color-background-black: rgba(0, 0, 0, 0.2);
+  --color-background-black-black: #0e0903;
+  --color-lightGray: #d1dae8;
+  --color-light-lightGray: #f0f4fa;
+  --color-darkGray: #181818;
+  --color-black: #000000;
+
+  --color-gray: #a0aec0;
+  --color-red: #a01212;
+  --color-red-main: #ee1111;
+  --color-red-main-dark: #ff254326;
+}
+
+.loader-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  div {
+    width: 16px;
+    height: 16px;
+    margin: 6px;
+    border-radius: 50%;
+    background: #4f46e5;
+    animation: bounce 1.2s infinite ease-in-out;
+  }
+
+  div:nth-child(1) {
+    animation-delay: -0.36s;
+  }
+  div:nth-child(2) {
+    animation-delay: -0.24s;
+  }
+  div:nth-child(3) {
+    animation-delay: -0.12s;
+  }
+  div:nth-child(4) {
+    animation-delay: 0;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  80%,
+  100% {
+    transform: scale(0.6);
+    opacity: 0.6;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

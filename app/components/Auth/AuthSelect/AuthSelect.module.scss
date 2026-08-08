@@ -1,0 +1,128 @@
+.selectWrapper {
+  position: relative;
+}
+
+.select {
+  display: flex;
+  align-items: center;
+  gap: 0.4vw;
+  padding: 0.55vw 0.9vw;
+  border: 0.01vw solid var(--color-darkGray);
+  border-radius: 0.5vw;
+  font-size: 0.75vw;
+  color: var(--color-white);
+  font-family: var(--font-Inter);
+  line-height: var(--font-lineh-normal);
+  font-weight: var(--font-weight-regular);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background: var(--color-black-grey);
+
+  & .selectPoint {
+    width: 0.9vw;
+    height: 0.9vw;
+    color: var(--color-red-main);
+  }
+}
+
+.selectArrow {
+  position: absolute;
+  top: 38%;
+  right: 5%;
+  transition: transform 0.25s ease;
+  width: 0.8vw;
+  height: 0.8vw;
+}
+
+.open .selectArrow {
+  transform: rotate(180deg);
+}
+
+.optionsList {
+  position: absolute;
+  top: calc(100% + 0.3vw);
+  left: 0;
+  right: 0;
+
+  background: var(--color-black-grey);
+
+  border: 0.01vw solid var(--color-darkGray);
+  border-radius: 0.5vw;
+
+  box-shadow: 0 0.4vw 1vw rgba(0, 0, 0, 0.12);
+
+  max-height: 15vw;
+  overflow-y: auto;
+
+  z-index: 100;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: translateY(-0.4vw);
+
+  transition:
+    opacity 0.22s ease,
+    transform 0.22s ease,
+    visibility 0.22s;
+}
+
+.optionsOpen {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.option {
+  padding: 0.5vw 0.75vw;
+  font-size: 0.7vw;
+  color: var(--color-white);
+  font-family: var(--font-Inter);
+  line-height: var(--font-lineh-normal);
+  font-weight: var(--font-weight-regular);
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    background: #ffffff14;
+  }
+}
+
+@media (max-width: 1024px) {
+  .optionsList {
+    margin-top: 0.75vw;
+    font-size: 1.8vw;
+    border: 0.05vw solid var(--main-page-color-light-lightGrey);
+    border-radius: 0.75vw;
+    box-shadow: 0 0.4vw 1vw rgba(0, 0, 0, 0.3);
+    max-height: 30vw;
+    padding: 1vw 0;
+  }
+
+  .option {
+    padding: 1vw 1.5vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .optionsList {
+    margin-top: 1.5vw;
+    font-size: 3.6vw;
+    border: 0.05vw solid var(--main-page-color-light-lightGrey);
+    border-radius: 1vw;
+    box-shadow: 0 0.4vw 1vw rgba(0, 0, 0, 0.3);
+    max-height: 50vw;
+    padding: 1.5vw 0;
+  }
+
+  .option {
+    padding: 2vw 3vw;
+  }
+}
+
+.selected {
+  background: var(--main-page-b-color-lightGrey);
+  color: white;
+}

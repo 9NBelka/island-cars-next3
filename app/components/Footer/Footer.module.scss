@@ -1,0 +1,145 @@
+.footer {
+  background: #000;
+  padding: 0.5vw 0;
+}
+
+.container {
+  max-width: 90vw;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+
+  & .logoAndNav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4vw;
+  }
+
+  & .legalAndSocial {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4vw;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  width: 8vw;
+
+  & img {
+    width: 100%;
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8vw;
+
+  & .pages {
+    display: flex;
+    gap: 1.5vw;
+
+    & a {
+      color: var(--color-white);
+      font-size: 0.75vw;
+      font-family: var(--font-Inter);
+      font-weight: var(--font-weight-regular);
+      line-height: var(--font-lineh-small);
+      text-decoration: none;
+      opacity: 0.85;
+      position: relative;
+      transition: color 0.3s;
+      gap: 0.25vw;
+      padding: 0.4vw 0;
+
+      &:hover {
+        color: var(--color-red-main);
+      }
+
+      &:after {
+        content: '';
+        background: var(--color-red-main);
+        width: 0;
+        height: 0.1vw;
+        transition: width 0.3s;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+
+      &:hover:after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.copyright {
+  width: 100%;
+  position: absolute;
+  bottom: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.55vw;
+  font-family: var(--font-Inter);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--font-lineh-small);
+  z-index: 0;
+}
+
+.legal {
+  display: flex;
+  gap: 1.5vw;
+
+  & a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.75vw;
+    font-family: var(--font-Inter);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--font-lineh-small);
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+      color: var(--color-white);
+
+      &:after {
+        display: none;
+      }
+    }
+  }
+}
+
+.socials {
+  display: flex;
+  gap: 1.5vw;
+
+  a {
+    display: flex;
+
+    & .socialIcon {
+      width: 1.2vw;
+      height: 1.2vw;
+      color: var(--color-white);
+      transition: 0.2s ease-in-out;
+
+      &:hover {
+        color: var(--color-red-main);
+      }
+    }
+  }
+}

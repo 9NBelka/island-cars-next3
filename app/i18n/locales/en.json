@@ -1,0 +1,144 @@
+{
+  "header": {
+    "nav": {
+      "questions": "Main questions",
+      "rules": "Rules and Conds",
+      "contacts": "Contacts"
+    },
+    "signIn": "Sign in"
+  },
+  "hero": {
+    "titleLine1": "Your journey",
+    "titleLine2": "begins",
+    "titleAccent": "here.",
+    "subtitle1": "Discover Spain at your own pace.",
+    "subtitle2": "Reliable cars, no hidden fees, real freedom.",
+    "features": {
+      "insurance": "Full cover insurance with no deposit",
+      "pickup": "Pick up and return anytime 24/7",
+      "price": "No hidden conditions the price you see is final"
+    },
+    "contactUs": "Contact us"
+  },
+  "form": {
+    "fromPlace": "From Place",
+    "toPlace": "To Place",
+    "fromDate": "From Date",
+    "toDate": "To Date",
+    "submit": "Find a vehicle",
+    "workingHours": "Working hours",
+    "offHours": "Off-hours +35€",
+    "places": {
+      "airport": "Alicante airport",
+      "office": "Guardamar del Segura office",
+      "station": "Alicante train station +15€",
+      "camping": "La Marina Camping",
+      "hotel": "Hotel Poseidón Guardamar beaches",
+      "myLocation": "My location"
+    }
+  },
+  "stats": {
+    "locations": "50+ locations",
+    "locationsSub": "Across Spain",
+    "cars": "150+ cars",
+    "carsSub": "For every journey",
+    "rating": "4.1 rating",
+    "ratingSub": "From happy customers",
+    "support": "24/7 support",
+    "supportSub": "We are here for you"
+  },
+  "footer": {
+    "news": "News",
+    "articles": "Articles",
+    "copyright": "IslandCars. All rights reserved.",
+    "privacy": "Privacy policy",
+    "cookies": "Cookies policy"
+  },
+  "auth": {
+    "register": {
+      "title": "Create your account",
+      "subtitle": "Fill in your details to get started",
+      "firstName": "First Name",
+      "firstNamePlaceholder": "Enter first name",
+      "lastName": "Last Name",
+      "lastNamePlaceholder": "Enter last name",
+      "email": "Email",
+      "emailPlaceholder": "Enter email",
+      "phone": "Phone",
+      "phoneHint": "with country code, e.g. +34900800700",
+      "phonePlaceholder": "Enter phone number",
+      "dateOfBirth": "Date of birth",
+      "dateOfBirthPlaceholder": "Select date",
+      "language": "Language",
+      "country": "Country",
+      "countryPlaceholder": "Enter country",
+      "city": "City",
+      "cityPlaceholder": "Enter city",
+      "address": "Address",
+      "addressPlaceholder": "Enter address",
+      "postalCode": "Postal Code",
+      "postalCodePlaceholder": "Enter postal code",
+      "licenseNumber": "Driver's License Number",
+      "licenseNumberPlaceholder": "Enter driver's license number",
+      "documentType": "Document Type",
+      "documentTypePlaceholder": "Select document type",
+      "documentTypes": {
+        "dni": "DNI",
+        "passport": "Passport",
+        "nie": "NIE"
+      },
+      "documentNumber": "Document Number",
+      "documentNumberPlaceholder": "Enter document number",
+      "submit": "Create account",
+      "haveAccount": "Already have an account?",
+      "logIn": "Log in",
+      "password": "Password",
+      "passwordPlaceholder": "Enter password",
+      "confirmPassword": "Confirm password",
+      "confirmPasswordPlaceholder": "Repeat password"
+    },
+    "login": {
+      "title": "Welcome back",
+      "subtitle": "Log in to your account",
+      "email": "Email",
+      "emailPlaceholder": "Enter email",
+      "password": "Password",
+      "passwordPlaceholder": "Enter password",
+      "forgotPassword": "Forgot password?",
+      "submit": "Log in",
+      "noAccount": "Don't have an account?",
+      "signUp": "Sign up"
+    },
+    "errors": {
+      "required": "This field is required",
+      "onlyLetters": "Only letters are allowed",
+      "onlyDigits": "Only digits are allowed",
+      "invalidEmail": "Enter a valid email",
+      "invalidPhone": "Enter a valid phone number",
+      "invalidPostalCode": "Enter a valid postal code",
+      "invalidDocument": "Only letters and digits are allowed",
+      "invalidPassword": "At least 8 characters",
+      "underage": "You must be at least 18 years old",
+      "invalidDate": "Enter a valid date",
+      "passwordMinLength": "Password must be at least 8 characters",
+      "passwordDigit": "Password must contain at least one digit",
+      "passwordMatch": "Passwords do not match"
+    }
+  },
+  "contacts": {
+    "label": "CONTACT US",
+    "title": "Contact us in any way",
+    "titleAccent": "convenient for you!",
+    "subtitle": "We are always ready to help you with any questions about car rental in Spain.",
+    "workingHoursLabel": "WORKING HOURS",
+    "workingHoursDays": "Monday - Sunday",
+    "workingHoursTime": "09:00 - 20:00",
+    "phone1": "+34 632 230 891",
+    "phone2": "+34 632 230 891",
+    "email": "rentcar@islandcars.es",
+    "address": "Avinguda de Cervantes, 19",
+    "addressCity": "03140 Guardamar del Segura, Spain",
+    "map": "Map",
+    "satellite": "Satellite"
+  }
+}

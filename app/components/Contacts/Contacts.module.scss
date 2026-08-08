@@ -1,0 +1,197 @@
+.contacts {
+  background: #0a0a0a;
+  color: #fff;
+  min-height: 91vh;
+  padding-top: 2vw;
+}
+
+.container {
+  max-width: 90vw;
+  margin: 0 auto;
+  width: 100%;
+  margin-top: 9vw;
+}
+
+.twoColumns {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 3vw;
+  align-items: start;
+}
+
+/* ========== LEFT COLUMN ========== */
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 0.7vw;
+  color: var(--color-red-main);
+  font-family: var(--font-Inter);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--font-lineh-normal);
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: 1.8vw;
+  color: var(--color-white);
+  font-family: var(--font-Inter);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--font-lineh-small);
+  margin-top: 0.25vw;
+
+  .accent {
+    color: var(--color-red-main);
+  }
+}
+
+.subtitle {
+  font-size: 0.85vw;
+  color: #ffffff80;
+  font-family: var(--font-Inter);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--font-lineh-normal);
+  margin-top: 0.75vw;
+  max-width: 20vw;
+}
+
+/* Contact cards */
+
+.mainRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75vw;
+  margin-top: 1.5vw;
+}
+
+.contactCard {
+  display: flex;
+  align-items: center;
+  gap: 0.75vw;
+  padding: 0.85vw 1vw;
+  background: #09090a;
+  border: 0.01vw solid var(--color-darkGray);
+  border-radius: 0.5vw;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    transform: translateY(-0.1vw);
+  }
+
+  & .iconCircle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.2vw;
+    height: 2.2vw;
+    border-radius: 50%;
+    background: rgba(225, 17, 17, 0.15);
+    border: 0.01vw solid var(--color-red-main);
+
+    & .icon {
+      color: var(--color-red-main);
+      width: 0.85vw;
+      height: 0.85vw;
+    }
+  }
+
+  & .phoneText {
+    font-size: 0.85vw;
+    font-weight: var(--font-weight-bold);
+  }
+
+  & p {
+    font-size: 0.75vw;
+    color: var(--color-white);
+    font-family: var(--font-Inter);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--font-lineh-normal);
+  }
+
+  & .addressText {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1vw;
+  }
+}
+
+/* Working hours */
+
+.workingHours {
+  margin-top: 1.5vw;
+
+  & .workingLabel {
+    font-size: 0.7vw;
+    color: #ffffff80;
+    font-family: var(--font-Inter);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--font-lineh-normal);
+    letter-spacing: 0.025vw;
+    text-transform: uppercase;
+  }
+}
+
+.hoursCard {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75vw;
+  margin-top: 0.5vw;
+
+  & .iconCircleDark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.6vw;
+    height: 2.6vw;
+    border-radius: 0.35vw;
+    background: rgba(225, 17, 17, 0.15);
+
+    & .iconTime {
+      color: var(--color-red-main);
+      width: 1vw;
+      height: 1vw;
+    }
+  }
+
+  & .days {
+    margin: 0;
+    font-size: 0.75vw;
+    color: var(--color-white);
+    font-family: var(--font-Inter);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--font-lineh-normal);
+  }
+
+  & .time {
+    font-size: 0.75vw;
+    color: #ffffff80;
+    font-family: var(--font-Inter);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--font-lineh-normal);
+    margin-top: 0.15vw;
+  }
+}
+
+/* ========== MAP ========== */
+/* ========== RIGHT COLUMN — MAP ========== */
+
+.mapWrapper {
+  position: relative;
+  border-radius: 0.75vw;
+  overflow: hidden;
+  background: #09090a;
+  border: 0.01vw solid var(--color-darkGray);
+  min-height: 20vw;
+  height: 100%;
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+  min-height: 28vw;
+  border: none;
+  display: block;
+}

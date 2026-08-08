@@ -1,0 +1,86 @@
+.wrapper {
+  position: relative;
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  background: var(--color-background-black);
+  -webkit-backdrop-filter: blur(0.3vw);
+  backdrop-filter: blur(0.3vw);
+  border: 0;
+  gap: 0.35vw;
+  padding: 0.6vw 0.8vw;
+  border-radius: 0.3vw;
+  color: var(--color-white);
+  font-size: 0.75vw;
+  font-family: var(--font-Inter);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--font-lineh-small);
+  cursor: pointer;
+  border: 0.01vw solid var(--color-background-black);
+
+  & .selectArrow {
+    width: 0.55vw;
+    height: 0.55vw;
+    transition: transform 0.25s ease;
+  }
+}
+
+.open {
+  &.selectArrow {
+    transform: rotate(180deg);
+  }
+}
+
+.flagBlock {
+  display: flex;
+  width: 0.9vw;
+  height: 0.6vw;
+
+  & .flag {
+    width: 100%;
+    border-radius: 0.1vw;
+  }
+}
+
+.dropdown {
+  position: absolute;
+  top: 90%;
+  right: 0;
+  background: var(--color-black-grey);
+  border: 0.01vw solid var(--color-darkGray);
+  border-radius: 0.5vw;
+  min-width: 7vw;
+  padding: 0.35vw;
+  z-index: 10;
+  list-style: none;
+
+  button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.4vw;
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+    color: var(--color-white);
+    padding: 0.45vw 0.5vw;
+    cursor: pointer;
+    border-radius: 0.25vw;
+    font-size: 0.65vw;
+    font-family: var(--font-Inter);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--font-lineh-small);
+
+    & .flagBlock {
+      width: 0.85vw;
+      height: 0.5vw;
+    }
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+  }
+}

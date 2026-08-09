@@ -6,6 +6,7 @@ import { getT } from '../../../i18n/getT';
 import type { Lang } from '../../../i18n/types';
 import LangLink from '../../LangLink/LangLink';
 import FormField from '../FormField/FormField';
+import ForgotPasswordModal from '../ForgotPasswordModal/ForgotPasswordModal';
 import { buildLoginSchema, loginInitialValues, type LoginValues } from './validationSchema';
 import styles from '../RegisterForm/RegisterForm.module.scss';
 import loginStyles from './LoginForm.module.scss';
@@ -22,6 +23,7 @@ export default function LoginForm({ lang }: LoginFormProps) {
 
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
+  const [isForgotPasswordOpen, setIsForgotPasswordOpen] = useState(false);
 
   const t = getT(lang);
   const schema = buildLoginSchema(t);
@@ -35,9 +37,6 @@ export default function LoginForm({ lang }: LoginFormProps) {
 
     try {
       await login(values);
-
-      // console.log('Redirect...');
-      // router.push(`/${lang}/profile`);
 
       setSuccessMessage('Login successful.');
 
@@ -78,9 +77,12 @@ export default function LoginForm({ lang }: LoginFormProps) {
                 placeholder={t('auth.login.passwordPlaceholder')}
               />
 
-              <LangLink lang={lang} href='/forgot-password' className={loginStyles.forgotLink}>
+              <button
+                type='button'
+                className={loginStyles.forgotLink}
+                onClick={() => setIsForgotPasswordOpen(true)}>
                 {t('auth.login.forgotPassword')}
-              </LangLink>
+              </button>
 
               <div className={styles.submitBlock}>
                 <button
@@ -93,7 +95,7 @@ export default function LoginForm({ lang }: LoginFormProps) {
 
               {errorMessage && <div className={styles.errorMessage}>{errorMessage}</div>}
 
-              {successMessage && <div className={styles.successMessage}>{successMessage}</div>}
+              {/* {successMessage && <div className={styles.successMessage}>{successMessage}</div>} */}
 
               <p className={styles.footerLink}>
                 {t('auth.login.noAccount')}{' '}
@@ -105,6 +107,12 @@ export default function LoginForm({ lang }: LoginFormProps) {
           )}
         </Formik>
       </div>
+
+      <ForgotPasswordModal
+        lang={lang}
+        isOpen={isForgotPasswordOpen}
+        onClose={() => setIsForgotPasswordOpen(false)}
+      />
     </div>
   );
 }

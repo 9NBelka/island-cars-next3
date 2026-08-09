@@ -110,6 +110,16 @@
       "noAccount": "¿No tienes una cuenta?",
       "signUp": "Regístrate"
     },
+    "forgotPasswordModal": {
+      "title": "Restablece tu contraseña",
+      "subtitle": "Introduce tu correo y te enviaremos un enlace para restablecerla.",
+      "email": "Correo electrónico",
+      "emailPlaceholder": "Introduce el correo",
+      "submit": "Enviar enlace",
+      "sending": "Enviando…",
+      "success": "Revisa tu correo — te hemos enviado un enlace.",
+      "close": "Cerrar"
+    },
     "errors": {
       "required": "Este campo es obligatorio",
       "onlyLetters": "Solo se permiten letras",

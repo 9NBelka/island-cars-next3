@@ -119,9 +119,7 @@ export default function RegisterForm({ lang }: RegisterFormProps) {
                   type='email'
                   placeholder={t('auth.register.emailPlaceholder')}
                 />
-              </div>
 
-              <div className={styles.row}>
                 <FormField
                   name='phone'
                   label={t('auth.register.phone')}
@@ -142,11 +140,7 @@ export default function RegisterForm({ lang }: RegisterFormProps) {
                   options={languageOptions}
                   placeholder={t('auth.register.language')}
                 />
-              </div>
 
-              {/* <div className={styles.row}></div> */}
-
-              <div className={styles.row}>
                 <FormField
                   name='country'
                   label={t('auth.register.country')}
@@ -165,9 +159,7 @@ export default function RegisterForm({ lang }: RegisterFormProps) {
                   icon={BsHouseDoorFill}
                   placeholder={t('auth.register.addressPlaceholder')}
                 />
-              </div>
 
-              <div className={styles.row}>
                 {/* <FormField
                 name='postalCode'
                 label={t('auth.register.postalCode')}

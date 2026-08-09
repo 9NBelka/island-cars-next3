@@ -14,6 +14,14 @@
   height: 100%;
 }
 
+@media (max-width: 1024px) {
+  .mainBlock {
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
 .card {
   max-width: 80vw;
   min-width: 60vw;
@@ -29,6 +37,41 @@
     max-width: 30vw;
     min-width: 24vw;
     padding: 1.5vw 1.5vw;
+    margin-top: 0vw;
+  }
+}
+
+@media (max-width: 1024px) {
+  .card {
+    max-width: 100vw;
+    min-width: 80vw;
+    border-radius: 1.5vw;
+    padding: 3vw 3vw;
+    margin-top: 4vw;
+
+    &.cardLogin {
+      max-width: 50vw;
+      min-width: 50vw;
+      padding: 3vw 3vw;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+    max-width: 90vw;
+    min-width: 90vw;
+    border-radius: 3vw;
+    padding: 4vw 4vw;
+    margin-top: 10vw;
+    margin-bottom: 10vw;
+
+    &.cardLogin {
+      max-width: 80vw;
+      min-width: 80vw;
+      padding: 4vw 4vw;
+      border-radius: 3vw;
+    }
   }
 }
 
@@ -51,6 +94,28 @@
   margin-top: 0.2vw;
 }
 
+@media (max-width: 1024px) {
+  .title {
+    font-size: 3vw;
+  }
+
+  .subtitle {
+    font-size: 1.8vw;
+    margin-top: 0.25vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .title {
+    font-size: 6vw;
+  }
+
+  .subtitle {
+    font-size: 3.4vw;
+    margin-top: 0.25vw;
+  }
+}
+
 .form {
   display: flex;
   flex-direction: column;
@@ -58,10 +123,40 @@
   margin-top: 1.25vw;
 }
 
+@media (max-width: 1024px) {
+  .form {
+    gap: 2vw;
+    margin-top: 2vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .form {
+    gap: 3vw;
+    margin-top: 4vw;
+  }
+}
+
 .row {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1vw;
+}
+
+@media (max-width: 1024px) {
+  .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3vw;
+  }
 }
 
 .submitBlock {
@@ -93,6 +188,23 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .submit {
+    font-size: 1.8vw;
+    border-radius: 0.75vw;
+    padding: 1.2vw 6vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .submit {
+    font-size: 3.6vw;
+    border-radius: 1vw;
+    padding: 2.5vw 10vw;
+    margin-top: 2vw;
+  }
+}
+
 .footerLink {
   text-align: center;
   font-size: 0.65vw;
@@ -108,5 +220,17 @@
     &:hover {
       text-decoration: underline;
     }
+  }
+}
+
+@media (max-width: 1024px) {
+  .footerLink {
+    font-size: 1.65vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .footerLink {
+    font-size: 3.4vw;
   }
 }

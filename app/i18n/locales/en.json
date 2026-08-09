@@ -110,6 +110,16 @@
       "noAccount": "Don't have an account?",
       "signUp": "Sign up"
     },
+    "forgotPasswordModal": {
+      "title": "Reset your password",
+      "subtitle": "Enter your email and we'll send you a reset link.",
+      "email": "Email",
+      "emailPlaceholder": "Enter email",
+      "submit": "Send reset link",
+      "sending": "Sending…",
+      "success": "Check your inbox — we've sent a reset link.",
+      "close": "Close"
+    },
     "errors": {
       "required": "This field is required",
       "onlyLetters": "Only letters are allowed",

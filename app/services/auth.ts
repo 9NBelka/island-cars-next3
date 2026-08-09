@@ -130,6 +130,14 @@ export async function updateProfile(userId: string, values: ProfileUpdateValues)
   return data as Profile;
 }
 
+export async function requestPasswordReset(email: string) {
+  const { error } = await supabase.auth.resetPasswordForEmail(email, {
+    redirectTo: `${window.location.origin}/reset-password`,
+  });
+
+  if (error) throw error;
+}
+
 export async function logout() {
   const { error } = await supabase.auth.signOut();
 

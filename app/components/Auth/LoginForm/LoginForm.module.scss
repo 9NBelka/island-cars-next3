@@ -7,8 +7,23 @@
   line-height: var(--font-lineh-normal);
   font-weight: var(--font-weight-regular);
   transition: 0.2s ease-in-out;
+  background: none;
+  border: 0;
+  cursor: pointer;
 
   &:hover {
-    color: rgba(255, 255, 255, 1);
+    color: var(--color-white);
+  }
+}
+
+@media (max-width: 1024px) {
+  .forgotLink {
+    font-size: 1.8vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .forgotLink {
+    font-size: 3.4vw;
   }
 }

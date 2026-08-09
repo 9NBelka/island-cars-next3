@@ -27,6 +27,24 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .trigger {
+    gap: 0.4vw;
+    font-size: 1.8vw;
+    border-radius: 0.75vw;
+    padding: 1.2vw 2vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .trigger {
+    gap: 0.4vw;
+    font-size: 3.6vw;
+    border-radius: 1.5vw;
+    padding: 2vw 3vw;
+  }
+}
+
 .popover {
   position: absolute;
   top: calc(100% + 0.3vw);
@@ -58,6 +76,26 @@
     visibility 0.22s;
 }
 
+@media (max-width: 1024px) {
+  .popover {
+    top: calc(100% + 1vw);
+    border-radius: 1vw;
+    padding: 1vw;
+    width: 40vw;
+    min-width: 40vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .popover {
+    top: calc(100% + 1vw);
+    border-radius: 1.5vw;
+    padding: 2.5vw;
+    width: 81.5vw;
+    min-width: 80vw;
+  }
+}
+
 .popoverOpen {
   opacity: 1;
   visibility: visible;
@@ -80,6 +118,18 @@
   text-transform: capitalize;
 }
 
+@media (max-width: 1024px) {
+  .monthLabel {
+    font-size: 1.8vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .monthLabel {
+    font-size: 3.6vw;
+  }
+}
+
 .navBtn {
   display: flex;
   background: transparent;
@@ -95,6 +145,24 @@
 
     &:hover {
       color: var(--color-red-main);
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .navBtn {
+    & .navBtnIcon {
+      width: 2.5vw;
+      height: 2.5vw;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .navBtn {
+    & .navBtnIcon {
+      width: 4vw;
+      height: 4vw;
     }
   }
 }
@@ -120,11 +188,43 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .weekdays {
+    margin-top: 2vw;
+
+    span {
+      font-size: 1.6vw;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .weekdays {
+    margin-top: 5vw;
+
+    span {
+      font-size: 3.2vw;
+    }
+  }
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 0;
   margin-top: 0.4vw;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    margin-top: 1vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .grid {
+    margin-top: 3vw;
+  }
 }
 
 // обёртка ячейки — именно на ней рисуем сплошную чёрную плашку диапазона
@@ -172,6 +272,22 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .day {
+    width: 5vw;
+    height: 5vw;
+    font-size: 1.6vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .day {
+    width: 8vw;
+    height: 8vw;
+    font-size: 3.2vw;
+  }
+}
+
 .outMonth {
   color: #ccc;
 }
@@ -201,6 +317,18 @@
   gap: 0.4vw;
 }
 
+@media (max-width: 1024px) {
+  .selects {
+    gap: 1.5vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .selects {
+    gap: 3vw;
+  }
+}
+
 .selectMonth,
 .selectYear {
   appearance: none;
@@ -227,6 +355,32 @@
   option {
     background: var(--color-black-grey);
     color: var(--color-white);
+  }
+}
+
+@media (max-width: 1024px) {
+  .selectMonth,
+  .selectYear {
+    padding: 0.75vw 4vw 0.75vw 3vw;
+    font-size: 1.65vw;
+    line-height: var(--font-lineh-normal);
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2'><polyline points='6 9 12 15 18 9'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 0.5vw center;
+    background-size: 2.2vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .selectMonth,
+  .selectYear {
+    padding: 1.5vw 8vw 1.5vw 6vw;
+    font-size: 3.4vw;
+    line-height: var(--font-lineh-normal);
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2'><polyline points='6 9 12 15 18 9'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 1vw center;
+    background-size: 4vw;
   }
 }
 

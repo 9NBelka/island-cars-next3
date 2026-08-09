@@ -30,9 +30,11 @@ export default function HomePage({ lang }: { lang: Lang }) {
   const [cars, setCars] = useState<(Car & { availability: CarAvailability })[]>([]);
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState<SearchFormState>(DEFAULT_FORM);
+  const [currentSearchParams, setCurrentSearchParams] = useState<SearchCarsParams | null>(null);
 
   const runSearch = useCallback(async (params: SearchCarsParams) => {
     setLoading(true);
+    setCurrentSearchParams(params);
 
     try {
       const result = await searchCars(params);
@@ -53,6 +55,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
     // Откладываем setState — React больше не считает это каскадом
     queueMicrotask(() => {
       setForm(searchParamsToForm(saved));
+      setCurrentSearchParams(saved);
       void runSearch(saved);
     });
   }, [runSearch]);
@@ -60,7 +63,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
   return (
     <>
       <Hero lang={lang} form={form} onFormChange={setForm} onSearch={runSearch} />
-      <CarList cars={cars} loading={loading} />
+      <CarList cars={cars} loading={loading} searchParams={currentSearchParams} />
     </>
   );
 }

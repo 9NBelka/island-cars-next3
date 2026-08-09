@@ -9,6 +9,8 @@ export type Car = {
 
   fuel_type: string;
 
+  engine_volume: string;
+
   seats: number;
 
   luggage: number;
@@ -20,4 +22,8 @@ export type Car = {
   price_per_day: number;
 
   image_preview: string | null;
+
+  fuel_consumption: string | null;
+
+  features: string | null;
 };

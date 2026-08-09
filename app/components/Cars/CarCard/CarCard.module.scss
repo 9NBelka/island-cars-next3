@@ -95,12 +95,41 @@
   flex-direction: column;
   gap: 0.3vw;
 
-  & .carName {
-    font-size: 1.25vw;
-    color: var(--color-white);
-    font-family: var(--font-Inter);
-    font-weight: var(--font-weight-smallStrong);
-    line-height: var(--font-lineh-small);
+  & .carNameAndIconBlock {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5vw;
+
+    & .carName {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-size: 1.25vw;
+      color: var(--color-white);
+      font-family: var(--font-Inter);
+      font-weight: var(--font-weight-smallStrong);
+      line-height: var(--font-lineh-small);
+    }
+
+    .infoTrigger {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 0;
+
+      border: 0;
+      background: transparent;
+
+      cursor: pointer;
+
+      & .infoTriggerIcon {
+        color: var(--color-white);
+        width: 0.75vw;
+        height: 0.75vw;
+      }
+    }
   }
 
   & .transmissionText {

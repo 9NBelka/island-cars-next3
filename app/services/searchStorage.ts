@@ -6,6 +6,9 @@ type SearchStorage = {
   searchedAt: string;
 };
 
+// Храним поиск максимум 4 часа
+const SEARCH_TTL = 4 * 60 * 60 * 1000;
+
 export function saveSearch(params: SearchCarsParams) {
   const data: SearchStorage = {
     form: params,
@@ -25,8 +28,27 @@ export function loadSearch(): SearchCarsParams | null {
   try {
     const parsed: SearchStorage = JSON.parse(saved);
 
+    // Проверяем дату сохранения
+    const searchedAt = new Date(parsed.searchedAt).getTime();
+
+    // Если дата некорректная — удаляем запись
+    if (Number.isNaN(searchedAt)) {
+      clearSearch();
+      return null;
+    }
+
+    // Если прошло больше 4 часов — очищаем поиск
+    const isExpired = Date.now() - searchedAt > SEARCH_TTL;
+
+    if (isExpired) {
+      clearSearch();
+      return null;
+    }
+
     return parsed.form;
   } catch {
+    // Если localStorage поврежден или JSON некорректный
+    clearSearch();
     return null;
   }
 }

@@ -1,0 +1,286 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, 0.65);
+  -webkit-backdrop-filter: blur(0.15vw);
+  backdrop-filter: blur(0.15vw);
+
+  animation: overlayIn 0.2s ease;
+}
+
+.modal {
+  position: relative;
+
+  width: 36vw;
+  max-height: 90vh;
+
+  -webkit-backdrop-filter: blur(0.3vw);
+  backdrop-filter: blur(0.3vw);
+  border: 0.01vw solid var(--color-darkGray);
+  background: rgba(34, 34, 34, 0.75);
+  border-radius: 1vw;
+
+  overflow-y: auto;
+
+  box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.5);
+
+  animation: modalIn 0.25s ease;
+}
+
+.headerAndNameCar {
+  display: flex;
+  flex-direction: column;
+  padding: 1vw;
+  padding-bottom: 0;
+
+  & .header {
+    display: flex;
+    justify-content: space-between;
+
+    h2 {
+      color: var(--color-white);
+      font-size: 1.4vw;
+      font-family: var(--font-Inter);
+      font-weight: var(--font-weight-bold);
+      line-height: var(--font-lineh-small);
+    }
+
+    .closeButton {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      border: 0;
+      background: transparent;
+
+      cursor: pointer;
+
+      & .closeIcon {
+        width: 1.5vw;
+        height: 1.5vw;
+        color: #999;
+        transition: 0.2s ease-in-out;
+
+        &:hover {
+          color: var(--color-red-main);
+        }
+      }
+    }
+  }
+
+  & .carName {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.85vw;
+    font-family: var(--font-Inter);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--font-lineh-small);
+    text-transform: capitalize;
+    margin-top: 0.5vw;
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  padding: 1vw;
+  width: 100%;
+  height: 16vw;
+
+  min-height: 180px;
+  max-height: 300px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 1.5vw;
+
+  border-radius: 0.7vw;
+
+  overflow: hidden;
+}
+
+.carImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.noImage {
+  font-size: 0.8vw;
+  color: #999;
+  font-family: var(--font-Inter);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--font-lineh-small);
+}
+
+.sliderButton {
+  position: absolute;
+  top: 50%;
+
+  width: 2.3vw;
+  height: 2.3vw;
+
+  min-width: 32px;
+  min-height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform: translateY(-50%);
+
+  border: 0;
+  background: transparent;
+
+  color: #111;
+
+  font-size: 1.4vw;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.7);
+  }
+}
+
+.previous {
+  left: 0.4vw;
+}
+
+.next {
+  right: 0.4vw;
+}
+
+.table {
+  width: 100%;
+  border-top: 0.01vw solid var(--color-red-main);
+  overflow: hidden;
+
+  border-radius: 0.5vw;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  min-height: 2vw;
+  background: rgb(9, 9, 9);
+  border: 0.01vw solid var(--color-darkGray);
+  border-right: 0;
+  border-left: 0;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  padding: 0vw 0.75vw;
+  font-size: 0.65vw;
+  color: var(--color-white);
+  font-family: var(--font-Inter);
+
+  border-right: 0.01vw solid var(--color-darkGray);
+}
+
+.value {
+  display: flex;
+  align-items: center;
+
+  padding: 0vw 0.8vw;
+  font-size: 0.7vw;
+  color: var(--color-white);
+  font-family: var(--font-Inter);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--font-lineh-small);
+}
+
+@keyframes overlayIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: translateY(1vw) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .overlay {
+    padding: 20px;
+  }
+
+  .modal {
+    width: 100%;
+    max-height: 90vh;
+
+    padding: 20px;
+
+    border-radius: 14px;
+  }
+
+  .header {
+    margin-bottom: 8px;
+
+    h2 {
+      font-size: 22px;
+    }
+  }
+
+  .closeButton {
+    font-size: 28px;
+  }
+
+  .carName {
+    margin-bottom: 15px;
+    font-size: 14px;
+  }
+
+  .imageWrapper {
+    height: 220px;
+
+    margin-bottom: 20px;
+
+    border-radius: 10px;
+  }
+
+  .sliderButton {
+    font-size: 24px;
+  }
+
+  .row {
+    grid-template-columns: 42% 58%;
+    min-height: 55px;
+  }
+
+  .label,
+  .value {
+    padding: 10px;
+    font-size: 13px;
+  }
+}

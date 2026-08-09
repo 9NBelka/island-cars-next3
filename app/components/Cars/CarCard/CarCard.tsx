@@ -1,6 +1,9 @@
 import clsx from 'clsx';
-
+import type { SearchCarsParams } from '@/app/types/search';
+import { calculateRentalPrice } from '@/app/services/rentalPricing';
 import styles from './CarCard.module.scss';
+import { useState } from 'react';
+import TechnicalDataModal from './TechnicalDataModal/TechnicalDataModal';
 
 import type { Car } from '@/app/types/car';
 import type { CarAvailability } from '@/app/types/carAvailability';
@@ -8,6 +11,7 @@ import {
   BsCarFrontFill,
   BsFillBeakerFill,
   BsFillFuelPumpFill,
+  BsFillInfoCircleFill,
   BsFillPeopleFill,
   BsFillPersonFill,
   BsFillSuitcaseLgFill,
@@ -20,6 +24,7 @@ type CarWithAvailability = Car & {
 
 type CarCardProps = {
   car: CarWithAvailability;
+  searchParams: SearchCarsParams | null;
 };
 
 const STATUS_TEXT: Record<CarAvailability, string> = {
@@ -36,17 +41,37 @@ const STATUS_TEXT: Record<CarAvailability, string> = {
   inactive: 'Inactive',
 };
 
-export default function CarCard({ car }: CarCardProps) {
+export default function CarCard({ car, searchParams }: CarCardProps) {
+  const [isTechnicalDataOpen, setIsTechnicalDataOpen] = useState(false);
   const isAvailable = car.availability === 'available';
+
+  const rentalPrice = searchParams
+    ? calculateRentalPrice(Number(car.price_per_day), searchParams.startAt, searchParams.endAt)
+    : {
+        days: 1,
+        discountPercent: 0,
+        pricePerDay: Number(car.price_per_day),
+        totalPrice: Number(car.price_per_day),
+      };
 
   return (
     <div className={clsx(styles.card, styles[car.availability])}>
       <div className={styles.cardBlockLeftRight}>
         <div className={styles.carCharacterBlockAndHeader}>
           <div className={styles.cardHeader}>
-            <h2 className={styles.carName}>
-              {car.brand} {car.model}
-            </h2>
+            <div className={styles.carNameAndIconBlock}>
+              <h2 className={styles.carName}>
+                {car.brand} {car.model}
+              </h2>
+              <button
+                type='button'
+                className={styles.infoTrigger}
+                onClick={() => setIsTechnicalDataOpen(true)}
+                aria-label='Technical data'>
+                <BsFillInfoCircleFill className={styles.infoTriggerIcon} />
+              </button>
+            </div>
+
             <p className={styles.transmissionText}>{car.transmission} Transmission1</p>
           </div>
 
@@ -100,8 +125,10 @@ export default function CarCard({ car }: CarCardProps) {
           <div className={styles.carTotalPriceAndButton}>
             <div className={styles.carTotalPriceBlock}>
               <p className={styles.carTotalPriceText}>Total</p>
+
               <p className={styles.carTotalPriceTextCost}>
-                {car.price_per_day} € <span>/ day</span>
+                {rentalPrice.totalPrice} €{' '}
+                {rentalPrice.totalPrice === car.price_per_day && <span>/ day</span>}
               </p>
             </div>
             <div>
@@ -113,6 +140,11 @@ export default function CarCard({ car }: CarCardProps) {
         </div>
       </div>
       {/* <p>{STATUS_TEXT[car.availability]}</p> */}
+      <TechnicalDataModal
+        car={car}
+        isOpen={isTechnicalDataOpen}
+        onClose={() => setIsTechnicalDataOpen(false)}
+      />
     </div>
   );
 }

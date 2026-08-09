@@ -1,14 +1,18 @@
 'use client';
 
+import { useState } from 'react';
 import type { User } from '@supabase/supabase-js';
 
 import type { Lang } from '@/app/i18n/types';
 import type { Profile as ProfileType } from '@/app/types/profile';
+import { getT } from '@/app/i18n/getT';
 
 import styles from './Profile.module.scss';
-import ProfileHeader from './ProfileHeader/ProfileHeader';
+
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 import ProfileBookings from './ProfileBookings/ProfileBookings';
+import ProfileSidebar, { ProfileTab } from './ProfileSidebar/ProfileSidebar';
+import ProfilePlaceholder from './ProfilePlaceholder/ProfilePlaceholder';
 
 type Props = {
   lang: Lang;
@@ -17,14 +21,51 @@ type Props = {
 };
 
 export default function Profile({ lang, user, profile }: Props) {
+  const t = getT(lang);
+  const [activeTab, setActiveTab] = useState<ProfileTab>('personal-data');
+
+  const fullName =
+    [profile?.first_name, profile?.last_name].filter(Boolean).join(' ') || user.email || 'Customer';
+
   return (
     <section className={styles.page}>
       <div className={styles.container}>
-        <ProfileHeader lang={lang} user={user} profile={profile} />
+        <h1 className={styles.title}>
+          {t('profile.welcome')} <span className={styles.name}>{fullName}</span>
+        </h1>
 
-        <ProfileInfo lang={lang} profile={profile} />
+        <div className={styles.layout}>
+          <ProfileSidebar lang={lang} activeTab={activeTab} onChange={setActiveTab} />
 
-        <ProfileBookings lang={lang} />
+          <div className={styles.content}>
+            {activeTab === 'bookings' && <ProfileBookings lang={lang} />}
+
+            {activeTab === 'personal-data' && (
+              <ProfileInfo lang={lang} profile={profile} user={user} />
+            )}
+
+            {activeTab === 'discounts' && (
+              <ProfilePlaceholder
+                title={t('profile.placeholders.discountsTitle')}
+                text={t('profile.placeholders.discountsText')}
+              />
+            )}
+
+            {activeTab === 'fines' && (
+              <ProfilePlaceholder
+                title={t('profile.placeholders.finesTitle')}
+                text={t('profile.placeholders.finesText')}
+              />
+            )}
+
+            {activeTab === 'faq' && (
+              <ProfilePlaceholder
+                title={t('profile.placeholders.faqTitle')}
+                text={t('profile.placeholders.faqText')}
+              />
+            )}
+          </div>
+        </div>
       </div>
     </section>
   );

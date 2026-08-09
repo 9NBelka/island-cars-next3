@@ -1,6 +1,6 @@
 .contacts {
-  background: #0a0a0a;
-  color: #fff;
+  background: var(--color-background-for-another-page);
+  color: var(--color-white);
   min-height: 91vh;
   padding-top: 2vw;
 }
@@ -72,7 +72,7 @@
   align-items: center;
   gap: 0.75vw;
   padding: 0.85vw 1vw;
-  background: #09090a;
+  background: var(--color-background-for-card-on-page);
   border: 0.01vw solid var(--color-darkGray);
   border-radius: 0.5vw;
   transition: 0.2s ease-in-out;

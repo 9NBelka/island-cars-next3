@@ -5,7 +5,8 @@
       "rules": "Rules and Conds",
       "contacts": "Contacts"
     },
-    "signIn": "Sign in"
+    "signIn": "Sign in",
+    "profile": "Profile"
   },
   "hero": {
     "titleLine1": "Your journey",
@@ -140,5 +141,63 @@
     "addressCity": "03140 Guardamar del Segura, Spain",
     "map": "Map",
     "satellite": "Satellite"
+  },
+  "profile": {
+    "welcome": "Welcome,",
+    "sidebar": {
+      "bookings": "My bookings",
+      "personalData": "Personal data",
+      "discounts": "Discounts info",
+      "fines": "Fines",
+      "faq": "FAQ",
+      "needHelpTitle": "Need help?",
+      "needHelpText": "Our support team is always ready to help you.",
+      "contactUs": "Contact us",
+      "logout": "Log out",
+      "logoutError": "Failed to log out."
+    },
+    "personalData": {
+      "title": "Personal data",
+      "subtitle": "Manage your personal information",
+      "name": "Name",
+      "namePlaceholder": "Name",
+      "lastName": "Last Name",
+      "lastNamePlaceholder": "Last name",
+      "email": "Email",
+      "emailReadonlyTitle": "Email cannot be changed",
+      "phone": "Phone",
+      "phonePlaceholder": "+34 000 000 000",
+      "birthDate": "Birth Date",
+      "documentType": "Document Type",
+      "documentTypePlaceholder": "Select document type",
+      "documentNumber": "Document Number",
+      "documentNumberPlaceholder": "Document number",
+      "licenseNumber": "Driver license Nº",
+      "licenseNumberPlaceholder": "Driver license number",
+      "country": "Country",
+      "countryPlaceholder": "Country",
+      "city": "City",
+      "cityPlaceholder": "City",
+      "address": "Address",
+      "addressPlaceholder": "Address",
+      "saveButton": "Save changes",
+      "saving": "Saving…",
+      "saveSuccess": "Changes saved.",
+      "saveError": "Failed to save changes."
+    },
+    "bookings": {
+      "title": "My Bookings",
+      "subtitle": "Your rental history",
+      "emptyTitle": "No bookings yet",
+      "emptyText": "When you rent your first vehicle, it will appear here."
+    },
+    "placeholders": {
+      "discountsTitle": "Discounts info",
+      "discountsText": "Your discounts and promo codes will appear here.",
+      "finesTitle": "Fines",
+      "finesText": "You have no fines at the moment.",
+      "faqTitle": "FAQ",
+      "faqText": "Frequently asked questions will appear here."
+    }
   }
 }

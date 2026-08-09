@@ -1,6 +1,20 @@
 import { supabase } from '../lib/supabase';
 import type { RegisterValues } from '@/app/components/Auth/RegisterForm/validationSchema';
 import type { LoginValues } from '@/app/components/Auth/LoginForm/validationSchema';
+import type { Profile } from '@/app/types/profile';
+
+export type ProfileUpdateValues = {
+  firstName?: string;
+  lastName?: string;
+  phone?: string;
+  dateOfBirth?: string;
+  country?: string;
+  city?: string;
+  address?: string;
+  licenseNumber?: string;
+  documentType?: string;
+  documentNumber?: string;
+};
 
 export async function register(values: RegisterValues) {
   const {
@@ -88,4 +102,36 @@ export async function login(values: LoginValues) {
   }
 
   return data.user;
+}
+
+export async function updateProfile(userId: string, values: ProfileUpdateValues) {
+  const payload: Record<string, unknown> = { updated_at: new Date().toISOString() };
+
+  if (values.firstName !== undefined) payload.first_name = values.firstName;
+  if (values.lastName !== undefined) payload.last_name = values.lastName;
+  if (values.phone !== undefined) payload.phone = values.phone;
+  if (values.dateOfBirth !== undefined) payload.date_of_birth = values.dateOfBirth;
+  if (values.country !== undefined) payload.country = values.country;
+  if (values.city !== undefined) payload.city = values.city;
+  if (values.address !== undefined) payload.address = values.address;
+  if (values.licenseNumber !== undefined) payload.license_number = values.licenseNumber;
+  if (values.documentType !== undefined) payload.document_type = values.documentType;
+  if (values.documentNumber !== undefined) payload.document_number = values.documentNumber;
+
+  const { data, error } = await supabase
+    .from('profiles')
+    .update(payload)
+    .eq('id', userId)
+    .select()
+    .single();
+
+  if (error) throw error;
+
+  return data as Profile;
+}
+
+export async function logout() {
+  const { error } = await supabase.auth.signOut();
+
+  if (error) throw error;
 }

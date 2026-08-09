@@ -5,7 +5,8 @@
       "rules": "Normas y condiciones",
       "contacts": "Contactos"
     },
-    "signIn": "Iniciar sesión"
+    "signIn": "Iniciar sesión",
+    "profile": "Perfil"
   },
   "hero": {
     "titleLine1": "Tu viaje",
@@ -140,5 +141,63 @@
     "addressCity": "03140 Guardamar del Segura, Spain",
     "map": "Mapa",
     "satellite": "Satélite"
+  },
+  "profile": {
+    "welcome": "Bienvenido,",
+    "sidebar": {
+      "bookings": "Mis reservas",
+      "personalData": "Datos personales",
+      "discounts": "Descuentos",
+      "fines": "Multas",
+      "faq": "Preguntas frecuentes",
+      "needHelpTitle": "¿Necesitas ayuda?",
+      "needHelpText": "Nuestro equipo de soporte está siempre listo para ayudarte.",
+      "contactUs": "Contáctanos",
+      "logout": "Cerrar sesión",
+      "logoutError": "No se pudo cerrar sesión."
+    },
+    "personalData": {
+      "title": "Datos personales",
+      "subtitle": "Gestiona tu información personal",
+      "name": "Nombre",
+      "namePlaceholder": "Nombre",
+      "lastName": "Apellidos",
+      "lastNamePlaceholder": "Apellidos",
+      "email": "Correo electrónico",
+      "emailReadonlyTitle": "El correo no se puede cambiar",
+      "phone": "Teléfono",
+      "phonePlaceholder": "+34 000 000 000",
+      "birthDate": "Fecha de nacimiento",
+      "documentType": "Tipo de documento",
+      "documentTypePlaceholder": "Selecciona el tipo de documento",
+      "documentNumber": "Número de documento",
+      "documentNumberPlaceholder": "Número de documento",
+      "licenseNumber": "Número de carnet de conducir",
+      "licenseNumberPlaceholder": "Número de carnet de conducir",
+      "country": "País",
+      "countryPlaceholder": "País",
+      "city": "Ciudad",
+      "cityPlaceholder": "Ciudad",
+      "address": "Dirección",
+      "addressPlaceholder": "Dirección",
+      "saveButton": "Guardar cambios",
+      "saving": "Guardando…",
+      "saveSuccess": "Cambios guardados.",
+      "saveError": "No se pudieron guardar los cambios."
+    },
+    "bookings": {
+      "title": "Mis reservas",
+      "subtitle": "Tu historial de alquiler",
+      "emptyTitle": "Aún no hay reservas",
+      "emptyText": "Cuando alquiles tu primer vehículo, aparecerá aquí."
+    },
+    "placeholders": {
+      "discountsTitle": "Descuentos",
+      "discountsText": "Tus descuentos y códigos promocionales aparecerán aquí.",
+      "finesTitle": "Multas",
+      "finesText": "No tienes multas por el momento.",
+      "faqTitle": "Preguntas frecuentes",
+      "faqText": "Aquí aparecerán las preguntas frecuentes."
+    }
   }
 }

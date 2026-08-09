@@ -1,0 +1,40 @@
+.page {
+  background: var(--color-background-for-another-page);
+  color: var(--color-white);
+  min-height: 91vh;
+  padding-top: 2vw;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 90vw;
+  margin: 0 auto;
+  width: 100%;
+  margin-top: 6vw;
+}
+
+.title {
+  font-size: 1.8vw;
+  color: var(--color-white);
+  font-family: var(--font-Inter);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--font-lineh-small);
+  margin-top: 0.25vw;
+
+  & .name {
+    color: var(--color-red-main);
+    text-transform: capitalize;
+  }
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 0.2fr 1fr;
+  gap: 1vw;
+  margin-top: 2vw;
+}
+
+.content {
+  min-width: 0;
+}

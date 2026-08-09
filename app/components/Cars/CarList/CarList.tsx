@@ -23,11 +23,13 @@ export default function CarList({ cars, loading, searchParams }: CarListProps) {
     return <p>No cars found.</p>;
   }
 
+  const sortedCars = [...cars].sort((a, b) => Number(a.price_per_day) - Number(b.price_per_day));
+
   return (
     <section className={styles.hero}>
       <div className={styles.container}>
         <div className={styles.carsList}>
-          {cars.map((car) => (
+          {sortedCars.map((car) => (
             <CarCard key={car.id} car={car} searchParams={searchParams} />
           ))}
         </div>

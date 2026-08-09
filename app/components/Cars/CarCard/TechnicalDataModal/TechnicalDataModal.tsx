@@ -28,7 +28,7 @@ export default function TechnicalDataModal({ car, isOpen, onClose }: TechnicalDa
    * здесь потом просто поменяем это место.
    */
   const images = [
-    car.image_url,
+    car.image_preview,
     // car.image_url_2,
     // car.image_url_3,
   ].filter(Boolean) as string[];

@@ -5,6 +5,7 @@ import CarCard from '../CarCard/CarCard';
 import type { Car } from '@/app/types/car';
 import type { CarAvailability } from '@/app/types/carAvailability';
 import type { SearchCarsParams } from '@/app/types/search';
+import type { Lang } from '@/app/i18n/types';
 
 import styles from './CarList.module.scss';
 
@@ -12,9 +13,10 @@ type CarListProps = {
   cars: (Car & { availability: CarAvailability })[];
   loading: boolean;
   searchParams: SearchCarsParams | null;
+  lang: Lang;
 };
 
-export default function CarList({ cars, loading, searchParams }: CarListProps) {
+export default function CarList({ cars, loading, searchParams, lang }: CarListProps) {
   if (loading) {
     return <p>Loading...</p>;
   }
@@ -30,7 +32,7 @@ export default function CarList({ cars, loading, searchParams }: CarListProps) {
       <div className={styles.container}>
         <div className={styles.carsList}>
           {sortedCars.map((car) => (
-            <CarCard key={car.id} car={car} searchParams={searchParams} />
+            <CarCard key={car.id} car={car} searchParams={searchParams} lang={lang} />
           ))}
         </div>
       </div>

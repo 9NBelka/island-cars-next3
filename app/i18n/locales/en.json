@@ -209,5 +209,11 @@
       "faqTitle": "FAQ",
       "faqText": "Frequently asked questions will appear here."
     }
+  },
+  "cars": {
+    "register": {
+      "title": "Crear una cuenta",
+      "subtitle": "To book a car, you need to create an account."
+    }
   }
 }

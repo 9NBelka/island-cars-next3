@@ -1,9 +1,14 @@
+'use client';
+
 import clsx from 'clsx';
 import type { SearchCarsParams } from '@/app/types/search';
 import { calculateRentalPrice } from '@/app/services/rentalPricing';
 import styles from './CarCard.module.scss';
 import { useState } from 'react';
 import TechnicalDataModal from './TechnicalDataModal/TechnicalDataModal';
+
+import type { Lang } from '@/app/i18n/types';
+import { supabase } from '@/app/lib/supabase';
 
 import type { Car } from '@/app/types/car';
 import type { CarAvailability } from '@/app/types/carAvailability';
@@ -17,6 +22,7 @@ import {
   BsFillSuitcaseLgFill,
 } from 'react-icons/bs';
 import { TbCarDoor } from 'react-icons/tb';
+import RegisterPopup from './RegisterPopup/RegisterPopup';
 
 type CarWithAvailability = Car & {
   availability: CarAvailability;
@@ -25,6 +31,7 @@ type CarWithAvailability = Car & {
 type CarCardProps = {
   car: CarWithAvailability;
   searchParams: SearchCarsParams | null;
+  lang: Lang;
 };
 
 const STATUS_TEXT: Record<CarAvailability, string> = {
@@ -41,8 +48,11 @@ const STATUS_TEXT: Record<CarAvailability, string> = {
   inactive: 'Inactive',
 };
 
-export default function CarCard({ car, searchParams }: CarCardProps) {
+export default function CarCard({ car, searchParams, lang }: CarCardProps) {
   const [isTechnicalDataOpen, setIsTechnicalDataOpen] = useState(false);
+
+  const [isRegisterPopupOpen, setIsRegisterPopupOpen] = useState(false);
+
   const isAvailable = car.availability === 'available';
 
   const rentalPrice = searchParams
@@ -53,6 +63,49 @@ export default function CarCard({ car, searchParams }: CarCardProps) {
         pricePerDay: Number(car.price_per_day),
         totalPrice: Number(car.price_per_day),
       };
+
+  // ---------------------------------------
+  // BOOK
+  // ---------------------------------------
+
+  const handleBook = async () => {
+    if (!isAvailable) {
+      return;
+    }
+
+    try {
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+
+      // ---------------------------------------
+      // Пользователь НЕ авторизован
+      // ---------------------------------------
+
+      if (!user) {
+        setIsRegisterPopupOpen(true);
+        return;
+      }
+
+      // ---------------------------------------
+      // Пользователь авторизован
+      // ---------------------------------------
+
+      console.log('User is authenticated:', user.id);
+
+      // Здесь позже будет следующий этап бронирования.
+      //
+      // Например:
+      //
+      // setIsBookingPopupOpen(true);
+      //
+      // или:
+      //
+      // router.push(`/booking/${car.id}`);
+    } catch (error) {
+      console.error('Failed to check authentication:', error);
+    }
+  };
 
   return (
     <div className={clsx(styles.card, styles[car.availability])}>
@@ -132,7 +185,11 @@ export default function CarCard({ car, searchParams }: CarCardProps) {
               </p>
             </div>
             <div>
-              <button disabled={!isAvailable} className={styles.buttonBook}>
+              <button
+                type='button'
+                disabled={!isAvailable}
+                className={styles.buttonBook}
+                onClick={handleBook}>
                 {isAvailable ? 'Book' : STATUS_TEXT[car.availability]}
               </button>
             </div>
@@ -144,6 +201,12 @@ export default function CarCard({ car, searchParams }: CarCardProps) {
         car={car}
         isOpen={isTechnicalDataOpen}
         onClose={() => setIsTechnicalDataOpen(false)}
+      />
+
+      <RegisterPopup
+        lang={lang}
+        isOpen={isRegisterPopupOpen}
+        onClose={() => setIsRegisterPopupOpen(false)}
       />
     </div>
   );

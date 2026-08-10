@@ -63,7 +63,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
   return (
     <>
       <Hero lang={lang} form={form} onFormChange={setForm} onSearch={runSearch} />
-      <CarList cars={cars} loading={loading} searchParams={currentSearchParams} />
+      <CarList cars={cars} loading={loading} searchParams={currentSearchParams} lang={lang} />
     </>
   );
 }

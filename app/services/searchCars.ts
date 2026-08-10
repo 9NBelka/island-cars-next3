@@ -24,9 +24,8 @@ export async function searchCars(
   //---------------------------------------
 
   const { data: bookings, error: bookingsError } = await supabase
-    .from('bookings')
+    .from('public_booking_windows')
     .select('car_id')
-    .neq('status', 'cancelled')
     .lt('start_at', params.endAt)
     .gt('end_at', params.startAt);
 

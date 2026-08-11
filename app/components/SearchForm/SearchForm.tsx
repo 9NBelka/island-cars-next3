@@ -82,6 +82,13 @@ export default function SearchForm({ lang, form, onChange, onSearch }: SearchFor
       startAt: `${form.fromDate}T${form.fromTime}:00`,
       endAt: `${form.toDate}T${form.toTime}:00`,
     });
+
+    setTimeout(() => {
+      document.getElementById('carList')?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }, 175);
   };
 
   const fromDisabledBefore = isToday(form.fromDate) ? getRoundedNow() : undefined;

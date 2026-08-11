@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 import type { User } from '@supabase/supabase-js';
 
 import type { Lang } from '@/app/i18n/types';
@@ -14,6 +15,8 @@ import ProfileBookings from './ProfileBookings/ProfileBookings';
 import ProfileSidebar, { ProfileTab } from './ProfileSidebar/ProfileSidebar';
 import ProfilePlaceholder from './ProfilePlaceholder/ProfilePlaceholder';
 
+const VALID_TABS: ProfileTab[] = ['bookings', 'personal-data', 'discounts', 'fines', 'faq'];
+
 type Props = {
   lang: Lang;
   user: User;
@@ -22,7 +25,17 @@ type Props = {
 
 export default function Profile({ lang, user, profile }: Props) {
   const t = getT(lang);
+  const searchParams = useSearchParams();
+
   const [activeTab, setActiveTab] = useState<ProfileTab>('personal-data');
+
+  useEffect(() => {
+    const tabParam = searchParams.get('tab');
+
+    if (tabParam && VALID_TABS.includes(tabParam as ProfileTab)) {
+      setActiveTab(tabParam as ProfileTab);
+    }
+  }, [searchParams]);
 
   const fullName =
     [profile?.first_name, profile?.last_name].filter(Boolean).join(' ') || user.email || 'Customer';

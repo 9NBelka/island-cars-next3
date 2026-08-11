@@ -21,14 +21,23 @@ export default function CarList({ cars, loading, searchParams, lang }: CarListPr
     return <p>Loading...</p>;
   }
 
-  if (!cars.length) {
-    return <p>No cars found.</p>;
-  }
+  // if (!cars.length) {
+  //   return <p>No cars found.</p>;
+  // }
 
-  const sortedCars = [...cars].sort((a, b) => Number(a.price_per_day) - Number(b.price_per_day));
+  const sortedCars = [...cars].sort((a, b) => {
+    const aAvailable = a.availability === 'available';
+    const bAvailable = b.availability === 'available';
+
+    if (aAvailable !== bAvailable) {
+      return aAvailable ? -1 : 1;
+    }
+
+    return Number(a.price_per_day) - Number(b.price_per_day);
+  });
 
   return (
-    <section className={styles.hero}>
+    <section className={styles.hero} id='carList'>
       <div className={styles.container}>
         <div className={styles.carsList}>
           {sortedCars.map((car) => (

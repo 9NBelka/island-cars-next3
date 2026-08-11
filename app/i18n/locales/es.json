@@ -199,7 +199,37 @@
       "title": "Mis reservas",
       "subtitle": "Tu historial de alquiler",
       "emptyTitle": "Aún no hay reservas",
-      "emptyText": "Cuando alquiles tu primer vehículo, aparecerá aquí."
+      "emptyText": "Cuando alquiles tu primer vehículo, aparecerá aquí.",
+      "loading": "Cargando tus reservas…",
+      "error": "No se pudieron cargar tus reservas.",
+      "pickup": "Recogida",
+      "return": "Devolución",
+      "from": "Desde",
+      "to": "Hasta",
+      "totalPrice": "Precio de alquiler",
+      "paymentMethod": "Método de pago",
+      "paymentStatus": "Estado del pago",
+      "status": "Estado",
+      "bookedOn": "Reservado el",
+      "paymentMethods": {
+        "cash": "Efectivo al recoger",
+        "card_full": "Tarjeta (pago completo)",
+        "card_deposit": "Tarjeta (depósito)"
+      },
+      "paymentStatuses": {
+        "paid": "Pagado",
+        "unpaid": "No pagado"
+      },
+      "statuses": {
+        "pending": "Pendiente",
+        "confirmed": "Confirmada",
+        "cancelled": "Cancelada",
+        "completed": "Completada"
+      },
+      "cancelButton": "Cancelar reserva",
+      "cancelling": "Cancelando…",
+      "cancelConfirm": "¿Cancelar esta reserva?",
+      "cancelError": "No se pudo cancelar la reserva. Inténtalo de nuevo."
     },
     "placeholders": {
       "discountsTitle": "Descuentos",
@@ -214,6 +244,32 @@
     "register": {
       "title": "Crea tu cuenta",
       "subtitle": "Para reservar un coche, necesitas crear una cuenta."
+    },
+    "carCard": {
+      "selectDatesWarning": "Selecciona primero las fechas de alquiler"
+    }
+  },
+  "booking": {
+    "payment": {
+      "promoLabel": "Código promocional",
+      "promoPlaceholder": "Código promocional",
+      "promoApply": "Aplicar",
+      "promoApplied": "Código promocional «{{code}}» aplicado",
+      "paymentLabel": "Pago:",
+      "totalLabel": "Total:",
+      "cashOption": "100% pago en efectivo al recoger",
+      "cancellationPolicy": "Reembolso completo si se cancela 24 horas antes del inicio de la reserva.",
+      "cancellationHint": "(Puedes cancelar tu reserva desde tu cuenta o por correo electrónico)",
+      "cancelButton": "Cancelar",
+      "bookButton": "Reservar",
+      "authRequiredError": "Necesitas iniciar sesión para reservar un coche.",
+      "bookError": "No se pudo crear la reserva. Inténtalo de nuevo.",
+      "booking": "Reservando…"
+    },
+    "success": {
+      "title": "¡Gracias por tu reserva!",
+      "text": "Nos pondremos en contacto contigo en los próximos 15 minutos para confirmar los detalles.",
+      "button": "Ir a mis reservas"
     }
   }
 }

@@ -8,6 +8,7 @@ import { useState } from 'react';
 import TechnicalDataModal from './TechnicalDataModal/TechnicalDataModal';
 
 import type { Lang } from '@/app/i18n/types';
+import { getT } from '@/app/i18n/getT';
 import { supabase } from '@/app/lib/supabase';
 
 import type { Car } from '@/app/types/car';
@@ -23,6 +24,8 @@ import {
 } from 'react-icons/bs';
 import { TbCarDoor } from 'react-icons/tb';
 import RegisterPopup from './RegisterPopup/RegisterPopup';
+import BookingPayment from './BookingPayment/BookingPayment';
+import BookingSuccess from './BookingSuccess/BookingSuccess';
 
 type CarWithAvailability = Car & {
   availability: CarAvailability;
@@ -49,11 +52,16 @@ const STATUS_TEXT: Record<CarAvailability, string> = {
 };
 
 export default function CarCard({ car, searchParams, lang }: CarCardProps) {
-  const [isTechnicalDataOpen, setIsTechnicalDataOpen] = useState(false);
+  const t = getT(lang);
 
+  const [isTechnicalDataOpen, setIsTechnicalDataOpen] = useState(false);
   const [isRegisterPopupOpen, setIsRegisterPopupOpen] = useState(false);
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
+  const [isBookingSuccess, setIsBookingSuccess] = useState(false);
 
   const isAvailable = car.availability === 'available';
+  const hasSearchDates = Boolean(searchParams?.startAt && searchParams?.endAt);
+  const canBook = isAvailable && hasSearchDates;
 
   const rentalPrice = searchParams
     ? calculateRentalPrice(Number(car.price_per_day), searchParams.startAt, searchParams.endAt)
@@ -69,7 +77,7 @@ export default function CarCard({ car, searchParams, lang }: CarCardProps) {
   // ---------------------------------------
 
   const handleBook = async () => {
-    if (!isAvailable) {
+    if (!canBook) {
       return;
     }
 
@@ -91,111 +99,131 @@ export default function CarCard({ car, searchParams, lang }: CarCardProps) {
       // Пользователь авторизован
       // ---------------------------------------
 
-      console.log('User is authenticated:', user.id);
-
-      // Здесь позже будет следующий этап бронирования.
-      //
-      // Например:
-      //
-      // setIsBookingPopupOpen(true);
-      //
-      // или:
-      //
-      // router.push(`/booking/${car.id}`);
+      setIsBookingOpen(true);
     } catch (error) {
       console.error('Failed to check authentication:', error);
     }
   };
 
   return (
-    <div className={clsx(styles.card, styles[car.availability])}>
-      <div className={styles.cardBlockLeftRight}>
-        <div className={styles.carCharacterBlockAndHeader}>
-          <div className={styles.cardHeader}>
-            <div className={styles.carNameAndIconBlock}>
-              <h2 className={styles.carName}>
-                {car.brand} {car.model}
-              </h2>
-              <button
-                type='button'
-                className={styles.infoTrigger}
-                onClick={() => setIsTechnicalDataOpen(true)}
-                aria-label='Technical data'>
-                <BsFillInfoCircleFill className={styles.infoTriggerIcon} />
-              </button>
+    <div
+      className={clsx(
+        styles.card,
+        styles[car.availability],
+        (isBookingOpen || isBookingSuccess) && styles.hoverOff,
+      )}>
+      {isBookingSuccess ? (
+        <BookingSuccess lang={lang} />
+      ) : isBookingOpen && searchParams ? (
+        <BookingPayment
+          lang={lang}
+          carId={car.id}
+          pickupPlace={searchParams.pickupPlace}
+          returnPlace={searchParams.returnPlace}
+          startAt={searchParams.startAt}
+          endAt={searchParams.endAt}
+          totalPrice={rentalPrice.totalPrice}
+          onCancel={() => setIsBookingOpen(false)}
+          onSuccess={() => {
+            setIsBookingOpen(false);
+            setIsBookingSuccess(true);
+          }}
+        />
+      ) : (
+        <div className={styles.cardBlockLeftRight}>
+          <div className={styles.carCharacterBlockAndHeader}>
+            <div className={styles.cardHeader}>
+              <div className={styles.carNameAndIconBlock}>
+                <h2 className={styles.carName}>
+                  {car.brand} {car.model}
+                </h2>
+                <button
+                  type='button'
+                  className={styles.infoTrigger}
+                  onClick={() => setIsTechnicalDataOpen(true)}
+                  aria-label='Technical data'>
+                  <BsFillInfoCircleFill className={styles.infoTriggerIcon} />
+                </button>
+              </div>
+
+              <p className={styles.transmissionText}>{car.transmission} Transmission</p>
             </div>
 
-            <p className={styles.transmissionText}>{car.transmission} Transmission</p>
+            <div className={styles.carShadow}>
+              <img src='/images/citroen-spacetourer.png'></img>
+            </div>
+
+            <div className={styles.carCharacterBlock}>
+              <div className={styles.carCharacterBlockIconAndText}>
+                <BsFillFuelPumpFill className={styles.carCharacterIcon} />
+                <p className={styles.carCharacterText}>{car.fuel_type}</p>
+              </div>
+              <div className={styles.carCharacterBlockIconAndText}>
+                <BsFillSuitcaseLgFill className={styles.carCharacterIcon} />
+                <p className={styles.carCharacterText}>{car.seats}</p>
+              </div>
+              <div className={styles.carCharacterBlockIconAndText}>
+                <TbCarDoor className={styles.carCharacterIcon} />
+                <p className={styles.carCharacterText}>{car.doors}</p>
+              </div>
+              <div className={styles.carCharacterBlockIconAndText}>
+                <BsFillPersonFill className={styles.carCharacterIcon} />
+                <p className={styles.carCharacterText}>{car.luggage}</p>
+              </div>
+            </div>
           </div>
+          <div className={styles.carRulesBlock}>
+            <div className={styles.carRulesMainBlockIconAndText}>
+              <div className={styles.carRulesBlockIconAndText}>
+                <BsCarFrontFill className={styles.carRulesIcon} />
+                <div className={styles.carRulesBlockText}>
+                  <p className={styles.carRulesText}>{`"Full Cover" insurance`}</p>
+                  <p className={styles.carRulesTextGrey}>
+                    Full cover insurance covers the vehicle.
+                  </p>
+                </div>
+              </div>
+              <div className={styles.carRulesBlockIconAndText}>
+                <BsFillBeakerFill className={styles.carRulesIcon} />
+                <div className={styles.carRulesBlockText}>
+                  <p className={styles.carRulesText}>Full-full fuel tank</p>
+                  <p className={styles.carRulesTextGrey}>Get a vehicle with full tank of fuel.</p>
+                </div>
+              </div>
+              <div className={styles.carRulesBlockIconAndText}>
+                <BsFillPeopleFill className={styles.carRulesIcon} />
+                <div className={styles.carRulesBlockText}>
+                  <p className={styles.carRulesText}>Second driver</p>
+                  <p className={styles.carRulesTextGrey}>Add free second driver.</p>
+                </div>
+              </div>
+            </div>
+            <div className={styles.carTotalPriceAndButton}>
+              <div className={styles.carTotalPriceBlock}>
+                <p className={styles.carTotalPriceText}>Total</p>
 
-          <div className={styles.carShadow}>
-            <img src='/images/citroen-spacetourer.png'></img>
-          </div>
+                <p className={styles.carTotalPriceTextCost}>
+                  {rentalPrice.totalPrice} €{' '}
+                  {rentalPrice.totalPrice === car.price_per_day && <span>/ day</span>}
+                </p>
+              </div>
+              <div className={styles.bookColumn}>
+                <button
+                  type='button'
+                  disabled={!canBook}
+                  className={styles.buttonBook}
+                  onClick={handleBook}>
+                  {isAvailable ? 'Book' : STATUS_TEXT[car.availability]}
+                </button>
 
-          <div className={styles.carCharacterBlock}>
-            <div className={styles.carCharacterBlockIconAndText}>
-              <BsFillFuelPumpFill className={styles.carCharacterIcon} />
-              <p className={styles.carCharacterText}>{car.fuel_type}</p>
-            </div>
-            <div className={styles.carCharacterBlockIconAndText}>
-              <BsFillSuitcaseLgFill className={styles.carCharacterIcon} />
-              <p className={styles.carCharacterText}>{car.seats}</p>
-            </div>
-            <div className={styles.carCharacterBlockIconAndText}>
-              <TbCarDoor className={styles.carCharacterIcon} />
-              <p className={styles.carCharacterText}>{car.doors}</p>
-            </div>
-            <div className={styles.carCharacterBlockIconAndText}>
-              <BsFillPersonFill className={styles.carCharacterIcon} />
-              <p className={styles.carCharacterText}>{car.luggage}</p>
+                {isAvailable && !hasSearchDates && (
+                  <p className={styles.selectDatesWarning}>{t('carCard.selectDatesWarning')}</p>
+                )}
+              </div>
             </div>
           </div>
         </div>
-        <div className={styles.carRulesBlock}>
-          <div className={styles.carRulesMainBlockIconAndText}>
-            <div className={styles.carRulesBlockIconAndText}>
-              <BsCarFrontFill className={styles.carRulesIcon} />
-              <div className={styles.carRulesBlockText}>
-                <p className={styles.carRulesText}>{`"Full Cover" insurance`}</p>
-                <p className={styles.carRulesTextGrey}>Full cover insurance covers the vehicle.</p>
-              </div>
-            </div>
-            <div className={styles.carRulesBlockIconAndText}>
-              <BsFillBeakerFill className={styles.carRulesIcon} />
-              <div className={styles.carRulesBlockText}>
-                <p className={styles.carRulesText}>Full-full fuel tank</p>
-                <p className={styles.carRulesTextGrey}>Get a vehicle with full tank of fuel.</p>
-              </div>
-            </div>
-            <div className={styles.carRulesBlockIconAndText}>
-              <BsFillPeopleFill className={styles.carRulesIcon} />
-              <div className={styles.carRulesBlockText}>
-                <p className={styles.carRulesText}>Second driver</p>
-                <p className={styles.carRulesTextGrey}>Add free second driver.</p>
-              </div>
-            </div>
-          </div>
-          <div className={styles.carTotalPriceAndButton}>
-            <div className={styles.carTotalPriceBlock}>
-              <p className={styles.carTotalPriceText}>Total</p>
-
-              <p className={styles.carTotalPriceTextCost}>
-                {rentalPrice.totalPrice} €{' '}
-                {rentalPrice.totalPrice === car.price_per_day && <span>/ day</span>}
-              </p>
-            </div>
-            <div>
-              <button
-                type='button'
-                disabled={!isAvailable}
-                className={styles.buttonBook}
-                onClick={handleBook}>
-                {isAvailable ? 'Book' : STATUS_TEXT[car.availability]}
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+      )}
       {/* <p>{STATUS_TEXT[car.availability]}</p> */}
       <TechnicalDataModal
         car={car}

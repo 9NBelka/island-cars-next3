@@ -199,7 +199,37 @@
       "title": "My Bookings",
       "subtitle": "Your rental history",
       "emptyTitle": "No bookings yet",
-      "emptyText": "When you rent your first vehicle, it will appear here."
+      "emptyText": "When you rent your first vehicle, it will appear here.",
+      "loading": "Loading your bookings…",
+      "error": "Failed to load your bookings.",
+      "pickup": "Pickup",
+      "return": "Return",
+      "from": "From",
+      "to": "To",
+      "totalPrice": "Rental price",
+      "paymentMethod": "Payment method",
+      "paymentStatus": "Payment status",
+      "status": "Status",
+      "bookedOn": "Booked on",
+      "paymentMethods": {
+        "cash": "Cash on pickup",
+        "card_full": "Card (full payment)",
+        "card_deposit": "Card (deposit)"
+      },
+      "paymentStatuses": {
+        "paid": "Paid",
+        "unpaid": "Unpaid"
+      },
+      "statuses": {
+        "pending": "Pending",
+        "confirmed": "Confirmed",
+        "cancelled": "Cancelled",
+        "completed": "Completed"
+      },
+      "cancelButton": "Cancel booking",
+      "cancelling": "Cancelling…",
+      "cancelConfirm": "Cancel this booking?",
+      "cancelError": "Failed to cancel the booking. Please try again."
     },
     "placeholders": {
       "discountsTitle": "Discounts info",
@@ -214,6 +244,32 @@
     "register": {
       "title": "Crear una cuenta",
       "subtitle": "To book a car, you need to create an account."
+    },
+    "carCard": {
+      "selectDatesWarning": "Please select rental dates first"
+    }
+  },
+  "booking": {
+    "payment": {
+      "promoLabel": "Promo code",
+      "promoPlaceholder": "Promo code",
+      "promoApply": "Apply",
+      "promoApplied": "Promo code \"{{code}}\" applied",
+      "paymentLabel": "Payment:",
+      "totalLabel": "Total:",
+      "cashOption": "100% cash payment on pickup",
+      "cancellationPolicy": "Full refund if cancelled 24 hours before the booking start.",
+      "cancellationHint": "(You can cancel your booking in your account or by email)",
+      "cancelButton": "Cancel",
+      "bookButton": "Book",
+      "authRequiredError": "You need to be logged in to book a car.",
+      "bookError": "Failed to create the booking. Please try again.",
+      "booking": "Booking…"
+    },
+    "success": {
+      "title": "Thank you for your booking!",
+      "text": "We'll contact you within 15 minutes to confirm the details.",
+      "button": "Go to my bookings"
     }
   }
 }

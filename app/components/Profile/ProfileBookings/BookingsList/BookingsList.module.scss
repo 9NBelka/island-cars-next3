@@ -1,0 +1,307 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 3;
+
+  & .error {
+    color: #ff5c5c;
+    font-size: 0.7vw;
+    font-family: var(--font-Inter);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--font-lineh-small);
+  }
+}
+
+.item {
+  border: 0.01vw solid var(--color-darkGray);
+  background: #090909;
+  border-radius: 0.75vw;
+  width: 100%;
+  padding: 1vw;
+  position: relative;
+  overflow: hidden;
+
+  &:first-child {
+    margin-top: 1vw;
+  }
+
+  &.status_pending {
+    &::before {
+      content: '';
+      position: absolute;
+
+      inset: 0; // вместо left/top/width/height
+      right: -25vw;
+      z-index: 0;
+      opacity: 1;
+      border-radius: inherit;
+      background: linear-gradient(
+        45deg,
+        rgb(9, 9, 9, 0.4),
+        rgb(9, 9, 9, 0.45),
+        rgba(250, 204, 21, 0.15)
+      );
+      transition: 0.2s ease-in-out;
+      pointer-events: none;
+    }
+  }
+
+  &.status_confirmed {
+    &::before {
+      content: '';
+      position: absolute;
+
+      inset: 0; // вместо left/top/width/height
+      right: -25vw;
+      z-index: 0;
+      opacity: 1;
+      border-radius: inherit;
+      background: linear-gradient(
+        45deg,
+        rgb(9, 9, 9, 0.4),
+        rgb(9, 9, 9, 0.45),
+        rgba(74, 222, 128, 0.15)
+      );
+      transition: 0.2s ease-in-out;
+      pointer-events: none;
+    }
+  }
+
+  &.status_cancelled {
+    &::before {
+      content: '';
+      position: absolute;
+
+      inset: 0; // вместо left/top/width/height
+      right: -25vw;
+      z-index: 0;
+      opacity: 1;
+      border-radius: inherit;
+      background: linear-gradient(
+        45deg,
+        rgb(9, 9, 9, 0.4),
+        rgb(9, 9, 9, 0.45),
+        rgba(255, 92, 92, 0.15)
+      );
+      transition: 0.2s ease-in-out;
+      pointer-events: none;
+    }
+  }
+
+  &.status_completed {
+    &::before {
+      content: '';
+      position: absolute;
+
+      inset: 0; // вместо left/top/width/height
+      right: -25vw;
+      z-index: 0;
+      opacity: 1;
+      border-radius: inherit;
+      background: linear-gradient(
+        45deg,
+        rgb(9, 9, 9, 0.4),
+        rgb(9, 9, 9, 0.45),
+        rgba(59, 131, 246, 0.15)
+      );
+      transition: 0.2s ease-in-out;
+      pointer-events: none;
+    }
+  }
+}
+
+.itemHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 3;
+  position: relative;
+
+  & .carInfo {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+
+    & .carName {
+      font-size: 0.8vw;
+      color: var(--color-white);
+      font-family: var(--font-Inter);
+      font-weight: var(--font-weight-bold);
+      line-height: var(--font-lineh-small);
+    }
+  }
+
+  & .badge {
+    font-size: 0.65vw;
+    color: var(--color-white);
+    font-family: var(--font-Inter);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--font-lineh-small);
+    border-radius: 1vw;
+    padding: 0.3vw 0.75vw;
+
+    &.status_pending {
+      background: rgba(250, 204, 21, 0.15);
+      color: #facc15;
+    }
+
+    &.status_confirmed {
+      background: rgba(74, 222, 128, 0.15);
+      color: #4ade80;
+    }
+
+    &.status_cancelled {
+      background: rgba(255, 92, 92, 0.15);
+      color: #ff5c5c;
+    }
+
+    &.status_completed {
+      background: rgba(59, 131, 246, 0.15);
+      color: #3b82f6;
+    }
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 1vw;
+  z-index: 3;
+  position: relative;
+
+  & .blockFields {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vw;
+  }
+
+  & .blockFieldsPayment {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vw;
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25vw;
+
+  &.bookedOnBlock {
+    margin-top: 1vw;
+  }
+
+  & .label {
+    font-size: 0.75vw;
+    color: var(--color-white);
+    font-family: var(--font-Inter);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--font-lineh-small);
+  }
+
+  & .value {
+    font-size: 0.65vw;
+    color: var(--color-white);
+    font-family: var(--font-Inter);
+    font-weight: var(--font-weight-light);
+    line-height: var(--font-lineh-small);
+    text-transform: capitalize;
+
+    &.valueDate {
+      text-transform: none;
+    }
+
+    &.payment_paid {
+      color: #4ade80;
+      font-size: 0.7vw;
+      font-family: var(--font-Inter);
+      font-weight: var(--font-weight-regular);
+      line-height: var(--font-lineh-small);
+    }
+
+    &.payment_unpaid {
+      font-size: 0.7vw;
+      color: var(--color-red-main);
+      font-family: var(--font-Inter);
+      font-weight: var(--font-weight-regular);
+      line-height: var(--font-lineh-small);
+    }
+  }
+}
+
+.totalRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  padding-top: 1vw;
+  margin-top: 1vw;
+  border-top: 0.1vw solid var(--color-darkGray);
+
+  & .totalBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vw;
+
+    & .totalLabel {
+      font-size: 0.75vw;
+      color: var(--color-white);
+      font-family: var(--font-Inter);
+      font-weight: var(--font-weight-bold);
+      line-height: var(--font-lineh-small);
+    }
+
+    & .totalValue {
+      font-size: 0.65vw;
+      color: var(--color-white);
+      font-family: var(--font-Inter);
+      font-weight: var(--font-weight-light);
+      line-height: var(--font-lineh-small);
+    }
+  }
+
+  & .timeBookAndButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1vw;
+
+    & .valueBook {
+      font-size: 0.6vw;
+      color: #ffffff80;
+      font-family: var(--font-Inter);
+      font-weight: var(--font-weight-light);
+      line-height: var(--font-lineh-small);
+    }
+
+    & .cancelButton {
+      background: none;
+
+      color: var(--color-white);
+      font-size: 0.75vw;
+      font-family: var(--font-Inter);
+      font-weight: var(--font-weight-regular);
+      line-height: var(--font-lineh-small);
+      cursor: pointer;
+      border: 0;
+      border: 0.01vw solid var(--color-red-main);
+      border-radius: 0.5vw;
+      align-items: center;
+      gap: 0.35vw;
+      padding: 0.55vw 1.5vw;
+      transition: all 0.2s ease-in-out;
+      display: flex;
+
+      &:hover:not(:disabled) {
+        background: var(--color-red-main);
+      }
+
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
+  }
+}

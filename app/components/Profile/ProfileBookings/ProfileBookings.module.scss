@@ -62,3 +62,20 @@
     margin-top: 0.5vw;
   }
 }
+
+.loading,
+.error {
+  color: #8a8a8a;
+  font-size: 0.7vw;
+  font-family: var(--font-Inter);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--font-lineh-small);
+}
+
+.error {
+  color: #ff5c5c;
+  font-size: 0.7vw;
+  font-family: var(--font-Inter);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--font-lineh-small);
+}

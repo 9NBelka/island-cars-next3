@@ -4,22 +4,83 @@
 
 .booked {
   opacity: 0.45;
+
+  &::before {
+    z-index: -1 !important;
+    background: #090909 !important;
+  }
+
+  &:hover {
+    & img {
+      filter: grayscale(1) !important;
+      -webkit-filter: grayscale(1) !important;
+      -moz-filter: grayscale(1) !important;
+    }
+  }
 }
 
 .rented {
   opacity: 0.45;
+
+  &::before {
+    z-index: -1 !important;
+    background: #090909 !important;
+  }
+  &:hover {
+    & img {
+      filter: grayscale(1) !important;
+      -webkit-filter: grayscale(1) !important;
+      -moz-filter: grayscale(1) !important;
+    }
+  }
 }
 
 .reserved {
   opacity: 0.55;
+
+  &::before {
+    z-index: -1 !important;
+    background: #090909 !important;
+  }
+  &:hover {
+    & img {
+      filter: grayscale(1) !important;
+      -webkit-filter: grayscale(1) !important;
+      -moz-filter: grayscale(1) !important;
+    }
+  }
 }
 
 .maintenance {
   opacity: 0.45;
+
+  &::before {
+    z-index: -1 !important;
+    background: #090909 !important;
+  }
+  &:hover {
+    & img {
+      filter: grayscale(1) !important;
+      -webkit-filter: grayscale(1) !important;
+      -moz-filter: grayscale(1) !important;
+    }
+  }
 }
 
 .inactive {
   opacity: 0.25;
+
+  &::before {
+    z-index: -1 !important;
+    background: #090909 !important;
+  }
+  &:hover {
+    & img {
+      filter: grayscale(1) !important;
+      -webkit-filter: grayscale(1) !important;
+      -moz-filter: grayscale(1) !important;
+    }
+  }
 }
 
 .booked button,
@@ -38,6 +99,13 @@
   padding: 1.5vw 1.5vw;
   position: relative;
   overflow: hidden;
+
+  &.hoverOff {
+    &::before {
+      z-index: -1;
+      background: #090909;
+    }
+  }
 
   &::before {
     content: '';
@@ -125,7 +193,7 @@
       cursor: pointer;
 
       & .infoTriggerIcon {
-        color: var(--color-white);
+        color: #ffffff80;
         width: 0.75vw;
         height: 0.75vw;
       }
@@ -262,25 +330,40 @@
     }
   }
 
-  & .buttonBook {
-    background: var(--color-red-main);
-    color: var(--color-white);
-    font-size: 0.75vw;
-    font-family: var(--font-Inter);
-    font-weight: var(--font-weight-regular);
-    line-height: var(--font-lineh-small);
-    cursor: pointer;
-    border: 0;
-    border: 0.01vw solid var(--color-red-main);
-    border-radius: 0.5vw;
-    align-items: center;
-    gap: 0.35vw;
-    padding: 0.65vw 3vw;
-    transition: all 0.2s ease-in-out;
+  & .bookColumn {
     display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5vw;
 
-    &:hover {
-      background: none;
+    & .buttonBook {
+      background: var(--color-red-main);
+      color: var(--color-white);
+      font-size: 0.75vw;
+      font-family: var(--font-Inter);
+      font-weight: var(--font-weight-regular);
+      line-height: var(--font-lineh-small);
+      cursor: pointer;
+      border: 0;
+      border: 0.01vw solid var(--color-red-main);
+      border-radius: 0.5vw;
+      align-items: center;
+      gap: 0.35vw;
+      padding: 0.65vw 3vw;
+      transition: all 0.2s ease-in-out;
+      display: flex;
+
+      &:hover {
+        background: none;
+      }
+    }
+
+    & .selectDatesWarning {
+      color: #ff6b6b;
+      font-size: 0.75vw;
+      font-family: var(--font-Inter);
+      font-weight: var(--font-weight-regular);
+      line-height: var(--font-lineh-small);
     }
   }
 }

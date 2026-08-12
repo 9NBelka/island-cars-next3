@@ -16,7 +16,7 @@ type TimePickerProps = {
   disabledBefore?: string; // напр. текущее время, если выбран сегодняшний день
   workingLabel: string;
   offHoursLabel: string;
-  twoDateTime: boolean;
+  twoDateTime?: boolean;
 };
 
 function toMinutes(time: string) {

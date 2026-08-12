@@ -10,6 +10,34 @@
   width: 100%;
 }
 
+@media (max-width: 1024px) {
+  .form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2vw;
+    border: 0.01vw solid var(--color-red);
+    border-radius: 1vw;
+    padding: 2vw 2vw;
+    width: 100%;
+  }
+}
+
+.selectsBlock {
+  display: flex;
+  align-items: flex-end;
+  gap: 1vw;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .selectsBlock {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2vw;
+    width: 100%;
+  }
+}
+
 .field {
   display: flex;
   flex-direction: column;
@@ -25,6 +53,16 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .field {
+    gap: 0.75vw;
+
+    label {
+      font-size: 1.8vw;
+    }
+  }
+}
+
 .dateTime {
   display: flex;
   gap: 0.4vw;
@@ -34,13 +72,37 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .dateTime {
+    display: flex;
+    gap: 1.5vw;
+
+    input {
+      flex: 1;
+    }
+  }
+}
+
+.buttonBlock {
+  display: flex;
+  width: 10.7vw;
+}
+
+@media (max-width: 1024px) {
+  .buttonBlock {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
 .submit {
   display: flex;
   align-items: center;
   background: var(--color-red-main);
   border: 0;
   gap: 0.35vw;
-  padding: 0.85vw 1.5vw;
+  padding: 0.78vw 1.5vw;
   border-radius: 0.5vw;
   color: var(--color-white);
   font-size: 0.75vw;
@@ -58,5 +120,19 @@
 
   &:hover {
     background: transparent;
+  }
+}
+
+@media (max-width: 1024px) {
+  .submit {
+    border-radius: 0.75vw;
+    padding: 1.2vw 4vw;
+    font-size: 1.8vw;
+    gap: 0.75vw;
+
+    & .submitIcon {
+      width: 3vw;
+      height: 3vw;
+    }
   }
 }

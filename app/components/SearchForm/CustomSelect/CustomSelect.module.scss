@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   gap: 0.4vw;
-  padding: 0.85vw 0.9vw;
+  padding: 0.75vw 0.9vw;
   border: 0.01vw solid var(--color-darkGray);
   border-radius: 0.5vw;
   font-size: 0.75vw;
@@ -25,6 +25,21 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .select {
+    width: 100%;
+    gap: 1vw;
+    font-size: 1.8vw;
+    border-radius: 0.75vw;
+    padding: 1.2vw 1.75vw;
+
+    & .selectPoint {
+      width: 1.6vw;
+      height: 1.6vw;
+    }
+  }
+}
+
 .selectArrow {
   position: absolute;
   top: 38%;
@@ -32,6 +47,16 @@
   transition: transform 0.25s ease;
   width: 0.8vw;
   height: 0.8vw;
+}
+
+@media (max-width: 1024px) {
+  .selectArrow {
+    position: absolute;
+    top: 33%;
+    right: 5%;
+    width: 2vw;
+    height: 2vw;
+  }
 }
 
 .open .selectArrow {
@@ -68,6 +93,15 @@
     visibility 0.22s;
 }
 
+@media (max-width: 1024px) {
+  .optionsList {
+    top: calc(100% + 1vw);
+    border-radius: 1vw;
+    max-height: 20vw;
+    padding: 0.5vw 0;
+  }
+}
+
 .optionsOpen {
   opacity: 1;
   visibility: visible;
@@ -91,34 +125,9 @@
 }
 
 @media (max-width: 1024px) {
-  .optionsList {
-    margin-top: 0.75vw;
+  .option {
+    padding: 1vw 2vw;
     font-size: 1.8vw;
-    border: 0.05vw solid var(--main-page-color-light-lightGrey);
-    border-radius: 0.75vw;
-    box-shadow: 0 0.4vw 1vw rgba(0, 0, 0, 0.3);
-    max-height: 30vw;
-    padding: 1vw 0;
-  }
-
-  .option {
-    padding: 1vw 1.5vw;
-  }
-}
-
-@media (max-width: 576px) {
-  .optionsList {
-    margin-top: 1.5vw;
-    font-size: 3.6vw;
-    border: 0.05vw solid var(--main-page-color-light-lightGrey);
-    border-radius: 1vw;
-    box-shadow: 0 0.4vw 1vw rgba(0, 0, 0, 0.3);
-    max-height: 50vw;
-    padding: 1.5vw 0;
-  }
-
-  .option {
-    padding: 2vw 3vw;
   }
 }
 

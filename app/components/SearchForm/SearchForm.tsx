@@ -98,92 +98,99 @@ export default function SearchForm({ lang, form, onChange, onSearch }: SearchFor
   const toDisabledBefore =
     form.toDate === form.fromDate && isToday(form.toDate) ? getRoundedNow() : undefined;
 
+  const twoDateTime = true;
+
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
-      <div className={styles.field}>
-        <label>{t('form.fromPlace')}</label>
+      <div className={styles.selectsBlock}>
+        <div className={styles.field}>
+          <label>{t('form.fromPlace')}</label>
 
-        <CustomSelect
-          isOpen={placeOpen === 'from'}
-          setIsOpen={(open) => setPlaceOpen(open ? 'from' : null)}
-          value={form.fromPlace}
-          onChange={handleSelect('fromPlace')}
-          options={places}
-          placeholder={t('form.fromPlace')}
-        />
-      </div>
-
-      <div className={styles.field}>
-        <label>{t('form.toPlace')}</label>
-
-        <CustomSelect
-          isOpen={placeOpen === 'to'}
-          setIsOpen={(open) => setPlaceOpen(open ? 'to' : null)}
-          value={form.toPlace}
-          onChange={handleSelect('toPlace')}
-          options={places}
-          placeholder={t('form.toPlace')}
-        />
-      </div>
-
-      <div className={styles.field}>
-        <label>{t('form.fromDate')}</label>
-
-        <div className={styles.dateTime}>
-          <DatePicker
-            isOpen={pickerOpen === 'fromDate'}
-            setIsOpen={(open) => setPickerOpen(open ? 'fromDate' : null)}
-            value={form.fromDate}
-            onChange={handleSelect('fromDate')}
-            lang={lang}
-            rangeStart={form.fromDate}
-            rangeEnd={form.toDate}
+          <CustomSelect
+            isOpen={placeOpen === 'from'}
+            setIsOpen={(open) => setPlaceOpen(open ? 'from' : null)}
+            value={form.fromPlace}
+            onChange={handleSelect('fromPlace')}
+            options={places}
+            placeholder={t('form.fromPlace')}
           />
+        </div>
 
-          <TimePicker
-            isOpen={pickerOpen === 'fromTime'}
-            setIsOpen={(open) => setPickerOpen(open ? 'fromTime' : null)}
-            value={form.fromTime}
-            onChange={handleSelect('fromTime')}
-            disabledBefore={fromDisabledBefore}
-            workingLabel={t('form.workingHours')}
-            offHoursLabel={t('form.offHours')}
+        <div className={styles.field}>
+          <label>{t('form.toPlace')}</label>
+
+          <CustomSelect
+            isOpen={placeOpen === 'to'}
+            setIsOpen={(open) => setPlaceOpen(open ? 'to' : null)}
+            value={form.toPlace}
+            onChange={handleSelect('toPlace')}
+            options={places}
+            placeholder={t('form.toPlace')}
           />
+        </div>
+
+        <div className={styles.field}>
+          <label>{t('form.fromDate')}</label>
+
+          <div className={styles.dateTime}>
+            <DatePicker
+              isOpen={pickerOpen === 'fromDate'}
+              setIsOpen={(open) => setPickerOpen(open ? 'fromDate' : null)}
+              value={form.fromDate}
+              onChange={handleSelect('fromDate')}
+              lang={lang}
+              rangeStart={form.fromDate}
+              rangeEnd={form.toDate}
+            />
+
+            <TimePicker
+              isOpen={pickerOpen === 'fromTime'}
+              setIsOpen={(open) => setPickerOpen(open ? 'fromTime' : null)}
+              value={form.fromTime}
+              onChange={handleSelect('fromTime')}
+              disabledBefore={fromDisabledBefore}
+              workingLabel={t('form.workingHours')}
+              offHoursLabel={t('form.offHours')}
+            />
+          </div>
+        </div>
+
+        <div className={styles.field}>
+          <label>{t('form.toDate')}</label>
+
+          <div className={styles.dateTime}>
+            <DatePicker
+              isOpen={pickerOpen === 'toDate'}
+              setIsOpen={(open) => setPickerOpen(open ? 'toDate' : null)}
+              value={form.toDate}
+              onChange={handleSelect('toDate')}
+              lang={lang}
+              minDate={toMinDate}
+              rangeStart={form.fromDate}
+              rangeEnd={form.toDate}
+            />
+
+            <TimePicker
+              isOpen={pickerOpen === 'toTime'}
+              setIsOpen={(open) => setPickerOpen(open ? 'toTime' : null)}
+              value={form.toTime}
+              onChange={handleSelect('toTime')}
+              disabledBefore={toDisabledBefore}
+              workingLabel={t('form.workingHours')}
+              offHoursLabel={t('form.offHours')}
+              twoDateTime={twoDateTime}
+            />
+          </div>
         </div>
       </div>
 
-      <div className={styles.field}>
-        <label>{t('form.toDate')}</label>
+      <div className={styles.buttonBlock}>
+        <button type='submit' className={styles.submit}>
+          {t('form.submit')}
 
-        <div className={styles.dateTime}>
-          <DatePicker
-            isOpen={pickerOpen === 'toDate'}
-            setIsOpen={(open) => setPickerOpen(open ? 'toDate' : null)}
-            value={form.toDate}
-            onChange={handleSelect('toDate')}
-            lang={lang}
-            minDate={toMinDate}
-            rangeStart={form.fromDate}
-            rangeEnd={form.toDate}
-          />
-
-          <TimePicker
-            isOpen={pickerOpen === 'toTime'}
-            setIsOpen={(open) => setPickerOpen(open ? 'toTime' : null)}
-            value={form.toTime}
-            onChange={handleSelect('toTime')}
-            disabledBefore={toDisabledBefore}
-            workingLabel={t('form.workingHours')}
-            offHoursLabel={t('form.offHours')}
-          />
-        </div>
+          <BsArrowRightShort className={styles.submitIcon} />
+        </button>
       </div>
-
-      <button type='submit' className={styles.submit}>
-        {t('form.submit')}
-
-        <BsArrowRightShort className={styles.submitIcon} />
-      </button>
     </form>
   );
 }

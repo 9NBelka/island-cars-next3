@@ -17,6 +17,16 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .header {
+    padding: 1vw 0;
+
+    &.scrolled {
+      padding: 0.5vw 0;
+    }
+  }
+}
+
 .container {
   display: flex;
   align-items: center;
@@ -32,6 +42,12 @@
 
   & img {
     width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .logo {
+    width: 16vw;
   }
 }
 
@@ -73,10 +89,52 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .nav {
+    display: none;
+    position: absolute;
+    top: 85%;
+    right: 5%;
+    flex-direction: column;
+    gap: 0vw;
+    background: var(--color-background-black);
+    box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.3);
+
+    a {
+      font-size: 1.8vw;
+      padding: 1.65vw 2vw;
+      width: 100%;
+      border-top: 0.1vw solid rgba(255, 255, 255, 0.08);
+
+      &:first-child {
+        border: 0;
+      }
+
+      &:after {
+        display: none;
+      }
+    }
+
+    &.navOpen {
+      display: flex;
+      border-radius: 0.75vw;
+      min-width: 15vw;
+      padding: 0vw 0vw;
+      background: var(--color-black-grey);
+    }
+  }
+}
+
 .actions {
   display: flex;
   align-items: center;
   gap: 1.2vw;
+}
+
+@media (max-width: 1024px) {
+  .actions {
+    gap: 3vw;
+  }
 }
 
 .signIn {
@@ -85,7 +143,7 @@
   background: var(--color-red-main);
   border: 0;
   gap: 0.35vw;
-  padding: 0.6vw 0.8vw;
+  padding: 0.5vw 0.8vw;
   border-radius: 0.3vw;
   color: var(--color-white);
   font-size: 0.75vw;
@@ -103,5 +161,65 @@
 
   &:hover {
     background: transparent;
+  }
+}
+
+@media (max-width: 1024px) {
+  .signIn {
+    display: flex;
+    align-items: center;
+    gap: 0.75vw;
+    padding: 1.1vw 2vw;
+    border-radius: 0.75vw;
+    font-size: 1.8vw;
+
+    & .signInIcon {
+      width: 1.7vw;
+      height: 1.7vw;
+    }
+  }
+}
+
+/* =========================
+   BURGER
+========================= */
+
+.burger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: var(--color-white);
+  cursor: pointer;
+  padding: 0;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+.mobileActions {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .burger {
+    display: flex;
+  }
+
+  .burgerIcon {
+    width: 3vw;
+    height: 3vw;
+  }
+
+  .mobileActions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3vw;
+    margin-top: 3vw;
+    padding-top: 3vw;
+    width: 100%;
   }
 }

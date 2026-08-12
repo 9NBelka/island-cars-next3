@@ -16,6 +16,7 @@ type TimePickerProps = {
   disabledBefore?: string; // напр. текущее время, если выбран сегодняшний день
   workingLabel: string;
   offHoursLabel: string;
+  twoDateTime: boolean;
 };
 
 function toMinutes(time: string) {
@@ -46,6 +47,7 @@ export default function TimePicker({
   disabledBefore,
   workingLabel,
   offHoursLabel,
+  twoDateTime,
 }: TimePickerProps) {
   const wrapperRef = useRef<HTMLDivElement>(null);
 
@@ -105,7 +107,12 @@ export default function TimePicker({
       </button>
 
       {isOpen && (
-        <div className={clsx(styles.popover, isOpen && styles.popoverOpen)}>
+        <div
+          className={clsx(
+            styles.popover,
+            isOpen && styles.popoverOpen,
+            twoDateTime && styles.popoverTwo,
+          )}>
           {beforeWork.length > 0 && (
             <>
               <div className={styles.groupLabel}>

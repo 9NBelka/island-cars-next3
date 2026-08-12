@@ -15,6 +15,7 @@ type DatePickerProps = {
   minDate?: Date;
   rangeStart?: string; // 'YYYY-MM-DD' — для подсветки диапазона в обоих календарях
   rangeEnd?: string;
+  twoDateTime: boolean;
 };
 
 const LOCALE_MAP: Record<Lang, string> = { en: 'en-US', es: 'es-ES' };

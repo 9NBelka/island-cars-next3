@@ -27,13 +27,7 @@
   padding: 1.5vw 1.5vw;
   margin-top: 4vw;
 
-  max-height: 135vw;
-  overflow: hidden;
-  overflow-y: scroll;
-
   animation: slideUp 0.25s ease-out;
-
-  scrollbar-width: thin;
 }
 
 @media (max-width: 1024px) {
@@ -55,6 +49,11 @@
     padding: 4vw 4vw;
     margin-top: 18vw;
     margin-bottom: 10vw;
+
+    max-height: 135vw;
+    overflow: hidden;
+    overflow-y: scroll;
+    scrollbar-width: thin;
   }
 }
 

@@ -4,6 +4,30 @@
   gap: 1vw;
   z-index: 3;
 
+  max-height: 25vw;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 0.5vw;
+  margin-top: 1vw;
+  // scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--color-red-main-dark);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-red-main);
+    border-radius: 1vw;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    opacity: 0.7;
+  }
+
   & .error {
     color: #ff5c5c;
     font-size: 0.7vw;
@@ -15,12 +39,10 @@
 
 @media (max-width: 1024px) {
   .list {
-    max-height: 70vw;
-    overflow-y: auto;
-    overflow-x: hidden;
     gap: 1.5vw;
-
-    scrollbar-width: thin;
+    max-height: 70vw;
+    padding-right: 1.5vw;
+    margin-top: 2vw;
 
     & .error {
       font-size: 1.8vw;
@@ -38,10 +60,6 @@
   padding: 1vw;
   position: relative;
   overflow: hidden;
-
-  &:first-child {
-    margin-top: 1vw;
-  }
 
   &.status_pending {
     &::before {
@@ -133,10 +151,6 @@
     border: 0.01vw solid var(--color-darkGray);
     border-radius: 1vw;
     padding: 1.5vw 2vw;
-
-    &:first-child {
-      margin-top: 2vw;
-    }
 
     &.status_pending {
       &::before {

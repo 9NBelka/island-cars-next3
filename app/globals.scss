@@ -40,6 +40,23 @@ body {
   width: 100%;
   background: #000;
   // overflow: hidden;
+
+  &::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--color-red-main-dark);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-red-main);
+    border-radius: 1vw;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    opacity: 0.7;
+  }
 }
 
 h1,

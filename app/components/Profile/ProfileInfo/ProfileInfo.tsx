@@ -71,11 +71,13 @@ export default function ProfileInfo({ lang, profile, user }: Props) {
   const [success, setSuccess] = useState<string | null>(null);
 
   const documentTypeOptions = [
-    { value: 'NIE', label: t('auth.register.documentTypes.nie') },
+    {
+      value: 'international_passport',
+      label: 'Заграничный паспорт',
+    },
     { value: 'DNI', label: t('auth.register.documentTypes.dni') },
     { value: 'Passport', label: t('auth.register.documentTypes.passport') },
-    { value: 'NIF', label: t('auth.register.documentTypes.nif') },
-    { value: 'Other', label: t('auth.register.documentTypes.other') },
+    { value: 'NIE', label: t('auth.register.documentTypes.nie') },
   ];
 
   return (

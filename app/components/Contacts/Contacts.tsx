@@ -1,13 +1,4 @@
-import {
-  BsFillTelephoneFill,
-  BsEnvelopeFill,
-  BsGeoAltFill,
-  BsClockFill,
-  BsClock,
-  BsTelephone,
-  BsEnvelope,
-  BsGeoAlt,
-} from 'react-icons/bs';
+import { BsClock, BsTelephone, BsEnvelope, BsGeoAlt } from 'react-icons/bs';
 import { getT } from '../../i18n/getT';
 import type { Lang } from '../../i18n/types';
 import styles from './Contacts.module.scss';

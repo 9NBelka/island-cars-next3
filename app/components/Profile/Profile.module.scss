@@ -5,6 +5,14 @@
   padding-top: 2vw;
 }
 
+@media (max-width: 1024px) {
+  .page {
+    min-height: 100%;
+    padding-top: 6vw;
+    padding-bottom: 6vw;
+  }
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -28,11 +36,26 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .title {
+    font-size: 3.6vw;
+    margin-top: 0.25vw;
+  }
+}
+
 .layout {
   display: grid;
   grid-template-columns: 0.2fr 1fr;
   gap: 1vw;
   margin-top: 2vw;
+}
+
+@media (max-width: 1024px) {
+  .layout {
+    grid-template-columns: 0.35fr 1fr;
+    gap: 1.5vw;
+    margin-top: 3vw;
+  }
 }
 
 .content {

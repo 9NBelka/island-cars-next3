@@ -5,6 +5,13 @@
   padding: 1vw;
 }
 
+@media (max-width: 1024px) {
+  .card {
+    border-radius: 0.75vw;
+    padding: 2vw;
+  }
+}
+
 .header {
   display: flex;
   align-items: flex-start;
@@ -27,12 +34,25 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .header {
+    h2 {
+      font-size: 2vw;
+    }
+
+    p {
+      font-size: 1.8vw;
+      margin-top: 0.5vw;
+    }
+  }
+}
+
 .empty {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 3rem 1rem;
+  padding: 3vw 1vw;
 
   & .iconCarBlock {
     display: flex;
@@ -63,6 +83,28 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .empty {
+    padding: 3vw 1vw;
+
+    & .iconCarBlock {
+      & .iconCar {
+        width: 3vw;
+      }
+    }
+
+    & .emptyTitle {
+      font-size: 1.8vw;
+      margin-top: 1.5vw;
+    }
+
+    & .emptyText {
+      font-size: 1.8vw;
+      margin-top: 1.5vw;
+    }
+  }
+}
+
 .loading,
 .error {
   color: #8a8a8a;
@@ -78,4 +120,15 @@
   font-family: var(--font-Inter);
   font-weight: var(--font-weight-regular);
   line-height: var(--font-lineh-small);
+}
+
+@media (max-width: 1024px) {
+  .loading,
+  .error {
+    font-size: 1.8vw;
+  }
+
+  .error {
+    font-size: 1.8vw;
+  }
 }

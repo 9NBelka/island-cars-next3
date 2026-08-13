@@ -27,6 +27,16 @@
   }
 }
 
+@media (max-width: 576px) {
+  .header {
+    padding: 2vw 0;
+
+    &.scrolled {
+      padding: 2vw 0;
+    }
+  }
+}
+
 .container {
   display: flex;
   align-items: center;
@@ -48,6 +58,12 @@
 @media (max-width: 1024px) {
   .logo {
     width: 16vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo {
+    width: 26vw;
   }
 }
 
@@ -99,6 +115,7 @@
     gap: 0vw;
     background: var(--color-background-black);
     box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.3);
+    border: 0.01vw solid var(--color-darkGray);
 
     a {
       font-size: 1.8vw;
@@ -125,6 +142,23 @@
   }
 }
 
+@media (max-width: 576px) {
+  .nav {
+    top: 90%;
+    right: 5%;
+
+    a {
+      font-size: 3.6vw;
+      padding: 2.75vw 3vw;
+    }
+
+    &.navOpen {
+      border-radius: 1vw;
+      min-width: 17vw;
+    }
+  }
+}
+
 .actions {
   display: flex;
   align-items: center;
@@ -134,6 +168,12 @@
 @media (max-width: 1024px) {
   .actions {
     gap: 3vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .actions {
+    gap: 4vw;
   }
 }
 
@@ -180,6 +220,20 @@
   }
 }
 
+@media (max-width: 576px) {
+  .signIn {
+    gap: 1.5vw;
+    padding: 2vw 3vw;
+    border-radius: 1vw;
+    font-size: 3.6vw;
+
+    & .signInIcon {
+      width: 3.2vw;
+      height: 3.2vw;
+    }
+  }
+}
+
 /* =========================
    BURGER
 ========================= */
@@ -217,6 +271,20 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    gap: 3vw;
+    margin-top: 3vw;
+    padding-top: 3vw;
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .burgerIcon {
+    width: 5vw;
+    height: 5vw;
+  }
+
+  .mobileActions {
     gap: 3vw;
     margin-top: 3vw;
     padding-top: 3vw;

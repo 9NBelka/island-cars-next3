@@ -5,6 +5,13 @@
   padding: 1vw;
 }
 
+@media (max-width: 1024px) {
+  .card {
+    border-radius: 0.75vw;
+    padding: 2vw;
+  }
+}
+
 .header {
   display: flex;
   align-items: flex-start;
@@ -27,11 +34,31 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .header {
+    h2 {
+      font-size: 2vw;
+    }
+
+    p {
+      font-size: 1.8vw;
+      margin-top: 0.5vw;
+    }
+  }
+}
+
 .form {
   display: flex;
   flex-direction: column;
   gap: 2vw;
   margin-top: 2vw;
+}
+
+@media (max-width: 1024px) {
+  .form {
+    gap: 3vw;
+    margin-top: 2vw;
+  }
 }
 
 .row3 {
@@ -46,9 +73,29 @@
   grid-template-columns: repeat(4, 1fr);
 }
 
+@media (max-width: 1024px) {
+  .row3 {
+    display: grid;
+    gap: 2vw;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .row4 {
+    display: grid;
+    gap: 2vw;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .divider {
   height: 0.05vw;
   background: var(--color-darkGray);
+}
+
+@media (max-width: 1024px) {
+  .divider {
+    height: 0.1vw;
+  }
 }
 
 .saveButton {
@@ -81,6 +128,17 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .saveButton {
+    font-size: 1.8vw;
+    border-radius: 0.75vw;
+    padding: 1.1vw 3vw;
+    &.marg {
+      margin-top: 1.5vw;
+    }
+  }
+}
+
 .readOnly {
   cursor: not-allowed;
   color: #7a7a7a !important;
@@ -100,4 +158,14 @@
   font-family: var(--font-Inter);
   font-weight: var(--font-weight-regular);
   line-height: var(--font-lineh-small);
+}
+
+@media (max-width: 1024px) {
+  .error {
+    font-size: 1.8vw;
+  }
+
+  .success {
+    font-size: 1.8vw;
+  }
 }

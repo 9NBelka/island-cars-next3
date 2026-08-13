@@ -5,6 +5,21 @@
   padding-top: 2vw;
 }
 
+@media (max-width: 1024px) {
+  .contacts {
+    min-height: 100%;
+    padding-top: 3vw;
+    padding-bottom: 4vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .contacts {
+    padding-top: 10vw;
+    padding-bottom: 10vw;
+  }
+}
+
 .container {
   max-width: 90vw;
   margin: 0 auto;
@@ -17,6 +32,21 @@
   grid-template-columns: 1fr 1.15fr;
   gap: 3vw;
   align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .twoColumns {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3vw;
+    align-items: start;
+  }
+}
+
+@media (max-width: 576px) {
+  .twoColumns {
+    gap: 4vw;
+  }
 }
 
 /* ========== LEFT COLUMN ========== */
@@ -58,6 +88,40 @@
   max-width: 20vw;
 }
 
+@media (max-width: 1024px) {
+  .label {
+    font-size: 1.8vw;
+  }
+
+  .title {
+    font-size: 3.6vw;
+    margin-top: 0.5vw;
+  }
+
+  .subtitle {
+    font-size: 1.8vw;
+    margin-top: 1vw;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .label {
+    font-size: 3.4vw;
+  }
+
+  .title {
+    font-size: 6vw;
+    line-height: var(--font-lineh-small2);
+    margin-top: 2vw;
+  }
+
+  .subtitle {
+    font-size: 3.6vw;
+    margin-top: 2vw;
+  }
+}
+
 /* Contact cards */
 
 .mainRow {
@@ -65,6 +129,21 @@
   grid-template-columns: 1fr 1fr;
   gap: 0.75vw;
   margin-top: 1.5vw;
+}
+
+@media (max-width: 1024px) {
+  .mainRow {
+    gap: 1.5vw;
+    margin-top: 2vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .mainRow {
+    grid-template-columns: 1fr;
+    gap: 2vw;
+    margin-top: 4vw;
+  }
 }
 
 .contactCard {
@@ -118,6 +197,70 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .contactCard {
+    gap: 1.5vw;
+    padding: 1.75vw 2vw;
+    border-radius: 0.75vw;
+
+    &:hover {
+      transform: translateY(0vw);
+    }
+
+    & .iconCircle {
+      width: 4vw;
+      height: 4vw;
+
+      & .icon {
+        width: 1.5vw;
+        height: 1.5vw;
+      }
+    }
+
+    & .phoneText {
+      font-size: 2vw;
+    }
+
+    & p {
+      font-size: 1.65vw;
+    }
+
+    & .addressText {
+      gap: 0.1vw;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .contactCard {
+    gap: 2.75vw;
+    padding: 2.75vw 2.75vw;
+    border-radius: 1.5vw;
+
+    & .iconCircle {
+      width: 8vw;
+      height: 8vw;
+
+      & .icon {
+        width: 3.5vw;
+        height: 3.5vw;
+      }
+    }
+
+    & .phoneText {
+      font-size: 4vw;
+    }
+
+    & p {
+      font-size: 3.4vw;
+    }
+
+    & .addressText {
+      gap: 0.1vw;
+    }
+  }
+}
+
 /* Working hours */
 
 .workingHours {
@@ -131,6 +274,28 @@
     line-height: var(--font-lineh-normal);
     letter-spacing: 0.025vw;
     text-transform: uppercase;
+  }
+}
+
+@media (max-width: 1024px) {
+  .workingHours {
+    margin-top: 2vw;
+
+    & .workingLabel {
+      font-size: 1.8vw;
+      letter-spacing: 0.05vw;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .workingHours {
+    margin-top: 4vw;
+
+    & .workingLabel {
+      font-size: 3.6vw;
+      letter-spacing: 0.1vw;
+    }
   }
 }
 
@@ -175,6 +340,59 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .hoursCard {
+    gap: 1.5vw;
+    margin-top: 1vw;
+
+    & .iconCircleDark {
+      width: 5.5vw;
+      height: 5.5vw;
+      border-radius: 0.5vw;
+
+      & .iconTime {
+        width: 2.75vw;
+        height: 2.75vw;
+      }
+    }
+
+    & .days {
+      font-size: 1.65vw;
+    }
+
+    & .time {
+      font-size: 1.8vw;
+      margin-top: 0vw;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .hoursCard {
+    gap: 3vw;
+    margin-top: 1.5vw;
+
+    & .iconCircleDark {
+      width: 9vw;
+      height: 9vw;
+      border-radius: 1vw;
+
+      & .iconTime {
+        width: 4vw;
+        height: 4vw;
+      }
+    }
+
+    & .days {
+      font-size: 3.4vw;
+    }
+
+    & .time {
+      font-size: 3.6vw;
+    }
+  }
+}
+
 /* ========== MAP ========== */
 /* ========== RIGHT COLUMN — MAP ========== */
 
@@ -194,4 +412,26 @@
   min-height: 28vw;
   border: none;
   display: block;
+}
+
+@media (max-width: 1024px) {
+  .mapWrapper {
+    border-radius: 1vw;
+    min-height: 40vw;
+  }
+
+  .map {
+    min-height: 40vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .mapWrapper {
+    border-radius: 1.5vw;
+    min-height: 60vw;
+  }
+
+  .map {
+    min-height: 60vw;
+  }
 }

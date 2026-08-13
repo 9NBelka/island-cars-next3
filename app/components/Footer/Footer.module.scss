@@ -3,6 +3,20 @@
   padding: 0.5vw 0;
 }
 
+@media (max-width: 1024px) {
+  .footer {
+    padding: 0.5vw 0;
+    padding-bottom: 3vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer {
+    padding: 2vw 0;
+    padding-bottom: 11vw;
+  }
+}
+
 .container {
   max-width: 90vw;
   margin: 0 auto;
@@ -31,6 +45,35 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .top {
+    & .logoAndNav {
+      gap: 5vw;
+    }
+
+    & .legalAndSocial {
+      gap: 5vw;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .top {
+    flex-direction: column;
+    gap: 3vw;
+
+    & .logoAndNav {
+      flex-direction: column;
+      gap: 3vw;
+    }
+
+    & .legalAndSocial {
+      flex-direction: column;
+      gap: 5vw;
+    }
+  }
+}
+
 .logo {
   display: flex;
   align-items: center;
@@ -38,6 +81,18 @@
 
   & img {
     width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .logo {
+    width: 16vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo {
+    width: 30vw;
   }
 }
 
@@ -86,6 +141,38 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .nav {
+    gap: 8vw;
+
+    & .pages {
+      gap: 4vw;
+
+      & a {
+        font-size: 1.6vw;
+
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .nav {
+    gap: 8vw;
+
+    & .pages {
+      gap: 5vw;
+
+      & a {
+        font-size: 3.6vw;
+      }
+    }
+  }
+}
+
 .copyright {
   width: 100%;
   position: absolute;
@@ -99,6 +186,20 @@
   font-weight: var(--font-weight-regular);
   line-height: var(--font-lineh-small);
   z-index: 0;
+}
+
+@media (max-width: 1024px) {
+  .copyright {
+    bottom: -30%;
+    font-size: 1.25vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .copyright {
+    bottom: -20%;
+    font-size: 2.8vw;
+  }
 }
 
 .legal {
@@ -124,6 +225,26 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .legal {
+    gap: 4vw;
+
+    & a {
+      font-size: 1.65vw;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .legal {
+    gap: 5vw;
+
+    & a {
+      font-size: 3.6vw;
+    }
+  }
+}
+
 .socials {
   display: flex;
   gap: 1.5vw;
@@ -139,6 +260,32 @@
 
       &:hover {
         color: var(--color-red-main);
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .socials {
+    gap: 3vw;
+
+    a {
+      & .socialIcon {
+        width: 3vw;
+        height: 3vw;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .socials {
+    gap: 5vw;
+
+    a {
+      & .socialIcon {
+        width: 5vw;
+        height: 5vw;
       }
     }
   }

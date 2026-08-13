@@ -67,6 +67,14 @@ export default function TechnicalDataModal({ car, isOpen, onClose }: TechnicalDa
     return null;
   }
 
+  const formatFeatures = (features: Car['features']) => {
+    if (Array.isArray(features)) {
+      return features.join(', ');
+    }
+
+    return features;
+  };
+
   const technicalData: TechnicalDataItem[] = [
     {
       label: 'Transmission type:',
@@ -90,7 +98,7 @@ export default function TechnicalDataModal({ car, isOpen, onClose }: TechnicalDa
     },
     {
       label: 'Equipment',
-      value: car.features,
+      value: formatFeatures(car.features),
     },
   ];
 

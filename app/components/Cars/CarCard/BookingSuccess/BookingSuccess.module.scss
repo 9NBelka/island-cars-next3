@@ -13,6 +13,14 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .success {
+    & .successBlock {
+      gap: 3vw;
+    }
+  }
+}
+
 .title {
   font-size: 1vw;
   color: var(--color-white);
@@ -28,6 +36,17 @@
   font-weight: var(--font-weight-regular);
   line-height: var(--font-lineh-small);
   margin-top: 0.75vw;
+}
+
+@media (max-width: 1024px) {
+  .title {
+    font-size: 3vw;
+  }
+
+  .text {
+    font-size: 1.8vw;
+    margin-top: 2vw;
+  }
 }
 
 .buttonBlock {
@@ -54,6 +73,16 @@
 
     &:hover {
       background: transparent;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .buttonBlock {
+    & .button {
+      font-size: 1.8vw;
+      border-radius: 0.75vw;
+      padding: 1.5vw 3vw;
     }
   }
 }

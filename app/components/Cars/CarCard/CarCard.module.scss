@@ -158,6 +158,24 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .card {
+    width: 100%;
+    border-radius: 1vw;
+    padding: 3vw 3vw;
+
+    & .cardBlockLeftRight {
+      & .carCharacterBlockAndHeader {
+        width: 60%;
+      }
+
+      & .carRulesBlock {
+        width: 40%;
+      }
+    }
+  }
+}
+
 .cardHeader {
   display: flex;
   flex-direction: column;
@@ -210,6 +228,31 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .cardHeader {
+    gap: 0.75vw;
+
+    & .carNameAndIconBlock {
+      gap: 1.25vw;
+
+      & .carName {
+        font-size: 3vw;
+      }
+
+      .infoTrigger {
+        & .infoTriggerIcon {
+          width: 1.6vw;
+          height: 1.6vw;
+        }
+      }
+    }
+
+    & .transmissionText {
+      font-size: 1.8vw;
+    }
+  }
+}
+
 .carShadow {
   display: flex;
   width: 20vw;
@@ -220,6 +263,12 @@
     filter: grayscale(100%);
     -webkit-filter: grayscale(100%);
     -moz-filter: grayscale(100%);
+  }
+}
+
+@media (max-width: 1024px) {
+  .carShadow {
+    width: 40vw;
   }
 }
 
@@ -248,6 +297,25 @@
       color: var(--color-white);
       width: 1.15vw;
       height: 1.15vw;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .carCharacterBlock {
+    gap: 4vw;
+
+    & .carCharacterBlockIconAndText {
+      gap: 0.75vw;
+
+      & .carCharacterText {
+        font-size: 2.2vw;
+      }
+
+      & .carCharacterIcon {
+        width: 2.4vw;
+        height: 2.4vw;
+      }
     }
   }
 }
@@ -293,6 +361,37 @@
         color: var(--color-red-main);
         width: 1.25vw;
         height: 1.25vw;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .carRulesBlock {
+    & .carRulesMainBlockIconAndText {
+      gap: 3vw;
+
+      & .carRulesBlockIconAndText {
+        align-items: flex-start;
+        gap: 2vw;
+
+        & .carRulesBlockText {
+          gap: 0.5vw;
+
+          & .carRulesText {
+            font-size: 1.8vw;
+          }
+
+          & .carRulesTextGrey {
+            font-size: 1.6vw;
+            line-height: var(--font-lineh-normal);
+          }
+        }
+
+        & .carRulesIcon {
+          width: 2.5vw;
+          height: 2.5vw;
+        }
       }
     }
   }
@@ -364,6 +463,41 @@
       font-family: var(--font-Inter);
       font-weight: var(--font-weight-regular);
       line-height: var(--font-lineh-small);
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .carTotalPriceAndButton {
+    & .carTotalPriceBlock {
+      gap: 0.75vw;
+
+      & .carTotalPriceText {
+        font-size: 1.8vw;
+      }
+
+      & .carTotalPriceTextCost {
+        font-size: 2.4vw;
+
+        & span {
+          font-size: 1.85vw;
+        }
+      }
+    }
+
+    & .bookColumn {
+      gap: 0.5vw;
+
+      & .buttonBook {
+        font-size: 1.8vw;
+        border-radius: 0.75vw;
+        gap: 0.35vw;
+        padding: 1.15vw 5vw;
+      }
+
+      & .selectDatesWarning {
+        font-size: 1.6vw;
+      }
     }
   }
 }

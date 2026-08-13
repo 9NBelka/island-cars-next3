@@ -33,6 +33,14 @@
   animation: modalIn 0.25s ease;
 }
 
+@media (max-width: 1024px) {
+  .modal {
+    width: 80vw;
+    max-height: 90vh;
+    border-radius: 1.5vw;
+  }
+}
+
 .headerAndNameCar {
   display: flex;
   flex-direction: column;
@@ -48,7 +56,7 @@
       font-size: 1.4vw;
       font-family: var(--font-Inter);
       font-weight: var(--font-weight-bold);
-      line-height: var(--font-lineh-small);
+      line-height: var(--font-lineh-normal);
     }
 
     .closeButton {
@@ -79,9 +87,33 @@
     font-size: 0.85vw;
     font-family: var(--font-Inter);
     font-weight: var(--font-weight-regular);
-    line-height: var(--font-lineh-small);
+    line-height: var(--font-lineh-normal);
     text-transform: capitalize;
     margin-top: 0.5vw;
+  }
+}
+
+@media (max-width: 1024px) {
+  .headerAndNameCar {
+    padding: 2vw;
+
+    & .header {
+      h2 {
+        font-size: 3vw;
+      }
+
+      .closeButton {
+        & .closeIcon {
+          width: 3vw;
+          height: 3vw;
+        }
+      }
+    }
+
+    & .carName {
+      margin-top: 0.25vw;
+      font-size: 1.8vw;
+    }
   }
 }
 
@@ -117,6 +149,12 @@
   font-family: var(--font-Inter);
   font-weight: var(--font-weight-regular);
   line-height: var(--font-lineh-small);
+}
+
+@media (max-width: 1024px) {
+  .noImage {
+    font-size: 1.8vw;
+  }
 }
 
 .sliderButton {
@@ -171,6 +209,12 @@
   border-top-right-radius: 0;
 }
 
+@media (max-width: 1024px) {
+  .table {
+    border-radius: 0.5vw;
+  }
+}
+
 .row {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
@@ -185,6 +229,13 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .row {
+    grid-template-columns: 1.1fr 1.25fr;
+    min-height: 6vw;
+  }
+}
+
 .label {
   display: flex;
   align-items: center;
@@ -196,16 +247,30 @@
   border-right: 0.01vw solid var(--color-darkGray);
 }
 
+@media (max-width: 1024px) {
+  .label {
+    padding: 0vw 1.5vw;
+    font-size: 1.8vw;
+  }
+}
+
 .value {
   display: flex;
   align-items: center;
 
-  padding: 0vw 0.8vw;
+  padding: 0vw 1vw;
   font-size: 0.7vw;
   color: var(--color-white);
   font-family: var(--font-Inter);
   font-weight: var(--font-weight-regular);
-  line-height: var(--font-lineh-small);
+  line-height: var(--font-lineh-normal);
+}
+
+@media (max-width: 1024px) {
+  .value {
+    padding: 0vw 1.5vw;
+    font-size: 1.8vw;
+  }
 }
 
 @keyframes overlayIn {
@@ -227,60 +292,5 @@
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
-  }
-}
-
-@media (max-width: 768px) {
-  .overlay {
-    padding: 20px;
-  }
-
-  .modal {
-    width: 100%;
-    max-height: 90vh;
-
-    padding: 20px;
-
-    border-radius: 14px;
-  }
-
-  .header {
-    margin-bottom: 8px;
-
-    h2 {
-      font-size: 22px;
-    }
-  }
-
-  .closeButton {
-    font-size: 28px;
-  }
-
-  .carName {
-    margin-bottom: 15px;
-    font-size: 14px;
-  }
-
-  .imageWrapper {
-    height: 220px;
-
-    margin-bottom: 20px;
-
-    border-radius: 10px;
-  }
-
-  .sliderButton {
-    font-size: 24px;
-  }
-
-  .row {
-    grid-template-columns: 42% 58%;
-    min-height: 55px;
-  }
-
-  .label,
-  .value {
-    padding: 10px;
-    font-size: 13px;
   }
 }

@@ -22,6 +22,14 @@
   }
 }
 
+@media (max-width: 576px) {
+  .form {
+    gap: 4vw;
+    border-radius: 1.5vw;
+    padding: 4vw 4vw;
+  }
+}
+
 .selectsBlock {
   display: flex;
   align-items: flex-end;
@@ -34,6 +42,15 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2vw;
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .selectsBlock {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3vw;
     width: 100%;
   }
 }
@@ -63,6 +80,16 @@
   }
 }
 
+@media (max-width: 576px) {
+  .field {
+    gap: 2vw;
+
+    label {
+      font-size: 3.6vw;
+    }
+  }
+}
+
 .dateTime {
   display: flex;
   gap: 0.4vw;
@@ -74,12 +101,13 @@
 
 @media (max-width: 1024px) {
   .dateTime {
-    display: flex;
     gap: 1.5vw;
+  }
+}
 
-    input {
-      flex: 1;
-    }
+@media (max-width: 576px) {
+  .dateTime {
+    gap: 2vw;
   }
 }
 
@@ -133,6 +161,20 @@
     & .submitIcon {
       width: 3vw;
       height: 3vw;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .submit {
+    border-radius: 1.5vw;
+    padding: 2.4vw 6vw;
+    font-size: 3.6vw;
+    gap: 1.5vw;
+
+    & .submitIcon {
+      width: 5vw;
+      height: 5vw;
     }
   }
 }

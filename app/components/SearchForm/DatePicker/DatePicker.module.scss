@@ -54,6 +54,25 @@
   }
 }
 
+@media (max-width: 576px) {
+  .trigger {
+    width: 100%;
+    gap: 2vw;
+    font-size: 3.6vw;
+    border-radius: 1vw;
+    padding: 2.6vw 2.5vw;
+
+    & .iconCalendar {
+      width: 3vw;
+      height: 3vw;
+    }
+
+    & span {
+      font-size: 3.6vw;
+    }
+  }
+}
+
 .popover {
   position: absolute;
   top: -654%;
@@ -95,6 +114,16 @@
   }
 }
 
+@media (max-width: 576px) {
+  .popover {
+    top: -975%;
+    border-radius: 1.5vw;
+    padding: 3vw;
+    width: 83.6vw;
+    min-width: 83.6vw;
+  }
+}
+
 .popoverOpen {
   opacity: 1;
   visibility: visible;
@@ -123,6 +152,12 @@
   }
 }
 
+@media (max-width: 576px) {
+  .monthLabel {
+    font-size: 3.6vw;
+  }
+}
+
 .navBtn {
   display: flex;
   background: transparent;
@@ -147,6 +182,15 @@
     & .navBtnIcon {
       width: 2.5vw;
       height: 2.5vw;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .navBtn {
+    & .navBtnIcon {
+      width: 4vw;
+      height: 4vw;
     }
   }
 }
@@ -182,6 +226,16 @@
   }
 }
 
+@media (max-width: 576px) {
+  .weekdays {
+    margin-top: 4vw;
+
+    span {
+      font-size: 3.4vw;
+    }
+  }
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -192,6 +246,12 @@
 @media (max-width: 1024px) {
   .grid {
     margin-top: 1vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .grid {
+    margin-top: 2vw;
   }
 }
 
@@ -245,6 +305,14 @@
     width: 5vw;
     height: 5vw;
     font-size: 1.6vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .day {
+    width: 11vw;
+    height: 11vw;
+    font-size: 3.6vw;
   }
 }
 

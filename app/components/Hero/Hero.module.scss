@@ -30,10 +30,13 @@
 
 @media (max-width: 1024px) {
   .container {
-    max-width: 90vw;
-    margin: 0 auto;
-    width: 100%;
     margin-top: 14vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    margin-top: 20vw;
   }
 }
 
@@ -67,6 +70,10 @@
   line-height: var(--font-lineh-normal);
   border: 0.01vw solid var(--color-red-main-dark);
   gap: 0.75vw;
+
+  &.contactBoxPhone {
+    display: none;
+  }
 
   & .iconPhoneBlock {
     display: flex;
@@ -128,6 +135,33 @@
       & .contactPhone {
         font-size: 1.9vw;
         line-height: var(--font-lineh-normal);
+      }
+    }
+  }
+}
+@media (max-width: 576px) {
+  .contactBox {
+    display: none;
+
+    &.contactBoxPhone {
+      display: flex;
+      position: static;
+      padding: 2vw 4vw;
+      margin-bottom: 1vw;
+
+      & .contactTextBlock {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 2vw;
+
+        & .contactLabel {
+          font-size: 3.6vw;
+        }
+
+        & .contactPhone {
+          font-size: 4vw;
+        }
       }
     }
   }
@@ -233,6 +267,51 @@
   }
 }
 
+@media (max-width: 576px) {
+  .content {
+    max-width: 100vw;
+
+    & .contactBoxLink {
+      display: flex;
+    }
+
+    & .title {
+      font-size: 12vw;
+    }
+
+    & .subtitle {
+      font-size: 3.6vw;
+      margin-top: 4vw;
+    }
+
+    & .features {
+      width: 100%;
+      justify-content: start;
+      flex-wrap: wrap;
+      gap: 3vw;
+      margin-top: 4vw;
+
+      li {
+        display: flex;
+        align-items: center;
+        gap: 3vw;
+        max-width: 100%;
+        padding-left: 0vw;
+        border: 0;
+      }
+
+      & span {
+        font-size: 3.6vw;
+      }
+
+      & .featureIcon {
+        width: 4vw;
+        height: 4vw;
+      }
+    }
+  }
+}
+
 .formWrapper {
   width: 100%;
   position: relative;
@@ -243,6 +322,12 @@
 @media (max-width: 1024px) {
   .formWrapper {
     margin-top: 4vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .formWrapper {
+    margin-top: 6vw;
   }
 }
 

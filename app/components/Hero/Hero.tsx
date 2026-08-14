@@ -11,6 +11,7 @@ import styles from './Hero.module.scss';
 
 import type { SearchCarsParams } from '@/app/types/search';
 import type { SearchFormState } from '@/app/types/searchForm';
+import clsx from 'clsx';
 
 type HeroProps = {
   lang: Lang;
@@ -52,20 +53,30 @@ export default function Hero({ lang, form, onFormChange, onSearch }: HeroProps) 
     <section className={styles.hero}>
       <div className={styles.container}>
         <div className={styles.overlay} />
+        <a href='#'>
+          <div className={styles.contactBox}>
+            <div className={styles.iconPhoneBlock}>
+              <BsFillTelephoneFill className={styles.iconPhone} />
+            </div>
 
-        <div className={styles.contactBox}>
-          <div className={styles.iconPhoneBlock}>
-            <BsFillTelephoneFill className={styles.iconPhone} />
+            <div className={styles.contactTextBlock}>
+              <p className={styles.contactLabel}>{t('hero.contactUs')}</p>
+
+              <p className={styles.contactPhone}>+34 632 230 891</p>
+            </div>
           </div>
-
-          <div className={styles.contactTextBlock}>
-            <p className={styles.contactLabel}>{t('hero.contactUs')}</p>
-
-            <p className={styles.contactPhone}>+34 632 230 891</p>
-          </div>
-        </div>
+        </a>
 
         <div className={styles.content}>
+          <a className={styles.contactBoxLink} href='#'>
+            <div className={clsx(styles.contactBox, styles.contactBoxPhone)}>
+              <div className={styles.contactTextBlock}>
+                <p className={styles.contactLabel}>{t('hero.contactUs')}:</p>
+
+                <p className={styles.contactPhone}>+34 632 230 891</p>
+              </div>
+            </div>
+          </a>
           <h1 className={styles.title}>
             {t('hero.titleLine1')}
             <br />
@@ -87,7 +98,6 @@ export default function Hero({ lang, form, onFormChange, onSearch }: HeroProps) 
             ))}
           </ul>
         </div>
-
         <div className={styles.formWrapper}>
           <SearchForm lang={lang} form={form} onChange={onFormChange} onSearch={onSearch} />
         </div>

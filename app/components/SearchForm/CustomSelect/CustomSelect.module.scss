@@ -40,6 +40,21 @@
   }
 }
 
+@media (max-width: 576px) {
+  .select {
+    width: 100%;
+    gap: 2vw;
+    font-size: 3.6vw;
+    border-radius: 1vw;
+    padding: 1.8vw 2.5vw;
+
+    & .selectPoint {
+      width: 3vw;
+      height: 3vw;
+    }
+  }
+}
+
 .selectArrow {
   position: absolute;
   top: 38%;
@@ -51,11 +66,19 @@
 
 @media (max-width: 1024px) {
   .selectArrow {
-    position: absolute;
     top: 33%;
     right: 5%;
     width: 2vw;
     height: 2vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .selectArrow {
+    top: 33%;
+    right: 4%;
+    width: 3vw;
+    height: 3vw;
   }
 }
 
@@ -102,6 +125,15 @@
   }
 }
 
+@media (max-width: 576px) {
+  .optionsList {
+    top: calc(100% + 1vw);
+    border-radius: 1vw;
+    max-height: 47vw;
+    padding: 0.5vw 0;
+  }
+}
+
 .optionsOpen {
   opacity: 1;
   visibility: visible;
@@ -128,6 +160,13 @@
   .option {
     padding: 1vw 2vw;
     font-size: 1.8vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .option {
+    padding: 2vw 3vw;
+    font-size: 3.6vw;
   }
 }
 

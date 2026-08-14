@@ -8,6 +8,7 @@ import LangLink from '../LangLink/LangLink';
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
 import styles from './Header.module.scss';
 import { supabase } from '@/app/lib/supabase';
+import clsx from 'clsx';
 
 type HeaderProps = { lang: Lang; isScrolled: boolean };
 
@@ -89,6 +90,14 @@ export default function Header({ lang, isScrolled }: HeaderProps) {
             className={styles.signIn}>
             <BsPerson className={styles.signInIcon} />
             {isAuthenticated ? t('header.profile') : t('header.signIn')}
+          </LangLink>
+
+          <LangLink
+            lang={lang}
+            href={isAuthenticated ? '/profile' : '/login'}
+            className={clsx(styles.signIn, styles.signInPhone)}>
+            <BsPerson className={styles.signInIcon} />
+            {/* {isAuthenticated ? t('header.profile') : t('header.signIn')} */}
           </LangLink>
 
           <button

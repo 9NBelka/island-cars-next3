@@ -1,6 +1,6 @@
 'use client';
 
-import { Formik, Form } from 'formik';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 import {
   BsPersonFill,
   BsEnvelopeFill,
@@ -215,6 +215,40 @@ export default function RegisterFormContent({ lang, onSuccess }: RegisterFormCon
               type='password'
               placeholder={t('auth.register.confirmPasswordPlaceholder')}
             />
+          </div>
+
+          <div className={styles.agreements}>
+            <label className={styles.checkboxLabel}>
+              <Field type='checkbox' name='rentalAgreement' className={styles.checkbox} />
+
+              <span className={styles.checkboxCustom} />
+
+              <span className={styles.checkboxText}>
+                {t('auth.register.termsAgreement.before')}{' '}
+                <LangLink lang={lang} href='/rules' className={styles.checkboxLink}>
+                  {t('auth.register.termsAgreement.link')}
+                </LangLink>
+                {t('auth.register.termsAgreement.after')}
+              </span>
+            </label>
+
+            <ErrorMessage name='rentalAgreement' component='div' className={styles.checkboxError} />
+
+            <label className={styles.checkboxLabel}>
+              <Field type='checkbox' name='privacyPolicy' className={styles.checkbox} />
+
+              <span className={styles.checkboxCustom} />
+
+              <span className={styles.checkboxText}>
+                {t('auth.register.privacyAgreement.before')}{' '}
+                <LangLink lang={lang} href='/privacy' className={styles.checkboxLink}>
+                  {t('auth.register.privacyAgreement.link')}
+                </LangLink>
+                {t('auth.register.privacyAgreement.after')}
+              </span>
+            </label>
+
+            <ErrorMessage name='privacyPolicy' component='div' className={styles.checkboxError} />
           </div>
 
           <div className={styles.submitBlock}>

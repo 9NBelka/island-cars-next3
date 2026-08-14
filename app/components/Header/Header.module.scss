@@ -194,6 +194,10 @@
   border: 0.01vw solid var(--color-red-main);
   transition: 0.2s ease-in-out;
 
+  &.signInPhone {
+    display: none;
+  }
+
   & .signInIcon {
     width: 0.8vw;
     height: 0.8vw;
@@ -226,10 +230,18 @@
     padding: 2vw 3vw;
     border-radius: 1vw;
     font-size: 3.6vw;
+    display: none;
+
+    &.signInPhone {
+      display: flex;
+      padding: 0;
+      background: none;
+      border: 0;
+    }
 
     & .signInIcon {
-      width: 3.2vw;
-      height: 3.2vw;
+      width: 4vw;
+      height: 4vw;
     }
   }
 }

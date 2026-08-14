@@ -96,7 +96,17 @@
       "password": "Contraseña",
       "passwordPlaceholder": "Introduce la contraseña",
       "confirmPassword": "Confirmar contraseña",
-      "confirmPasswordPlaceholder": "Repite la contraseña"
+      "confirmPasswordPlaceholder": "Repite la contraseña",
+      "termsAgreement": {
+        "before": "Confirmo que he leído y acepto las ",
+        "link": "Reglas y Condiciones",
+        "after": "."
+      },
+      "privacyAgreement": {
+        "before": "Confirmo que he leído y acepto la ",
+        "link": "Política de Privacidad",
+        "after": "."
+      }
     },
     "login": {
       "title": "Bienvenido de nuevo",
@@ -133,7 +143,9 @@
       "invalidDate": "Introduce una fecha válida",
       "passwordMinLength": "La contraseña debe tener al menos 8 caracteres",
       "passwordDigit": "La contraseña debe contener al menos un dígito",
-      "passwordMatch": "Las contraseñas no coinciden"
+      "passwordMatch": "Las contraseñas no coinciden",
+      "rentalAgreementRequired": "Debes aceptar las Reglas y Condiciones.",
+      "privacyPolicyRequired": "Debes aceptar la Política de Privacidad."
     }
   },
   "contacts": {
@@ -270,6 +282,78 @@
       "title": "¡Gracias por tu reserva!",
       "text": "Nos pondremos en contacto contigo en los próximos 15 minutos para confirmar los detalles.",
       "button": "Ir a mis reservas"
+    }
+  },
+  "rules": {
+    "title": "Normas y condiciones de alquiler",
+    "highlights": "- Los alquileres de 5 días o más incluyen kilometraje ilimitado (en alquileres más cortos se aplica una franquicia diaria: 300 km el primer día, hasta 600 km el cuarto día).\n- Solo se permite circular por la España peninsular; la única excepción es Ibiza.\n- La devolución anticipada del vehículo no da derecho a reembolso por los días no utilizados.",
+    "sections": {
+      "subject": {
+        "title": "1. Objeto del contrato",
+        "body": "Island Cars entrega el vehículo en buen estado de funcionamiento para uso temporal del arrendatario, quien se compromete a abonar el importe del alquiler y a devolver el vehículo, en buen estado, en la fecha, hora y lugar indicados en la reserva.\nEl equipamiento entregado con el vehículo figura en la hoja de entrega y forma parte de este contrato.\nLos arrendatarios que no contraten el seguro opcional Full Cover deberán dejar una fianza reembolsable de 1.200 €.\nLos conductores deben tener al menos 21 años; Island Cars podrá hacer excepciones a su criterio.\nEl precio del alquiler incluye: kilometraje ilimitado en alquileres de 5 días o más (o la franquicia diaria indicada arriba en alquileres más cortos), impuesto de circulación, IVA del 21%, seguro obligatorio de responsabilidad civil frente a terceros, grúa en caso de accidente, vehículo de sustitución si se avería sin culpa del arrendatario, opción de segundo conductor, y cobertura de seguro completo."
+      },
+      "obligations": {
+        "title": "2. Derechos y obligaciones",
+        "body": "El vehículo se entrega en buen estado técnico y con el depósito lleno; según la modalidad de combustible elegida, deberá devolverse lleno o vacío — el combustible no consumido no se reembolsa.\nEl arrendatario no podrá modificar el vehículo ni añadir o quitar accesorios sin autorización previa.\nAl finalizar el alquiler, el vehículo debe devolverse con todos sus accesorios, considerando el desgaste normal, en el lugar y hora acordados.\nLas devoluciones con más de una hora de retraso se cobran al doble de la tarifa diaria por cada día de retraso.\nEl arrendatario es responsable de:\n- Pagar las multas recibidas durante el alquiler. Las multas notificadas después de finalizar el alquiler llevan un recargo de gestión de 40 €; el impago puede notificarse a la policía.\n- Abonar hasta 100 € por limpieza profunda del interior si es necesario al devolver el vehículo.\n- Pagar 150 € por la pérdida de la llave electrónica (50 € si la llave no tiene control electrónico), más el coste de envío si procede.\n- Devolver el vehículo en el aparcamiento de Island Cars o en otro lugar acordado.\n- Los gastos de aparcamiento (incluidos los posteriores al alquiler si el vehículo no se devuelve correctamente), los peajes y otros gastos derivados del uso del vehículo, salvo los de mantenimiento o los originados por Island Cars.\nEn caso de daños o accidente, el arrendatario debe:\n- Informar de inmediato a la policía u organismo competente, y a Island Cars.\n- Recabar los datos de los testigos y fotografiar el lugar.\n- Si el accidente es por su culpa y no dispone de Full Cover, asumir el coste de la reparación y el tiempo de inmovilización según la tarifa del concesionario oficial.\nIsland Cars se compromete a:\n- Devolver la fianza en un plazo de 5 días hábiles, siempre que se hayan cumplido todas las condiciones del contrato.\n- Entregar y recoger el vehículo en el lugar y hora acordados.\n- Reparar o sustituir el vehículo lo antes posible si se avería sin culpa del arrendatario."
+      },
+      "unauthorizedUse": {
+        "title": "3. Uso no autorizado",
+        "body": "Al conducir, el arrendatario debe actuar con la diligencia adecuada, respetar las normas de tráfico y evitar cualquier situación que pueda dañar el vehículo o a terceros; es plenamente responsable de los daños derivados de un uso no autorizado, incluido el de conductores no autorizados.\nEl uso no autorizado incluye, entre otros:\n- Remolcar otro vehículo o remolque.\n- Circular por playas, circuitos, pistas forestales u otros terrenos no aptos para vehículos de carretera.\n- Circular por vías sin asfaltar, o asfaltadas pero en mal estado, que puedan dañar los bajos del vehículo.\n- Acceder a zonas restringidas, incluidas pistas de aeropuerto o áreas militares o aeronáuticas.\n- Ignorar los testigos o avisos del cuadro de mandos — al firmar este contrato, el arrendatario confirma que conoce su significado.\n- Transportar animales o sustancias peligrosas, inflamables o nocivas.\n- Utilizar el vehículo como taxi, traslado u otro servicio de transporte remunerado.\n- Subarrendar el vehículo.\n- Cualquier actividad ilegal.\n- Transportar más pasajeros o carga de los previstos por el fabricante.\n- Manipular o alterar el cuentakilómetros — cualquier fallo debe notificarse de inmediato.\n- Transportar equipaje u objetos en el techo, incluso con portaequipajes.\n- Dejar objetos de valor a la vista que puedan favorecer un robo.\n- Ensuciar el interior más allá de un uso razonable.\n- Usar el vehículo para clases de conducción de cualquier tipo.\n- Conducir incumpliendo el código de circulación.\n- Permitir conducir a quien no esté autorizado en este contrato o no disponga de la documentación requerida.\n- Usar el vehículo una vez finalizado el periodo de alquiler.\nFumar en el vehículo conlleva una multa de 200 €.\nCircular fuera de la España peninsular, salvo Ibiza, conlleva una multa de 200 €."
+      },
+      "term": {
+        "title": "4. Duración y resolución",
+        "body": "Este contrato entra en vigor en el momento de su firma por ambas partes.\nLa devolución anticipada del vehículo no da derecho a reembolso por los días no utilizados.\nSi el arrendatario incumple alguna condición de este contrato, Island Cars podrá resolverlo de forma unilateral, sin previo aviso, y recuperar el vehículo con independencia de su ubicación. Island Cars no se hace responsable de los objetos personales dejados en el vehículo en el momento de su recuperación, aunque procurará protegerlos. En este caso, el importe abonado por los días no utilizados no se reembolsa, y el arrendatario deberá cubrir los gastos derivados de la recuperación del vehículo."
+      },
+      "other": {
+        "title": "5. Otras condiciones",
+        "body": "Cualquier modificación de este contrato, o condiciones no recogidas en él, deberá constar por escrito en un anexo firmado por ambas partes.\nEste contrato se redacta en español (las versiones en inglés, ruso y alemán se ofrecen únicamente para facilitar su comprensión), se firma por duplicado, un ejemplar para cada parte, y se rige por la legislación del Reino de España.\nLas discrepancias se intentarán resolver directamente entre las partes; si no fuera posible, se someterán a la legislación española ante los tribunales de España."
+      },
+      "dataProcessing": {
+        "title": "6. Tratamiento de datos",
+        "body": "Al firmar, el arrendatario acepta que sus datos personales puedan compartirse con autoridades nacionales y regionales, aseguradoras y organismos públicos o privados en relación con infracciones de tráfico o el impago de peajes, así como con los tribunales y cuerpos de seguridad de España y la Unión Europea. Sus datos también podrán tratarse para evaluar la satisfacción del cliente. El arrendatario puede ejercer en cualquier momento sus derechos de acceso, rectificación, supresión y limitación sobre sus datos."
+      }
+    }
+  },
+  "privacy": {
+    "title": "Política de privacidad",
+    "lastUpdated": "Última actualización: [FECHA]",
+    "sections": {
+      "controller": {
+        "title": "1. Quiénes somos",
+        "body": "Este sitio web está operado por [NOMBRE LEGAL DE LA EMPRESA], [DIRECCIÓN LEGAL], España ('Island Cars', 'nosotros'). Para cualquier duda sobre esta política o sobre tus datos personales, contáctanos en [EMAIL DE CONTACTO DE PRIVACIDAD]."
+      },
+      "dataCollected": {
+        "title": "2. Qué datos recopilamos",
+        "body": "Datos de cuenta y perfil: nombre, correo electrónico, teléfono, fecha de nacimiento, dirección, número de carnet de conducir y datos del documento de identidad/pasaporte, facilitados al registrarte.\nDatos de reserva: lugares de recogida y devolución, fechas de alquiler, vehículo seleccionado, precio, método de pago y estado del pago, generados al reservar un coche.\nDatos técnicos almacenados en tu navegador: tus criterios de búsqueda (lugar de recogida/devolución, fechas) se guardan en el almacenamiento local de tu navegador durante un máximo de 4 horas para que el sitio pueda recuperar tu última búsqueda — estos datos permanecen en tu dispositivo y no se envían a nuestros servidores como mecanismo de seguimiento independiente.\nNo recopilamos conscientemente datos de menores de 18 años."
+      },
+      "purposesLegalBasis": {
+        "title": "3. Por qué tratamos tus datos y con qué base legal",
+        "body": "Para crear y gestionar tu cuenta — necesario para ejecutar el contrato contigo.\nPara procesar y gestionar las reservas de vehículos, incluidas las cancelaciones — necesario para ejecutar el contrato contigo.\nPara cumplir obligaciones legales, como notificar multas de tráfico a las autoridades competentes — necesario por obligación legal.\nPara responder a tus consultas y ofrecerte atención al cliente — interés legítimo en atender a nuestros clientes.\nPara mantener el sitio seguro y prevenir abusos — interés legítimo en proteger nuestro servicio y a nuestros usuarios."
+      },
+      "cookiesLocalStorage": {
+        "title": "4. Cookies y almacenamiento local",
+        "body": "Utilizamos el almacenamiento local de tu navegador (no cookies de seguimiento de terceros) para recordar tu última búsqueda de vehículo durante un máximo de 4 horas, para que no tengas que volver a introducirla si regresas al sitio. Estos datos se guardan únicamente en tu dispositivo y se eliminan automáticamente pasadas 4 horas o al borrar los datos de tu navegador.\nActualmente no utilizamos cookies publicitarias ni de análisis. Si esto cambia, actualizaremos esta política y, cuando sea necesario, solicitaremos tu consentimiento."
+      },
+      "recipients": {
+        "title": "5. Con quién compartimos tus datos",
+        "body": "Nuestro proveedor de alojamiento y base de datos, que almacena los datos de cuenta, perfil y reservas en nuestro nombre bajo un acuerdo de tratamiento de datos.\nAutoridades públicas (policía, autoridades de tráfico, tribunales), cuando la ley lo exija — por ejemplo, en relación con multas de tráfico o reclamaciones legales.\nCompañías de seguros, cuando sea relevante para un siniestro relacionado con tu alquiler.\nNo vendemos tus datos personales a terceros."
+      },
+      "retention": {
+        "title": "6. Cuánto tiempo conservamos tus datos",
+        "body": "Conservamos los datos de cuenta y perfil mientras tu cuenta esté activa. Si eliminas tu cuenta, eliminamos tus datos de perfil, salvo que estemos legalmente obligados a conservar ciertos registros (por ejemplo, por motivos fiscales o de reclamaciones legales) durante más tiempo.\nLos registros de reservas pueden conservarse más tiempo cuando sea necesario por motivos contables, fiscales o legales.\nLos datos de búsqueda guardados en el almacenamiento local se eliminan automáticamente pasadas 4 horas."
+      },
+      "rights": {
+        "title": "7. Tus derechos",
+        "body": "Conforme al RGPD, tienes derecho a:\n- Acceder a los datos personales que tenemos sobre ti.\n- Corregir datos inexactos o incompletos.\n- Solicitar la eliminación de tus datos, salvo obligaciones legales de conservación.\n- Restringir u oponerte a determinados tratamientos.\n- Recibir tus datos en un formato portable.\n- Retirar tu consentimiento en cualquier momento, cuando el tratamiento se base en el consentimiento.\nPara ejercer cualquiera de estos derechos, contáctanos en [EMAIL DE CONTACTO DE PRIVACIDAD]. También tienes derecho a presentar una reclamación ante la Agencia Española de Protección de Datos (www.aepd.es) o tu autoridad de control local."
+      },
+      "transfers": {
+        "title": "8. Transferencias internacionales de datos",
+        "body": "Tus datos se almacenan en servidores ubicados en [UBICACIÓN DEL SERVIDOR]. Si en algún momento transferimos datos fuera del Espacio Económico Europeo, nos aseguraremos de contar con las garantías adecuadas, como las Cláusulas Contractuales Tipo."
+      },
+      "changes": {
+        "title": "9. Cambios en esta política",
+        "body": "Podemos actualizar esta política periódicamente. La fecha de 'Última actualización' en la parte superior de esta página indica cuándo se revisó por última vez. Te recomendamos consultar esta página periódicamente."
+      }
     }
   }
 }

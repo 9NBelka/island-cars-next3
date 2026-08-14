@@ -96,7 +96,17 @@
       "password": "Password",
       "passwordPlaceholder": "Enter password",
       "confirmPassword": "Confirm password",
-      "confirmPasswordPlaceholder": "Repeat password"
+      "confirmPasswordPlaceholder": "Repeat password",
+      "termsAgreement": {
+        "before": "I confirm that I have read and agree to the ",
+        "link": "Rules and Conditions",
+        "after": "."
+      },
+      "privacyAgreement": {
+        "before": "I confirm that I have read and agree to the ",
+        "link": "Privacy Policy",
+        "after": "."
+      }
     },
     "login": {
       "title": "Welcome back",
@@ -133,7 +143,9 @@
       "invalidDate": "Enter a valid date",
       "passwordMinLength": "Password must be at least 8 characters",
       "passwordDigit": "Password must contain at least one digit",
-      "passwordMatch": "Passwords do not match"
+      "passwordMatch": "Passwords do not match",
+      "rentalAgreementRequired": "You must agree to the Rules and Conditions.",
+      "privacyPolicyRequired": "You must agree to the Privacy Policy."
     }
   },
   "contacts": {
@@ -270,6 +282,78 @@
       "title": "Thank you for your booking!",
       "text": "We'll contact you within 15 minutes to confirm the details.",
       "button": "Go to my bookings"
+    }
+  },
+  "rules": {
+    "title": "Rental Rules & Conditions",
+    "highlights": "- Rentals of 5 days or longer include unlimited mileage (shorter rentals get a daily allowance: 300 km on day 1, up to 600 km by day 4).\n- Driving is allowed within mainland Spain only, with Ibiza as the sole exception.\n- Returning the car early does not entitle you to a refund for the unused days.",
+    "sections": {
+      "subject": {
+        "title": "1. What this agreement covers",
+        "body": "Island Cars provides the vehicle in working order for the renter's temporary use; the renter agrees to pay the rental fee and return the vehicle, in working order, at the date, time and place stated in the booking.\nThe equipment supplied with the vehicle is listed on the handover sheet and forms part of this agreement.\nRenters who decline the optional Full Cover insurance must leave a refundable deposit of €1,200.\nDrivers must be at least 21 years old; exceptions may be granted at Island Cars' discretion.\nThe rental price includes: unlimited mileage on rentals of 5+ days (or the daily allowance above on shorter rentals), road tax, 21% IVA, mandatory third-party liability insurance, roadside towing after an accident, a replacement vehicle if the car breaks down through no fault of the renter, a second-driver option, and full insurance coverage."
+      },
+      "obligations": {
+        "title": "2. Rights and obligations",
+        "body": "The vehicle is handed over in good working condition with a full tank; depending on the fuel option chosen, it must be returned either full or empty — unused fuel left in the tank is not refunded.\nRenters may not modify the vehicle or add or remove accessories without prior authorization.\nAt the end of the rental, the vehicle must be returned with all its equipment, allowing for normal wear, at the agreed place and time.\nReturns more than one hour late are charged at double the daily rate for each late day.\nThe renter is responsible for:\n- Paying any fines received during the rental. Fines notified after the rental ends carry an additional €40 processing fee; unpaid fines may be reported to the police.\n- A deep-cleaning fee of up to €100 if the interior needs it on return.\n- €150 to replace a lost electronic key (€50 for a key without electronic locking), plus delivery costs where applicable.\n- Returning the vehicle to Island Cars' lot or another agreed location.\n- Parking fees (including any after the rental period if the car isn't returned properly), tolls, and other running costs, except maintenance costs or costs caused by Island Cars.\nIn the event of damage or an accident, the renter must:\n- Report it immediately to the police or relevant authority, and to Island Cars.\n- Collect witness details and photograph the scene.\n- If at fault and without Full Cover, cover the repair cost and the vehicle's downtime at the official dealer's rate.\nIsland Cars will:\n- Refund the deposit within 5 business days, provided all contract terms were met.\n- Hand over and collect the vehicle at the agreed time and place.\n- Repair or replace the vehicle promptly if it breaks down through no fault of the renter."
+      },
+      "unauthorizedUse": {
+        "title": "3. Unauthorized use",
+        "body": "While driving, the renter must take reasonable care, follow traffic regulations, and avoid anything that could damage the vehicle or harm others; the renter is fully liable for damage from unauthorized use, including by unauthorized drivers.\nUnauthorized use includes, without limitation:\n- Towing another vehicle or trailer.\n- Driving on beaches, race tracks, forest trails, or other terrain unsuited to road vehicles.\n- Driving on unpaved roads, or paved roads in poor condition likely to damage the underbody.\n- Entering restricted areas, including airport aprons or military/aviation zones.\n- Ignoring dashboard warning lights — by signing this agreement you confirm you understand what they mean.\n- Transporting animals or hazardous, flammable, or otherwise harmful substances.\n- Using the vehicle as a taxi, transfer, or other paid transport service.\n- Subletting the vehicle.\n- Any unlawful activity.\n- Carrying more passengers or cargo than the manufacturer's specifications allow.\n- Tampering with or interfering with the odometer — report any malfunction immediately.\n- Carrying luggage or items on the roof, even with a proper rack.\n- Leaving valuables visible inside the car where they could attract theft.\n- Leaving the interior significantly dirtier than normal use would cause.\n- Using the vehicle for driving lessons of any kind.\n- Driving in violation of traffic law.\n- Letting anyone drive who isn't authorized under this contract or lacks the required documents.\n- Using the vehicle after the rental period has ended.\nSmoking in the vehicle carries a €200 fine.\nDriving outside mainland Spain, Ibiza excepted, carries a €200 fine."
+      },
+      "term": {
+        "title": "4. Term and termination",
+        "body": "This agreement takes effect once signed by both parties.\nReturning the vehicle early does not entitle the renter to a refund for unused days.\nIf the renter breaches any term of this agreement, Island Cars may terminate it immediately, without prior notice, and repossess the vehicle regardless of its location. Island Cars is not liable for belongings left in the vehicle at the time of repossession, though it will make reasonable efforts to safeguard them. Rental fees already paid for unused days are non-refundable in this case, and the renter must cover any costs Island Cars incurs recovering the vehicle."
+      },
+      "other": {
+        "title": "5. Other terms",
+        "body": "Any changes to this agreement, or terms not covered here, must be recorded in a signed written addendum.\nThis agreement is drawn up in Spanish (English, Russian, and German versions are provided only to help renters understand it) and signed in two copies, one per party, under the laws of the Kingdom of Spain.\nDisputes will first be addressed directly between the parties; if unresolved, they will be settled under Spanish law before the courts of Spain."
+      },
+      "dataProcessing": {
+        "title": "6. Data processing",
+        "body": "By signing, you agree that your personal data may be shared with national and regional authorities, insurers, and public or private bodies in connection with traffic violations or unpaid tolls, as well as with Spanish and EU courts and law-enforcement bodies. Your data may also be processed to assess customer satisfaction. You may exercise your rights to access, correct, delete, or restrict the use of your data at any time."
+      }
+    }
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: [DATE]",
+    "sections": {
+      "controller": {
+        "title": "1. Who we are",
+        "body": "This website is operated by [LEGAL COMPANY NAME], [LEGAL ADDRESS], Spain ('Island Cars', 'we', 'us'). For any question about this policy or your personal data, contact us at [PRIVACY CONTACT EMAIL]."
+      },
+      "dataCollected": {
+        "title": "2. What data we collect",
+        "body": "Account and profile data: name, email, phone, date of birth, address, driver's license number, and ID/passport document details, provided when you register.\nBooking data: pickup and return locations, rental dates, selected vehicle, price, payment method, and payment status, created when you book a car.\nTechnical data stored in your browser: your search criteria (pickup/return location, dates) are kept in your browser's local storage for up to 4 hours so the site can restore your last search — this data stays on your device and is not sent to our servers as a separate tracking mechanism.\nWe do not knowingly collect data from anyone under 18."
+      },
+      "purposesLegalBasis": {
+        "title": "3. Why we process your data, and on what basis",
+        "body": "To create and manage your account — necessary to perform our contract with you.\nTo process and manage vehicle bookings, including cancellations — necessary to perform our contract with you.\nTo comply with legal obligations, such as reporting traffic fines to the relevant authorities — necessary for legal compliance.\nTo respond to your enquiries and provide customer support — our legitimate interest in supporting our customers.\nTo keep the site secure and prevent abuse — our legitimate interest in protecting our service and users."
+      },
+      "cookiesLocalStorage": {
+        "title": "4. Cookies and local storage",
+        "body": "We use your browser's local storage (not third-party tracking cookies) to remember your last vehicle search for up to 4 hours, so you don't have to re-enter it if you return to the site. This data is stored only on your device and is automatically cleared after 4 hours or when you clear your browser data.\nWe currently do not use advertising or analytics cookies. If this changes, we will update this policy and, where required, ask for your consent."
+      },
+      "recipients": {
+        "title": "5. Who we share your data with",
+        "body": "Our hosting and database provider, which stores account, profile, and booking data on our behalf under a data processing agreement.\nPublic authorities (police, traffic authorities, courts), where required by law — for example, in relation to traffic fines or legal claims.\nInsurance companies, where relevant to a claim involving your rental.\nWe do not sell your personal data to third parties."
+      },
+      "retention": {
+        "title": "6. How long we keep your data",
+        "body": "We keep account and profile data for as long as your account is active. If you delete your account, we delete your profile data, except where we are legally required to retain certain records (for example, for tax or legal claim purposes) for longer.\nBooking records may be kept for longer where required for accounting, tax, or legal purposes.\nSearch data stored in local storage is automatically cleared after 4 hours."
+      },
+      "rights": {
+        "title": "7. Your rights",
+        "body": "Under the GDPR, you have the right to:\n- Access the personal data we hold about you.\n- Correct inaccurate or incomplete data.\n- Request deletion of your data, subject to legal retention requirements.\n- Restrict or object to certain processing.\n- Receive your data in a portable format.\n- Withdraw consent at any time, where processing is based on consent.\nTo exercise any of these rights, contact us at [PRIVACY CONTACT EMAIL]. You also have the right to lodge a complaint with the Spanish data protection authority (Agencia Española de Protección de Datos, www.aepd.es) or your local supervisory authority."
+      },
+      "transfers": {
+        "title": "8. International data transfers",
+        "body": "Your data is stored on servers located in [SERVER LOCATION]. If we ever transfer data outside the European Economic Area, we will ensure appropriate safeguards are in place, such as Standard Contractual Clauses."
+      },
+      "changes": {
+        "title": "9. Changes to this policy",
+        "body": "We may update this policy from time to time. The 'Last updated' date at the top of this page shows when it was last revised. We encourage you to review this page periodically."
+      }
     }
   }
 }

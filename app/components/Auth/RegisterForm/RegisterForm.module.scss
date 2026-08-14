@@ -1,5 +1,5 @@
 .mainBlock {
-  min-height: 91vh;
+  min-height: 100vh;
   background: url('/images/hero-bg.jpg');
   background-repeat: no-repeat;
   background-size: 100%;
@@ -31,7 +31,8 @@
   backdrop-filter: blur(0.5vw);
   border-radius: 1vw;
   padding: 1.5vw 1.5vw;
-  margin-top: 4vw;
+  margin-top: 6vw;
+  margin-bottom: 2vw;
 
   &.cardLogin {
     max-width: 30vw;

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Formik, Form, type FormikHelpers } from 'formik';
 import { BsLockFill } from 'react-icons/bs';
@@ -32,6 +32,21 @@ export default function ResetPasswordForm({ lang }: Props) {
   const router = useRouter();
 
   const [sessionStatus, setSessionStatus] = useState<SessionStatus>('checking');
+  const [passwordChanged, setPasswordChanged] = useState(false);
+
+  // useRef, а не просто переменную в замыкании — cleanup в следующем
+  // useEffect должен видеть самое свежее значение на момент размонтирования,
+  // а не то, что было на момент запуска эффекта
+  const sessionStatusRef = useRef(sessionStatus);
+  const passwordChangedRef = useRef(passwordChanged);
+
+  useEffect(() => {
+    sessionStatusRef.current = sessionStatus;
+  }, [sessionStatus]);
+
+  useEffect(() => {
+    passwordChangedRef.current = passwordChanged;
+  }, [passwordChanged]);
 
   useEffect(() => {
     let resolved = false;
@@ -69,6 +84,17 @@ export default function ResetPasswordForm({ lang }: Props) {
     };
   }, []);
 
+  // Если пользователь ушёл со страницы, так и не сменив пароль —
+  // гасим recovery-сессию, чтобы просто открытая ссылка из письма
+  // не давала постоянный доступ к аккаунту.
+  useEffect(() => {
+    return () => {
+      if (sessionStatusRef.current === 'ready' && !passwordChangedRef.current) {
+        supabase.auth.signOut();
+      }
+    };
+  }, []);
+
   const handleSubmit = async (
     values: ResetPasswordValues,
     { setSubmitting, setStatus }: FormikHelpers<ResetPasswordValues>,
@@ -78,6 +104,7 @@ export default function ResetPasswordForm({ lang }: Props) {
     try {
       await updatePassword(values.password);
 
+      setPasswordChanged(true);
       setStatus({ success: t('auth.resetPassword.success') });
 
       setTimeout(() => {

@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { Formik, Form, type FormikHelpers } from 'formik';
 import { BsLockFill } from 'react-icons/bs';
 
@@ -30,28 +30,44 @@ type SessionStatus = 'checking' | 'ready' | 'invalid';
 export default function ResetPasswordForm({ lang }: Props) {
   const t = getT(lang);
   const router = useRouter();
-  const searchParams = useSearchParams();
 
   const [sessionStatus, setSessionStatus] = useState<SessionStatus>('checking');
 
   useEffect(() => {
-    const code = searchParams.get('code');
+    let resolved = false;
 
-    async function establishSession() {
-      if (!code) {
-        // На случай если сессия уже установлена автоматически
-        // (implicit-флоу с токеном в hash вместо ?code=)
-        const { data } = await supabase.auth.getSession();
-        setSessionStatus(data.session ? 'ready' : 'invalid');
-        return;
+    // Ссылку из письма (?code=... или #access_token=...) супабейз-клиент
+    // обрабатывает сам при инициализации — просто слушаем результат,
+    // а не пытаемся обменивать код повторно.
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((event) => {
+      if (event === 'PASSWORD_RECOVERY') {
+        resolved = true;
+        setSessionStatus('ready');
       }
+    });
 
-      const { error } = await supabase.auth.exchangeCodeForSession(code);
-      setSessionStatus(error ? 'invalid' : 'ready');
-    }
+    // Подстраховка: вдруг событие уже пролетело до того, как мы подписались
+    supabase.auth.getSession().then(({ data }) => {
+      if (!resolved && data.session) {
+        resolved = true;
+        setSessionStatus('ready');
+      }
+    });
 
-    establishSession();
-  }, [searchParams]);
+    // Если через несколько секунд ничего не случилось — ссылка невалидна
+    const timeout = setTimeout(() => {
+      if (!resolved) {
+        setSessionStatus('invalid');
+      }
+    }, 3000);
+
+    return () => {
+      subscription.unsubscribe();
+      clearTimeout(timeout);
+    };
+  }, []);
 
   const handleSubmit = async (
     values: ResetPasswordValues,
@@ -65,7 +81,9 @@ export default function ResetPasswordForm({ lang }: Props) {
       setStatus({ success: t('auth.resetPassword.success') });
 
       setTimeout(() => {
-        router.push(`/${lang}/login`);
+        // Пользователь уже авторизован после восстановления пароля —
+        // ведём сразу в профиль, а не на /login (там его и так перекинет).
+        router.push(`/${lang}/profile`);
       }, 2000);
     } catch (err) {
       setStatus({

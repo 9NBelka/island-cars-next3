@@ -122,7 +122,7 @@
   font-size: 0.75vw;
   font-family: var(--font-Inter);
   font-weight: var(--font-weight-regular);
-  line-height: var(--font-lineh-small);
+  line-height: var(--font-lineh-normal);
 }
 
 .successMessage {
@@ -130,7 +130,7 @@
   font-size: 0.75vw;
   font-family: var(--font-Inter);
   font-weight: var(--font-weight-regular);
-  line-height: var(--font-lineh-small);
+  line-height: var(--font-lineh-normal);
 }
 
 @media (max-width: 1024px) {
@@ -304,7 +304,7 @@
   font-size: 0.65vw;
   font-family: var(--font-Inter);
   font-weight: var(--font-weight-regular);
-  line-height: var(--font-lineh-small);
+  line-height: var(--font-lineh-normal);
 }
 
 @media (max-width: 1024px) {

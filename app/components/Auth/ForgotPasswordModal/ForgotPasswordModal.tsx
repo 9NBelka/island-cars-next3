@@ -47,7 +47,7 @@ export default function ForgotPasswordModal({ lang, isOpen, onClose }: Props) {
     setStatus(undefined);
 
     try {
-      await requestPasswordReset(values.email);
+      await requestPasswordReset(values.email, lang);
       setStatus({ success: t('auth.forgotPasswordModal.success') });
     } catch (error) {
       setStatus({

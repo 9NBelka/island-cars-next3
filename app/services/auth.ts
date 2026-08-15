@@ -130,10 +130,16 @@ export async function updateProfile(userId: string, values: ProfileUpdateValues)
   return data as Profile;
 }
 
-export async function requestPasswordReset(email: string) {
+export async function requestPasswordReset(email: string, lang: string) {
   const { error } = await supabase.auth.resetPasswordForEmail(email, {
-    redirectTo: `${window.location.origin}/reset-password`,
+    redirectTo: `${window.location.origin}/${lang}/reset-password`,
   });
+
+  if (error) throw error;
+}
+
+export async function updatePassword(password: string) {
+  const { error } = await supabase.auth.updateUser({ password });
 
   if (error) throw error;
 }

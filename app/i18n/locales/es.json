@@ -130,6 +130,22 @@
       "success": "Revisa tu correo — te hemos enviado un enlace.",
       "close": "Cerrar"
     },
+    "resetPassword": {
+      "title": "Establece una nueva contraseña",
+      "subtitle": "Elige una nueva contraseña para tu cuenta.",
+      "password": "Nueva contraseña",
+      "passwordPlaceholder": "Introduce la nueva contraseña",
+      "confirmPassword": "Confirmar contraseña",
+      "confirmPasswordPlaceholder": "Repite la nueva contraseña",
+      "submit": "Guardar nueva contraseña",
+      "saving": "Guardando…",
+      "success": "Contraseña actualizada correctamente. Redirigiendo al inicio de sesión…",
+      "error": "No se pudo actualizar la contraseña. Inténtalo de nuevo.",
+      "checking": "Verificando tu enlace…",
+      "invalidTitle": "Enlace caducado o no válido",
+      "invalidText": "Este enlace para restablecer la contraseña ya no es válido. Solicita uno nuevo.",
+      "backToLogin": "Volver al inicio de sesión"
+    },
     "errors": {
       "required": "Este campo es obligatorio",
       "onlyLetters": "Solo se permiten letras",

@@ -130,6 +130,22 @@
       "success": "Check your inbox — we've sent a reset link.",
       "close": "Close"
     },
+    "resetPassword": {
+      "title": "Set a new password",
+      "subtitle": "Choose a new password for your account.",
+      "password": "New password",
+      "passwordPlaceholder": "Enter new password",
+      "confirmPassword": "Confirm password",
+      "confirmPasswordPlaceholder": "Repeat new password",
+      "submit": "Save new password",
+      "saving": "Saving…",
+      "success": "Password updated successfully. Redirecting to login…",
+      "error": "Failed to update password. Please try again.",
+      "checking": "Verifying your link…",
+      "invalidTitle": "Link expired or invalid",
+      "invalidText": "This password reset link is no longer valid. Please request a new one.",
+      "backToLogin": "Back to login"
+    },
     "errors": {
       "required": "This field is required",
       "onlyLetters": "Only letters are allowed",

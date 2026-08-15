@@ -89,7 +89,7 @@
     font-weight: var(--font-weight-regular);
     line-height: var(--font-lineh-normal);
     text-transform: capitalize;
-    margin-top: 0.5vw;
+    margin-top: 0vw;
   }
 }
 
@@ -119,18 +119,17 @@
 
 .imageWrapper {
   position: relative;
-  padding: 1vw;
+  padding: 0 1vw;
   width: 100%;
-  height: 16vw;
+  height: 100%;
+  margin-top: 0.25vw;
 
-  min-height: 180px;
+  min-height: 20vw;
   max-height: 300px;
 
   display: flex;
   align-items: center;
   justify-content: center;
-
-  margin-bottom: 1.5vw;
 
   border-radius: 0.7vw;
 
@@ -141,6 +140,7 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
+  border-radius: 0.5vw;
 }
 
 .noImage {
@@ -164,39 +164,38 @@
   width: 2.3vw;
   height: 2.3vw;
 
-  min-width: 32px;
-  min-height: 32px;
-
   display: flex;
   align-items: center;
   justify-content: center;
 
   transform: translateY(-50%);
 
-  border: 0;
-  background: transparent;
-
-  color: #111;
-
-  font-size: 1.4vw;
+  background: rgba(9, 9, 9, 0.9);
+  border: 0.01vw solid var(--color-red);
+  border-radius: 50%;
 
   cursor: pointer;
 
-  transition:
-    background 0.2s ease,
-    transform 0.2s ease;
+  transition: 0.2s ease-in-out;
+
+  & .sliderButtonIcon {
+    width: 1vw;
+    height: 1vw;
+    color: var(--color-white);
+  }
 
   &:hover {
-    background: rgba(255, 255, 255, 0.7);
+    border: 0.01vw solid var(--color-red-main);
+    background: var(--color-red-main);
   }
 }
 
 .previous {
-  left: 0.4vw;
+  left: 0.2vw;
 }
 
 .next {
-  right: 0.4vw;
+  right: 0.2vw;
 }
 
 .table {
@@ -207,6 +206,7 @@
   border-radius: 0.5vw;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+  margin-top: 0.5vw;
 }
 
 @media (max-width: 1024px) {
@@ -258,7 +258,7 @@
   display: flex;
   align-items: center;
 
-  padding: 0vw 1vw;
+  padding: 0.2vw 1vw;
   font-size: 0.7vw;
   color: var(--color-white);
   font-family: var(--font-Inter);

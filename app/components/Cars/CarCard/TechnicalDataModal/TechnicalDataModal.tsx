@@ -21,17 +21,23 @@ type TechnicalDataItem = {
 export default function TechnicalDataModal({ car, isOpen, onClose }: TechnicalDataModalProps) {
   const [currentImage, setCurrentImage] = useState(0);
 
+  // console.log('CAR IN MODAL:', car);
+  // console.log('IMAGES IN MODAL:', car.images);
+  // console.log(
+  //   'IMAGE URLS:',
+  //   car.images?.map((image) => image.image_url),
+  // );
+
   /*
    * Пока используем изображения машины из базы.
    *
    * Если у тебя в Car другие названия полей для изображений,
    * здесь потом просто поменяем это место.
    */
-  const images = [
-    car.image_preview,
-    // car.image_url_2,
-    // car.image_url_3,
-  ].filter(Boolean) as string[];
+  const images = (car.images ?? [])
+    .slice()
+    .sort((a, b) => a.sort_order - b.sort_order)
+    .map((image) => image.image_url);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -161,7 +167,7 @@ export default function TechnicalDataModal({ car, isOpen, onClose }: TechnicalDa
                     className={`${styles.sliderButton} ${styles.previous}`}
                     onClick={goToPreviousImage}
                     aria-label='Previous image'>
-                    <BsChevronLeft />
+                    <BsChevronLeft className={styles.sliderButtonIcon} />
                   </button>
 
                   <button
@@ -169,7 +175,7 @@ export default function TechnicalDataModal({ car, isOpen, onClose }: TechnicalDa
                     className={`${styles.sliderButton} ${styles.next}`}
                     onClick={goToNextImage}
                     aria-label='Next image'>
-                    <BsChevronRight />
+                    <BsChevronRight className={styles.sliderButtonIcon} />
                   </button>
                 </>
               )}

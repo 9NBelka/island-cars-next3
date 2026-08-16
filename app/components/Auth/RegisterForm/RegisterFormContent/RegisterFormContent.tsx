@@ -30,10 +30,9 @@ import LangLink from '@/app/components/LangLink/LangLink';
 
 type RegisterFormContentProps = {
   lang: Lang;
-  onSuccess?: () => void;
 };
 
-export default function RegisterFormContent({ lang, onSuccess }: RegisterFormContentProps) {
+export default function RegisterFormContent({ lang }: RegisterFormContentProps) {
   const t = getT(lang);
 
   const schema = buildRegisterSchema(t);
@@ -75,18 +74,10 @@ export default function RegisterFormContent({ lang, onSuccess }: RegisterFormCon
     setSuccessMessage('');
 
     try {
-      await register(values);
+      await register(values, lang);
 
       resetForm();
-
-      if (onSuccess) {
-        onSuccess();
-        return;
-      }
-
-      setSuccessMessage(
-        'Аккаунт успешно создан. Проверьте электронную почту для подтверждения регистрации.',
-      );
+      setSuccessMessage(t('auth.register.success.text'));
     } catch (error: unknown) {
       console.error(error);
 
@@ -94,15 +85,15 @@ export default function RegisterFormContent({ lang, onSuccess }: RegisterFormCon
 
       switch (message) {
         case 'User already registered':
-          setErrorMessage('Пользователь с таким Email уже зарегистрирован.');
+          setErrorMessage(t('auth.errors.alreadyRegistered'));
           break;
 
         case 'Password should be at least 6 characters':
-          setErrorMessage('Пароль должен содержать минимум 6 символов.');
+          setErrorMessage(t('auth.errors.passwordTooShort'));
           break;
 
         default:
-          setErrorMessage(message || 'Произошла ошибка регистрации.');
+          setErrorMessage(message || t('auth.errors.registrationFailed'));
       }
     } finally {
       setSubmitting(false);
@@ -263,7 +254,12 @@ export default function RegisterFormContent({ lang, onSuccess }: RegisterFormCon
 
           {errorMessage && <div className={styles.errorMessage}>{errorMessage}</div>}
 
-          {successMessage && <div className={styles.successMessage}>{successMessage}</div>}
+          {successMessage && (
+            <div className={styles.successMessage}>
+              <strong>{t('auth.register.success.title')}</strong>
+              <p>{successMessage}</p>
+            </div>
+          )}
 
           <p className={styles.footerLink}>
             {t('auth.register.haveAccount')}{' '}

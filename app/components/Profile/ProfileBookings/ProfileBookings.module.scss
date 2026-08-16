@@ -110,6 +110,7 @@
     & .iconCarBlock {
       & .iconCar {
         width: 3vw;
+        height: 3vw;
       }
     }
 
@@ -127,11 +128,12 @@
 
 @media (max-width: 576px) {
   .empty {
-    padding: 4vw 1vw;
+    padding: 6vw 4vw;
 
     & .iconCarBlock {
       & .iconCar {
         width: 5vw;
+        height: 5vw;
       }
     }
 

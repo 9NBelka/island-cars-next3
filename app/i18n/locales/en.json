@@ -106,6 +106,10 @@
         "before": "I confirm that I have read and agree to the ",
         "link": "Privacy Policy",
         "after": "."
+      },
+      "success": {
+        "title": "Check your email",
+        "text": "We've sent a confirmation link to your email. Please confirm your address to activate your account, then log in."
       }
     },
     "login": {
@@ -161,7 +165,10 @@
       "passwordDigit": "Password must contain at least one digit",
       "passwordMatch": "Passwords do not match",
       "rentalAgreementRequired": "You must agree to the Rules and Conditions.",
-      "privacyPolicyRequired": "You must agree to the Privacy Policy."
+      "privacyPolicyRequired": "You must agree to the Privacy Policy.",
+      "alreadyRegistered": "An account with this email already exists.",
+      "passwordTooShort": "Password must be at least 6 characters.",
+      "registrationFailed": "Registration failed. Please try again."
     }
   },
   "contacts": {

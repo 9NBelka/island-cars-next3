@@ -106,6 +106,10 @@
         "before": "Confirmo que he leído y acepto la ",
         "link": "Política de Privacidad",
         "after": "."
+      },
+      "success": {
+        "title": "Revisa tu correo",
+        "text": "Te hemos enviado un enlace de confirmación a tu correo. Confirma tu dirección para activar tu cuenta y luego inicia sesión."
       }
     },
     "login": {
@@ -161,7 +165,10 @@
       "passwordDigit": "La contraseña debe contener al menos un dígito",
       "passwordMatch": "Las contraseñas no coinciden",
       "rentalAgreementRequired": "Debes aceptar las Reglas y Condiciones.",
-      "privacyPolicyRequired": "Debes aceptar la Política de Privacidad."
+      "privacyPolicyRequired": "Debes aceptar la Política de Privacidad.",
+      "alreadyRegistered": "Ya existe una cuenta con este correo electrónico.",
+      "passwordTooShort": "La contraseña debe tener al menos 6 caracteres.",
+      "registrationFailed": "No se pudo completar el registro. Inténtalo de nuevo."
     }
   },
   "contacts": {

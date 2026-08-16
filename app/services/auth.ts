@@ -16,7 +16,7 @@ export type ProfileUpdateValues = {
   documentNumber?: string;
 };
 
-export async function register(values: RegisterValues) {
+export async function register(values: RegisterValues, lang: string) {
   const {
     email,
     password,
@@ -35,12 +35,31 @@ export async function register(values: RegisterValues) {
   } = values;
 
   //---------------------------------------
-  // Создаем пользователя
+  // Создаём пользователя. Все данные профиля кладём в user_metadata —
+  // их подхватит серверный триггер handle_new_user() и сам создаст
+  // строку в profiles, независимо от того, есть ли сейчас сессия
+  // (до подтверждения почты её нет).
   //---------------------------------------
 
   const { data, error } = await supabase.auth.signUp({
     email,
     password,
+    options: {
+      emailRedirectTo: `${window.location.origin}/${lang}/login`,
+      data: {
+        first_name: firstName,
+        last_name: lastName,
+        phone,
+        date_of_birth: dateOfBirth,
+        language,
+        country,
+        city,
+        address,
+        license_number: licenseNumber,
+        document_type: documentType,
+        document_number: documentNumber,
+      },
+    },
   });
 
   if (error) throw error;
@@ -48,38 +67,6 @@ export async function register(values: RegisterValues) {
   if (!data.user) {
     throw new Error('User was not created');
   }
-
-  //---------------------------------------
-  // Создаем профиль
-  //---------------------------------------
-
-  const { error: profileError } = await supabase.from('profiles').insert({
-    id: data.user.id,
-
-    first_name: firstName,
-    last_name: lastName,
-
-    phone,
-
-    date_of_birth: dateOfBirth,
-
-    language,
-
-    country,
-    city,
-    address,
-
-    license_number: licenseNumber,
-
-    document_type: documentType,
-    document_number: documentNumber,
-
-    role: 'customer',
-    created_by_admin: false,
-    is_verified: false,
-  });
-
-  if (profileError) throw profileError;
 
   return data.user;
 }

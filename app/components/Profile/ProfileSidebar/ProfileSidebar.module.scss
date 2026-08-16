@@ -82,6 +82,28 @@
   }
 }
 
+@media (max-width: 576px) {
+  .nav {
+    border-radius: 1.5vw;
+    padding: 1.5vw;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 1.75vw;
+
+    & .navItem {
+      gap: 2vw;
+      padding: 2.6vw 3vw;
+      border-radius: 1vw;
+      font-size: 3.6vw;
+
+      & .icon {
+        width: 3vw;
+        height: 3vw;
+      }
+    }
+  }
+}
+
 .help {
   display: flex;
   flex-direction: column;
@@ -172,6 +194,37 @@
   }
 }
 
+@media (max-width: 576px) {
+  .help {
+    display: none;
+    border-radius: 1.5vw;
+    padding: 4vw;
+    gap: 3vw;
+
+    & .helpIcon {
+      & .hIcon {
+        width: 8vw;
+        height: 8vw;
+      }
+    }
+
+    & .helpTitle {
+      font-size: 4vw;
+    }
+
+    & .helpText {
+      font-size: 3.6vw;
+      margin-top: 2vw;
+    }
+
+    & .helpButton {
+      font-size: 3.6vw;
+      border-radius: 1vw;
+      padding: 2.6vw 0vw;
+    }
+  }
+}
+
 .logoutItem {
   display: flex;
   align-items: center;
@@ -218,6 +271,22 @@
   }
 }
 
+@media (max-width: 576px) {
+  .logoutItem {
+    display: none;
+    gap: 2.6vw;
+    padding: 0vw 0.25vw;
+    border-radius: 0vw;
+    font-size: 3.6vw;
+    margin-top: 3vw;
+
+    & .icon {
+      width: 4vw;
+      height: 4vw;
+    }
+  }
+}
+
 .logoutError {
   color: #ff6b6b;
   font-size: 0.75vw;
@@ -229,5 +298,11 @@
 @media (max-width: 1024px) {
   .logoutError {
     font-size: 1.8vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .logoutError {
+    font-size: 3.6vw;
   }
 }

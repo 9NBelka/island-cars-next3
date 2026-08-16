@@ -12,6 +12,13 @@
   }
 }
 
+@media (max-width: 576px) {
+  .card {
+    border-radius: 1.5vw;
+    padding: 3vw;
+  }
+}
+
 .header {
   display: flex;
   align-items: flex-start;
@@ -47,6 +54,19 @@
   }
 }
 
+@media (max-width: 576px) {
+  .header {
+    h2 {
+      font-size: 5vw;
+    }
+
+    p {
+      font-size: 3.6vw;
+      margin-top: 1vw;
+    }
+  }
+}
+
 .form {
   display: flex;
   flex-direction: column;
@@ -58,6 +78,13 @@
   .form {
     gap: 3vw;
     margin-top: 2vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .form {
+    gap: 4vw;
+    margin-top: 4vw;
   }
 }
 
@@ -87,6 +114,20 @@
   }
 }
 
+@media (max-width: 576px) {
+  .row3 {
+    display: grid;
+    gap: 4vw;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .row4 {
+    display: grid;
+    gap: 4vw;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
 .divider {
   height: 0.05vw;
   background: var(--color-darkGray);
@@ -95,6 +136,12 @@
 @media (max-width: 1024px) {
   .divider {
     height: 0.1vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .divider {
+    height: 0.25vw;
   }
 }
 
@@ -130,9 +177,21 @@
 
 @media (max-width: 1024px) {
   .saveButton {
+    width: 100%;
     font-size: 1.8vw;
     border-radius: 0.75vw;
     padding: 1.1vw 3vw;
+    &.marg {
+      margin-top: 1.5vw;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .saveButton {
+    border-radius: 1vw;
+    padding: 2.6vw 0;
+    font-size: 3.6vw;
     &.marg {
       margin-top: 1.5vw;
     }
@@ -167,5 +226,15 @@
 
   .success {
     font-size: 1.8vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .error {
+    font-size: 3.6vw;
+  }
+
+  .success {
+    font-size: 3.6vw;
   }
 }

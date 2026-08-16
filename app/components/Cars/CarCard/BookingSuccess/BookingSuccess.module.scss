@@ -21,6 +21,14 @@
   }
 }
 
+@media (max-width: 576px) {
+  .success {
+    & .successBlock {
+      gap: 5vw;
+    }
+  }
+}
+
 .title {
   font-size: 1vw;
   color: var(--color-white);
@@ -46,6 +54,17 @@
   .text {
     font-size: 1.8vw;
     margin-top: 2vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .title {
+    font-size: 5vw;
+  }
+
+  .text {
+    font-size: 3.6vw;
+    margin-top: 4vw;
   }
 }
 
@@ -83,6 +102,16 @@
       font-size: 1.8vw;
       border-radius: 0.75vw;
       padding: 1.5vw 3vw;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .buttonBlock {
+    & .button {
+      font-size: 3.6vw;
+      border-radius: 1.5vw;
+      padding: 2.4vw 8vw;
     }
   }
 }

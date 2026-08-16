@@ -44,10 +44,14 @@ export default function Footer({ lang }: FooterProps) {
             </div>
 
             <div className={styles.socials}>
-              <a href='#' aria-label='facebook'>
+              <a
+                href='https://www.facebook.com/profile.php?id=61580741230497&locale=es_ES'
+                aria-label='facebook'
+                target='_blank'>
                 <BsFacebook className={styles.socialIcon} />
               </a>
-              <a href='#' aria-label='whatsapp'>
+
+              <a href='https://wa.me/34656369589' aria-label='whatsapp' target='_blank'>
                 <BsWhatsapp className={styles.socialIcon} />
               </a>
             </div>

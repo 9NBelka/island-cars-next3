@@ -176,6 +176,28 @@
   }
 }
 
+@media (max-width: 576px) {
+  .card {
+    width: 100%;
+    border-radius: 2vw;
+    padding: 5vw 5vw;
+
+    & .cardBlockLeftRight {
+      flex-direction: column;
+      gap: 8vw;
+      // align-items: center;
+      & .carCharacterBlockAndHeader {
+        width: 100%;
+      }
+
+      & .carRulesBlock {
+        gap: 6vw;
+        width: 100%;
+      }
+    }
+  }
+}
+
 .cardHeader {
   display: flex;
   flex-direction: column;
@@ -253,6 +275,31 @@
   }
 }
 
+@media (max-width: 576px) {
+  .cardHeader {
+    gap: 1.5vw;
+
+    & .carNameAndIconBlock {
+      gap: 3vw;
+
+      & .carName {
+        font-size: 5vw;
+      }
+
+      .infoTrigger {
+        & .infoTriggerIcon {
+          width: 3.4vw;
+          height: 3.4vw;
+        }
+      }
+    }
+
+    & .transmissionText {
+      font-size: 3.6vw;
+    }
+  }
+}
+
 .carShadow {
   display: flex;
   width: 20vw;
@@ -269,6 +316,12 @@
 @media (max-width: 1024px) {
   .carShadow {
     width: 40vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .carShadow {
+    width: 100%;
   }
 }
 
@@ -315,6 +368,26 @@
       & .carCharacterIcon {
         width: 2.4vw;
         height: 2.4vw;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .carCharacterBlock {
+    justify-content: center;
+    gap: 5vw;
+
+    & .carCharacterBlockIconAndText {
+      gap: 2vw;
+
+      & .carCharacterText {
+        font-size: 4.4vw;
+      }
+
+      & .carCharacterIcon {
+        width: 5vw;
+        height: 5vw;
       }
     }
   }
@@ -391,6 +464,36 @@
         & .carRulesIcon {
           width: 2.5vw;
           height: 2.5vw;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .carRulesBlock {
+    & .carRulesMainBlockIconAndText {
+      gap: 6vw;
+
+      & .carRulesBlockIconAndText {
+        align-items: flex-start;
+        gap: 3vw;
+
+        & .carRulesBlockText {
+          gap: 1vw;
+
+          & .carRulesText {
+            font-size: 3.6vw;
+          }
+
+          & .carRulesTextGrey {
+            font-size: 3.2vw;
+          }
+        }
+
+        & .carRulesIcon {
+          width: 5vw;
+          height: 5vw;
         }
       }
     }
@@ -497,6 +600,41 @@
 
       & .selectDatesWarning {
         font-size: 1.6vw;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .carTotalPriceAndButton {
+    & .carTotalPriceBlock {
+      gap: 2vw;
+
+      & .carTotalPriceText {
+        font-size: 4vw;
+      }
+
+      & .carTotalPriceTextCost {
+        font-size: 6vw;
+
+        & span {
+          font-size: 4vw;
+        }
+      }
+    }
+
+    & .bookColumn {
+      gap: 0.5vw;
+
+      & .buttonBook {
+        border-radius: 1.5vw;
+        gap: 1.5vw;
+        padding: 2.4vw 8vw;
+        font-size: 3.6vw;
+      }
+
+      & .selectDatesWarning {
+        font-size: 3.6vw;
       }
     }
   }

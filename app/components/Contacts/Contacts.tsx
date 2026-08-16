@@ -27,19 +27,19 @@ export default function Contacts({ lang }: ContactsProps) {
 
             {/* Phones */}
             <div className={styles.mainRow}>
-              <a href='tel:+34632230891' className={styles.contactCard}>
+              <a href='tel:+34656369589' className={styles.contactCard}>
                 <span className={styles.iconCircle}>
                   <BsTelephone className={styles.icon} />
                 </span>
                 <p className={styles.phoneText}>{t('contacts.phone1')}</p>
               </a>
 
-              <a href='tel:+34632230891' className={styles.contactCard}>
+              {/* <a href='tel:+34632230891' className={styles.contactCard}>
                 <span className={styles.iconCircle}>
                   <BsTelephone className={styles.icon} />
                 </span>
                 <p className={styles.phoneText}>{t('contacts.phone2')}</p>
-              </a>
+              </a> */}
 
               <a href='mailto:rentcar@islandcars.es' className={styles.contactCard}>
                 <span className={styles.iconCircle}>
@@ -63,13 +63,24 @@ export default function Contacts({ lang }: ContactsProps) {
             {/* Working hours */}
             <div className={styles.workingHours}>
               <p className={styles.workingLabel}>{t('contacts.workingHoursLabel')}</p>
-              <div className={styles.hoursCard}>
-                <span className={styles.iconCircleDark}>
-                  <BsClock className={styles.iconTime} />
-                </span>
-                <div>
-                  <p className={styles.days}>{t('contacts.workingHoursDays')}</p>
-                  <p className={styles.time}>{t('contacts.workingHoursTime')}</p>
+              <div className={styles.hoursCardMainBlock}>
+                <div className={styles.hoursCard}>
+                  <span className={styles.iconCircleDark}>
+                    <BsClock className={styles.iconTime} />
+                  </span>
+                  <div>
+                    <p className={styles.days}>{t('contacts.workingHoursDays')}</p>
+                    <p className={styles.time}>{t('contacts.workingHoursTime')}</p>
+                  </div>
+                </div>
+                <div className={styles.hoursCard}>
+                  <span className={styles.iconCircleDark}>
+                    <BsClock className={styles.iconTime} />
+                  </span>
+                  <div>
+                    <p className={styles.days}>{t('contacts.workingHoursDays2')}</p>
+                    <p className={styles.time}>{t('contacts.workingHoursTime2')}</p>
+                  </div>
                 </div>
               </div>
             </div>

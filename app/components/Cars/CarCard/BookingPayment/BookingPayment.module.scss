@@ -21,6 +21,12 @@
   }
 }
 
+@media (max-width: 576px) {
+  .label {
+    font-size: 3.6vw;
+  }
+}
+
 .promoBlock {
   display: flex;
   flex-direction: column;
@@ -112,6 +118,33 @@
 
     & .successMessage {
       font-size: 1.8vw;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .promoBlock {
+    & .promoRow {
+      justify-content: space-between;
+      gap: 0vw;
+      margin-top: 2vw;
+
+      & .promoInput {
+        gap: 0.4vw;
+        padding: 2.4vw 4vw;
+        border-radius: 1.5vw;
+        font-size: 3.6vw;
+      }
+
+      & .applyButton {
+        font-size: 3.6vw;
+        border-radius: 1.5vw;
+        padding: 2.4vw 5vw;
+      }
+    }
+
+    & .successMessage {
+      font-size: 3.6vw;
     }
   }
 }
@@ -243,6 +276,40 @@
   }
 }
 
+@media (max-width: 576px) {
+  .paymentBlock {
+    gap: 2vw;
+    margin-top: 5vw;
+
+    & .total {
+      font-size: 4.2vw;
+    }
+
+    & .paymentOptions {
+      gap: 2vw;
+      margin-top: 4vw;
+
+      & .paymentOption {
+        gap: 2.4vw;
+        font-size: 3.6vw;
+
+        & .radio {
+          flex: 0 0 4vw;
+          width: 4.2vw;
+          height: 4.2vw;
+
+          &::after {
+            top: 48%;
+            left: 49%;
+            width: 1.8vw;
+            height: 1.8vw;
+          }
+        }
+      }
+    }
+  }
+}
+
 .cancellation {
   color: #ff6b6b;
   font-size: 0.65vw;
@@ -259,6 +326,13 @@
   }
 }
 
+@media (max-width: 576px) {
+  .cancellation {
+    font-size: 3.6vw;
+    margin-top: 5vw;
+  }
+}
+
 .buttons {
   display: flex;
   flex-direction: row;
@@ -271,6 +345,14 @@
   .buttons {
     gap: 1.5vw;
     margin-top: 2.5vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .buttons {
+    flex-direction: column-reverse;
+    gap: 4vw;
+    margin-top: 5vw;
   }
 }
 
@@ -299,6 +381,14 @@
     font-size: 1.8vw;
     padding: 1.25vw 0;
     border-radius: 0.75vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .cancelButton {
+    font-size: 3.6vw;
+    padding: 2.4vw 0;
+    border-radius: 1.5vw;
   }
 }
 
@@ -335,6 +425,14 @@
   }
 }
 
+@media (max-width: 576px) {
+  .bookButton {
+    font-size: 3.6vw;
+    padding: 3vw 0;
+    border-radius: 1.5vw;
+  }
+}
+
 .errorMessage {
   color: #ff6b6b;
   font-size: 0.75vw;
@@ -349,6 +447,12 @@
   }
 }
 
+@media (max-width: 576px) {
+  .errorMessage {
+    font-size: 3.6vw;
+  }
+}
+
 @keyframes pulse-button-header {
   0% {
     box-shadow: 0 0 0 0px rgb(238, 17, 17, 0.65);
@@ -359,5 +463,20 @@
   }
   100% {
     box-shadow: 0 0 0 0px rgba(81, 203, 238, 0);
+  }
+}
+
+@media (max-width: 576px) {
+  @keyframes pulse-button-header {
+    0% {
+      box-shadow: 0 0 0 0px rgb(238, 17, 17, 0.65);
+    }
+
+    70% {
+      box-shadow: 0 0 2vw 3vw rgba(81, 203, 238, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0px rgba(81, 203, 238, 0);
+    }
   }
 }

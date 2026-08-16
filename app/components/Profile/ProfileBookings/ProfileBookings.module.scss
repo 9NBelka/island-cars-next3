@@ -12,6 +12,13 @@
   }
 }
 
+@media (max-width: 576px) {
+  .card {
+    border-radius: 1.5vw;
+    padding: 3vw;
+  }
+}
+
 .header {
   display: flex;
   align-items: flex-start;
@@ -43,6 +50,19 @@
     p {
       font-size: 1.8vw;
       margin-top: 0.5vw;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .header {
+    h2 {
+      font-size: 5vw;
+    }
+
+    p {
+      font-size: 3.6vw;
+      margin-top: 1vw;
     }
   }
 }
@@ -105,6 +125,28 @@
   }
 }
 
+@media (max-width: 576px) {
+  .empty {
+    padding: 4vw 1vw;
+
+    & .iconCarBlock {
+      & .iconCar {
+        width: 5vw;
+      }
+    }
+
+    & .emptyTitle {
+      font-size: 3.6vw;
+      margin-top: 3vw;
+    }
+
+    & .emptyText {
+      font-size: 3.6vw;
+      margin-top: 3vw;
+    }
+  }
+}
+
 .loading,
 .error {
   color: #8a8a8a;
@@ -130,5 +172,16 @@
 
   .error {
     font-size: 1.8vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .loading,
+  .error {
+    font-size: 3.6vw;
+  }
+
+  .error {
+    font-size: 3.6vw;
   }
 }

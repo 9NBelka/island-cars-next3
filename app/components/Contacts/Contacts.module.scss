@@ -299,6 +299,24 @@
   }
 }
 
+.hoursCardMainBlock {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5vw;
+}
+
+@media (max-width: 1024px) {
+  .hoursCardMainBlock {
+    gap: 4vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .hoursCardMainBlock {
+    gap: 6vw;
+  }
+}
+
 .hoursCard {
   display: inline-flex;
   align-items: center;
@@ -370,7 +388,7 @@
 @media (max-width: 576px) {
   .hoursCard {
     gap: 3vw;
-    margin-top: 1.5vw;
+    margin-top: 2vw;
 
     & .iconCircleDark {
       width: 9vw;

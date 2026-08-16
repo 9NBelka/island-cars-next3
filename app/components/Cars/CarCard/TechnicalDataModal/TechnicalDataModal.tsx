@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { BsChevronLeft, BsChevronRight, BsX } from 'react-icons/bs';
 
 import type { Car } from '@/app/types/car';
@@ -21,23 +21,40 @@ type TechnicalDataItem = {
 export default function TechnicalDataModal({ car, isOpen, onClose }: TechnicalDataModalProps) {
   const [currentImage, setCurrentImage] = useState(0);
 
-  // console.log('CAR IN MODAL:', car);
-  // console.log('IMAGES IN MODAL:', car.images);
-  // console.log(
-  //   'IMAGE URLS:',
-  //   car.images?.map((image) => image.image_url),
-  // );
-
   /*
    * Пока используем изображения машины из базы.
    *
    * Если у тебя в Car другие названия полей для изображений,
    * здесь потом просто поменяем это место.
    */
-  const images = (car.images ?? [])
-    .slice()
-    .sort((a, b) => a.sort_order - b.sort_order)
-    .map((image) => image.image_url);
+  const images = useMemo(
+    () =>
+      (car.images ?? [])
+        .slice()
+        .sort((a, b) => a.sort_order - b.sort_order)
+        .map((image) => image.image_url),
+    [car.images],
+  );
+
+  // Предзагружаем все фото машины сразу при открытии модалки —
+  // иначе браузер начинает качать картинку только по клику "вперёд/назад",
+  // и переключение выглядит как "не среагировало с первого раза".
+  useEffect(() => {
+    if (!isOpen || images.length === 0) return;
+
+    const preloaded = images.map((src) => {
+      const img = new Image();
+      img.src = src;
+      return img;
+    });
+
+    return () => {
+      // Отменяем незавершённую загрузку, если модалку закрыли раньше времени
+      preloaded.forEach((img) => {
+        img.src = '';
+      });
+    };
+  }, [isOpen, images]);
 
   useEffect(() => {
     if (!isOpen) return;

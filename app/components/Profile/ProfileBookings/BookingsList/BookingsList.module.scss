@@ -50,6 +50,19 @@
   }
 }
 
+@media (max-width: 576px) {
+  .list {
+    gap: 3vw;
+    max-height: 130vw;
+    padding-right: 2vw;
+    margin-top: 3vw;
+
+    & .error {
+      font-size: 3.6vw;
+    }
+  }
+}
+
 .item {
   height: auto;
   flex-shrink: 0;
@@ -178,6 +191,14 @@
   }
 }
 
+@media (max-width: 576px) {
+  .item {
+    border: 0.01vw solid var(--color-darkGray);
+    border-radius: 1.5vw;
+    padding: 3vw 4vw;
+  }
+}
+
 .itemHeader {
   display: flex;
   align-items: center;
@@ -248,6 +269,25 @@
   }
 }
 
+@media (max-width: 576px) {
+  .itemHeader {
+    & .carInfo {
+      gap: 1vw;
+
+      & .carName {
+        font-size: 4.2vw;
+      }
+    }
+
+    & .badge {
+      font-size: 3.4vw;
+      border-radius: 5vw;
+      padding: 1.5vw 4.2vw;
+      line-height: var(--font-lineh-small);
+    }
+  }
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -280,6 +320,22 @@
 
     & .blockFieldsPayment {
       gap: 1vw;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: 4vw;
+    gap: 5vw;
+
+    & .blockFields {
+      gap: 2vw;
+    }
+
+    & .blockFieldsPayment {
+      gap: 2vw;
     }
   }
 }
@@ -352,6 +408,33 @@
 
       &.payment_unpaid {
         font-size: 1.6vw;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .field {
+    gap: 0vw;
+
+    &.bookedOnBlock {
+      margin-top: 0vw;
+    }
+
+    & .label {
+      font-size: 3.4vw;
+    }
+
+    & .value {
+      font-size: 3.6vw;
+      line-height: var(--font-lineh-normal);
+
+      &.payment_paid {
+        font-size: 3.6vw;
+      }
+
+      &.payment_unpaid {
+        font-size: 3.6vw;
       }
     }
   }
@@ -461,6 +544,39 @@
         font-size: 1.8vw;
         border-radius: 0.75vw;
         padding: 1vw 2vw;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .totalRow {
+    padding-top: 4vw;
+    margin-top: 3.6vw;
+
+    & .totalBlock {
+      gap: 2vw;
+
+      & .totalLabel {
+        font-size: 3.6vw;
+      }
+
+      & .totalValue {
+        font-size: 4.2vw;
+      }
+    }
+
+    & .timeBookAndButton {
+      gap: 1vw;
+
+      & .valueBook {
+        display: none;
+      }
+
+      & .cancelButton {
+        font-size: 3.6vw;
+        border-radius: 1.5vw;
+        padding: 2.6vw 4vw;
       }
     }
   }

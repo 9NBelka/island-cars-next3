@@ -160,7 +160,7 @@ export default function CarCard({ car, searchParams, lang }: CarCardProps) {
               </div>
               <div className={styles.carCharacterBlockIconAndText}>
                 <BsFillSuitcaseLgFill className={styles.carCharacterIcon} />
-                <p className={styles.carCharacterText}>{car.seats}</p>
+                <p className={styles.carCharacterText}>{car.luggage}</p>
               </div>
               <div className={styles.carCharacterBlockIconAndText}>
                 <TbCarDoor className={styles.carCharacterIcon} />
@@ -168,7 +168,7 @@ export default function CarCard({ car, searchParams, lang }: CarCardProps) {
               </div>
               <div className={styles.carCharacterBlockIconAndText}>
                 <BsFillPersonFill className={styles.carCharacterIcon} />
-                <p className={styles.carCharacterText}>{car.luggage}</p>
+                <p className={styles.carCharacterText}>{car.seats}</p>
               </div>
             </div>
           </div>

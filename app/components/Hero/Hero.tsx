@@ -53,7 +53,7 @@ export default function Hero({ lang, form, onFormChange, onSearch }: HeroProps) 
     <section className={styles.hero}>
       <div className={styles.container}>
         <div className={styles.overlay} />
-        <a href='#'>
+        <a href='tel:+34656369589'>
           <div className={styles.contactBox}>
             <div className={styles.iconPhoneBlock}>
               <BsFillTelephoneFill className={styles.iconPhone} />
@@ -62,18 +62,18 @@ export default function Hero({ lang, form, onFormChange, onSearch }: HeroProps) 
             <div className={styles.contactTextBlock}>
               <p className={styles.contactLabel}>{t('hero.contactUs')}</p>
 
-              <p className={styles.contactPhone}>+34 632 230 891</p>
+              <p className={styles.contactPhone}>+34 656 369 589</p>
             </div>
           </div>
         </a>
 
         <div className={styles.content}>
-          <a className={styles.contactBoxLink} href='#'>
+          <a className={styles.contactBoxLink} href='tel:+34656369589'>
             <div className={clsx(styles.contactBox, styles.contactBoxPhone)}>
               <div className={styles.contactTextBlock}>
                 <p className={styles.contactLabel}>{t('hero.contactUs')}:</p>
 
-                <p className={styles.contactPhone}>+34 632 230 891</p>
+                <p className={styles.contactPhone}>+34 656 369 589</p>
               </div>
             </div>
           </a>

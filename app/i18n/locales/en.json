@@ -1,4 +1,31 @@
 {
+  "meta": {
+    "home": {
+      "title": "Island Cars – Car Rental in Costa Blanca, Spain | No Hidden Fees",
+      "description": "Rent a car in Guardamar del Segura and explore Costa Blanca at your own pace. Full cover insurance with no deposit, pickup & return anytime 24/7, and a price that never changes at checkout.",
+      "keywords": "car rental Costa Blanca, rent a car Guardamar del Segura, car hire Alicante, car rental Spain no deposit, Island Cars",
+      "ogTitle": "Island Cars — Your journey begins here.",
+      "ogDescription": "Reliable cars, no hidden fees, real freedom. Rent a car on the Costa Blanca with full cover insurance and 24/7 pickup & return."
+    },
+    "rules": {
+      "title": "Rental Rules & Conditions",
+      "description": "Everything you need to know before renting with Island Cars: mileage, insurance, deposits, fines, and what counts as unauthorized use.",
+      "ogTitle": "Island Cars — Rental Rules & Conditions",
+      "ogDescription": "Clear, upfront rental terms — mileage, insurance, deposits and fines explained before you book."
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "description": "How Island Cars collects, uses, and protects your personal data, in line with the GDPR.",
+      "ogTitle": "Island Cars — Privacy Policy",
+      "ogDescription": "How we handle your personal data, your rights under the GDPR, and how to reach us about your data."
+    },
+    "contacts": {
+      "title": "Contact Us",
+      "description": "Get in touch with Island Cars in Guardamar del Segura — phone, email, working hours, and our office location on the Costa Blanca.",
+      "ogTitle": "Island Cars — Contact Us",
+      "ogDescription": "Phone, email, and office hours — reach the Island Cars team in Guardamar del Segura."
+    }
+  },
   "header": {
     "nav": {
       "questions": "Main questions",

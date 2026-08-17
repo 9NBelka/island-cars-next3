@@ -58,7 +58,7 @@ export default function RegisterPopup({ lang, isOpen, onClose }: RegisterPopupPr
         <h1 className={styles.title}>{t('cars.register.title')}</h1>
         <p className={styles.subtitle}>{t('cars.register.subtitle')}</p>
 
-        <RegisterFormContent lang={lang} onSuccess={onClose} />
+        <RegisterFormContent lang={lang} />
       </div>
     </div>
   );

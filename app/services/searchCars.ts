@@ -4,9 +4,13 @@ import type { Car, CarImage } from '../types/car';
 import type { SearchCarsParams } from '../types/search';
 import type { CarAvailability } from '../types/carAvailability';
 
+const CAR_IMAGES_BUCKET = 'cars';
+
+type CarWithImages = Car & { images: CarImage[] };
+
 export async function searchCars(
   params: SearchCarsParams,
-): Promise<(Car & { availability: CarAvailability })[]> {
+): Promise<(CarWithImages & { availability: CarAvailability })[]> {
   //---------------------------------------
   // Машины + фотографии
   //---------------------------------------
@@ -27,7 +31,8 @@ export async function searchCars(
     `,
     )
     .eq('is_visible', true)
-    .order('brand');
+    .order('brand')
+    .returns<CarWithImages[]>();
 
   if (carsError) {
     console.error('Error loading cars:', carsError);
@@ -70,10 +75,11 @@ export async function searchCars(
 
     const images = (car.images ?? [])
       .slice()
-      .sort((a, b) => a.sort_order - b.sort_order)
+      .sort((a: CarImage, b: CarImage) => a.sort_order - b.sort_order)
       .map((image: CarImage) => ({
         ...image,
-        image_url: supabase.storage.from('cars').getPublicUrl(image.image_url).data.publicUrl,
+        image_url: supabase.storage.from(CAR_IMAGES_BUCKET).getPublicUrl(image.image_url).data
+          .publicUrl,
       }));
 
     return {

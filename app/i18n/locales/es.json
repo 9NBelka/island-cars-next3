@@ -1,4 +1,31 @@
 {
+  "meta": {
+    "home": {
+      "title": "Island Cars – Alquiler de coches en la Costa Blanca | Sin sorpresas",
+      "description": "Alquila un coche en Guardamar del Segura y descubre la Costa Blanca a tu ritmo. Seguro a todo riesgo sin depósito, recogida y devolución 24/7, y un precio que no cambia al pagar.",
+      "keywords": "alquiler de coches Costa Blanca, alquiler de coches Guardamar del Segura, alquiler de coches Alicante, alquiler de coches España sin depósito, Island Cars",
+      "ogTitle": "Island Cars — Tu viaje comienza aquí.",
+      "ogDescription": "Coches fiables, sin tarifas ocultas, libertad real. Alquila un coche en la Costa Blanca con seguro a todo riesgo y recogida y devolución 24/7."
+    },
+    "rules": {
+      "title": "Normas y condiciones de alquiler",
+      "description": "Todo lo que necesitas saber antes de alquilar con Island Cars: kilometraje, seguro, fianza, multas y qué se considera uso no autorizado.",
+      "ogTitle": "Island Cars — Normas y condiciones de alquiler",
+      "ogDescription": "Condiciones de alquiler claras desde el principio — kilometraje, seguro, fianza y multas explicados antes de reservar."
+    },
+    "privacy": {
+      "title": "Política de privacidad",
+      "description": "Cómo Island Cars recopila, utiliza y protege tus datos personales, conforme al RGPD.",
+      "ogTitle": "Island Cars — Política de privacidad",
+      "ogDescription": "Cómo tratamos tus datos personales, tus derechos bajo el RGPD y cómo contactarnos al respecto."
+    },
+    "contacts": {
+      "title": "Contáctanos",
+      "description": "Ponte en contacto con Island Cars en Guardamar del Segura — teléfono, correo, horario y la ubicación de nuestra oficina en la Costa Blanca.",
+      "ogTitle": "Island Cars — Contáctanos",
+      "ogDescription": "Teléfono, correo y horario de atención — contacta con el equipo de Island Cars en Guardamar del Segura."
+    }
+  },
   "header": {
     "nav": {
       "questions": "Preguntas frecuentes",

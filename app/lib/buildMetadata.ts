@@ -5,7 +5,7 @@ import { getT } from '@/app/i18n/getT';
 
 const SITE_URL = 'https://rent.islandcars.pro';
 const SITE_NAME = 'Island Cars';
-const DEFAULT_OG_IMAGE = '/images/imageMeta.png';
+const DEFAULT_OG_IMAGE = '/imageMeta.png';
 
 export type MetaPageKey = 'home' | 'rules' | 'privacy' | 'contacts';
 

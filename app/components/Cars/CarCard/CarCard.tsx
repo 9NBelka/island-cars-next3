@@ -13,6 +13,7 @@ import { supabase } from '@/app/lib/supabase';
 
 import type { Car } from '@/app/types/car';
 import type { CarAvailability } from '@/app/types/carAvailability';
+
 import {
   BsCarFrontFill,
   BsFillBeakerFill,
@@ -22,7 +23,9 @@ import {
   BsFillPersonFill,
   BsFillSuitcaseLgFill,
 } from 'react-icons/bs';
+
 import { TbCarDoor } from 'react-icons/tb';
+
 import RegisterPopup from './RegisterPopup/RegisterPopup';
 import BookingPayment from './BookingPayment/BookingPayment';
 import BookingSuccess from './BookingSuccess/BookingSuccess';
@@ -37,20 +40,6 @@ type CarCardProps = {
   lang: Lang;
 };
 
-const STATUS_TEXT: Record<CarAvailability, string> = {
-  available: 'Available',
-
-  booked: 'Booked',
-
-  reserved: 'Reserved',
-
-  rented: 'Rented',
-
-  maintenance: 'Maintenance',
-
-  inactive: 'Inactive',
-};
-
 export default function CarCard({ car, searchParams, lang }: CarCardProps) {
   const t = getT(lang);
 
@@ -59,9 +48,27 @@ export default function CarCard({ car, searchParams, lang }: CarCardProps) {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [isBookingSuccess, setIsBookingSuccess] = useState(false);
 
+  // ---------------------------------------
+  // CAR STATUS / TRANSLATIONS
+  // ---------------------------------------
+
   const isAvailable = car.availability === 'available';
+
   const hasSearchDates = Boolean(searchParams?.startAt && searchParams?.endAt);
+
   const canBook = isAvailable && hasSearchDates;
+
+  const transmissionKey = String(car.transmission).toLowerCase();
+
+  const fuelTypeKey = car.fuel_type?.toLowerCase() as 'petrol' | 'diesel' | 'hybrid' | 'electric';
+
+  const getStatusText = (status: CarAvailability) => {
+    return t(`cars.carCard.status.${status}`);
+  };
+
+  // ---------------------------------------
+  // RENTAL PRICE
+  // ---------------------------------------
 
   const rentalPrice = searchParams
     ? calculateRentalPrice(Number(car.price_per_day), searchParams.startAt, searchParams.endAt)
@@ -105,6 +112,19 @@ export default function CarCard({ car, searchParams, lang }: CarCardProps) {
     }
   };
 
+  // ---------------------------------------
+  // BOOK FROM TECHNICAL DATA MODAL
+  // ---------------------------------------
+
+  const handleBookFromModal = async () => {
+    setIsTechnicalDataOpen(false);
+    await handleBook();
+  };
+
+  // ---------------------------------------
+  // RENDER
+  // ---------------------------------------
+
   return (
     <div
       className={clsx(
@@ -131,12 +151,21 @@ export default function CarCard({ car, searchParams, lang }: CarCardProps) {
         />
       ) : (
         <div className={styles.cardBlockLeftRight}>
-          <div className={styles.carCharacterBlockAndHeader}>
+          {/* --------------------------------------- */}
+          {/* LEFT SIDE */}
+          {/* --------------------------------------- */}
+
+          <div
+            className={styles.carCharacterBlockAndHeader}
+            onClick={() => setIsTechnicalDataOpen(true)}>
+            {/* HEADER */}
+
             <div className={styles.cardHeader}>
               <div className={styles.carNameAndIconBlock}>
                 <h2 className={styles.carName}>
                   {car.brand} {car.model}
                 </h2>
+
                 <button
                   type='button'
                   className={styles.infoTrigger}
@@ -146,90 +175,150 @@ export default function CarCard({ car, searchParams, lang }: CarCardProps) {
                 </button>
               </div>
 
-              <p className={styles.transmissionText}>{car.transmission} Transmission</p>
+              <p className={styles.transmissionText}>
+                {t(`cars.carCard.transmissions.${transmissionKey}`)}
+              </p>
             </div>
 
+            {/* CAR IMAGE */}
+
             <div className={styles.carShadow}>
-              <img src='/images/citroen-spacetourer.png'></img>
+              {car.card_image && <img src={car.card_image} alt={`${car.brand} ${car.model}`} />}
             </div>
+
+            {/* CAR CHARACTERISTICS */}
 
             <div className={styles.carCharacterBlock}>
               <div className={styles.carCharacterBlockIconAndText}>
                 <BsFillFuelPumpFill className={styles.carCharacterIcon} />
-                <p className={styles.carCharacterText}>{car.fuel_type}</p>
+
+                <p className={styles.carCharacterText}>
+                  {t(`cars.carCard.fuelTypes.${fuelTypeKey}`)}
+                </p>
               </div>
+
               <div className={styles.carCharacterBlockIconAndText}>
                 <BsFillSuitcaseLgFill className={styles.carCharacterIcon} />
+
                 <p className={styles.carCharacterText}>{car.luggage}</p>
               </div>
+
               <div className={styles.carCharacterBlockIconAndText}>
                 <TbCarDoor className={styles.carCharacterIcon} />
+
                 <p className={styles.carCharacterText}>{car.doors}</p>
               </div>
+
               <div className={styles.carCharacterBlockIconAndText}>
                 <BsFillPersonFill className={styles.carCharacterIcon} />
+
                 <p className={styles.carCharacterText}>{car.seats}</p>
               </div>
             </div>
           </div>
+
+          {/* --------------------------------------- */}
+          {/* RIGHT SIDE */}
+          {/* --------------------------------------- */}
+
           <div className={styles.carRulesBlock}>
             <div className={styles.carRulesMainBlockIconAndText}>
+              {/* INSURANCE */}
+
               <div className={styles.carRulesBlockIconAndText}>
                 <BsCarFrontFill className={styles.carRulesIcon} />
+
                 <div className={styles.carRulesBlockText}>
-                  <p className={styles.carRulesText}>{`"Full Cover" insurance`}</p>
+                  <p className={styles.carRulesText}>{t('cars.carCard.insurance.title')}</p>
+
                   <p className={styles.carRulesTextGrey}>
-                    Full cover insurance covers the vehicle.
+                    {t('cars.carCard.insurance.description')}
                   </p>
                 </div>
               </div>
+
+              {/* FUEL */}
+
               <div className={styles.carRulesBlockIconAndText}>
                 <BsFillBeakerFill className={styles.carRulesIcon} />
+
                 <div className={styles.carRulesBlockText}>
-                  <p className={styles.carRulesText}>Full-full fuel tank</p>
-                  <p className={styles.carRulesTextGrey}>Get a vehicle with full tank of fuel.</p>
+                  <p className={styles.carRulesText}>{t('cars.carCard.fuel.title')}</p>
+
+                  <p className={styles.carRulesTextGrey}>{t('cars.carCard.fuel.description')}</p>
                 </div>
               </div>
+
+              {/* SECOND DRIVER */}
+
               <div className={styles.carRulesBlockIconAndText}>
                 <BsFillPeopleFill className={styles.carRulesIcon} />
+
                 <div className={styles.carRulesBlockText}>
-                  <p className={styles.carRulesText}>Second driver</p>
-                  <p className={styles.carRulesTextGrey}>Add free second driver.</p>
+                  <p className={styles.carRulesText}>{t('cars.carCard.secondDriver.title')}</p>
+
+                  <p className={styles.carRulesTextGrey}>
+                    {t('cars.carCard.secondDriver.description')}
+                  </p>
                 </div>
               </div>
             </div>
+
+            {/* --------------------------------------- */}
+            {/* PRICE + BOOK */}
+            {/* --------------------------------------- */}
+
             <div className={styles.carTotalPriceAndButton}>
               <div className={styles.carTotalPriceBlock}>
-                <p className={styles.carTotalPriceText}>Total</p>
+                <p className={styles.carTotalPriceText}>{t('cars.carCard.total')}</p>
 
                 <p className={styles.carTotalPriceTextCost}>
                   {rentalPrice.totalPrice} €{' '}
-                  {rentalPrice.totalPrice === car.price_per_day && <span>/ day</span>}
+                  {rentalPrice.totalPrice === car.price_per_day && (
+                    <span>/ {t('cars.carCard.perDay')}</span>
+                  )}
                 </p>
               </div>
+
               <div className={styles.bookColumn}>
                 <button
                   type='button'
                   disabled={!canBook}
                   className={styles.buttonBook}
                   onClick={handleBook}>
-                  {isAvailable ? 'Book' : STATUS_TEXT[car.availability]}
+                  {isAvailable ? t('cars.carCard.book') : getStatusText(car.availability)}
                 </button>
 
                 {isAvailable && !hasSearchDates && (
-                  <p className={styles.selectDatesWarning}>{t('carCard.selectDatesWarning')}</p>
+                  <p className={styles.selectDatesWarning}>
+                    {t('cars.carCard.selectDatesWarning')}
+                  </p>
                 )}
               </div>
             </div>
           </div>
         </div>
       )}
-      {/* <p>{STATUS_TEXT[car.availability]}</p> */}
+
+      {/* --------------------------------------- */}
+      {/* TECHNICAL DATA MODAL */}
+      {/* --------------------------------------- */}
+
       <TechnicalDataModal
         car={car}
         isOpen={isTechnicalDataOpen}
         onClose={() => setIsTechnicalDataOpen(false)}
+        canBook={canBook}
+        isAvailable={isAvailable}
+        hasSearchDates={hasSearchDates}
+        availability={car.availability}
+        onBook={handleBookFromModal}
+        lang={lang}
       />
+
+      {/* --------------------------------------- */}
+      {/* REGISTER POPUP */}
+      {/* --------------------------------------- */}
 
       <RegisterPopup
         lang={lang}

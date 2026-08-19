@@ -32,4 +32,6 @@ export type Car = {
   features: string | null;
 
   images: CarImage[];
+
+  card_image: string | null;
 };

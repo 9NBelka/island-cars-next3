@@ -71,9 +71,9 @@ export default function Header({ lang, isScrolled }: HeaderProps) {
         </LangLink>
 
         <nav className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ''}`}>
-          <LangLink lang={lang} href='/questions' onClick={closeMenu}>
+          {/* <LangLink lang={lang} href='/questions' onClick={closeMenu}>
             {t('header.nav.questions')}
-          </LangLink>
+          </LangLink> */}
           <LangLink lang={lang} href='/rules' onClick={closeMenu}>
             {t('header.nav.rules')}
           </LangLink>

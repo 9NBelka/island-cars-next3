@@ -82,9 +82,14 @@ export async function searchCars(
           .publicUrl,
       }));
 
+    const cardImageUrl = car.card_image
+      ? supabase.storage.from(CAR_IMAGES_BUCKET).getPublicUrl(car.card_image).data.publicUrl
+      : null;
+
     return {
       ...car,
       images,
+      card_image: cardImageUrl,
       availability,
     };
   });

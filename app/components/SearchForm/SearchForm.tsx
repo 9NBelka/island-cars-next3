@@ -58,10 +58,10 @@ export default function SearchForm({ lang, form, onChange, onSearch }: SearchFor
 
   const places = [
     { value: 'airport', label: t('form.places.airport') },
-    { value: 'office', label: t('form.places.office') },
+    { value: 'stationAlic', label: t('form.places.stationAlic') },
     { value: 'station', label: t('form.places.station') },
+    { value: 'office', label: t('form.places.office') },
     { value: 'camping', label: t('form.places.camping') },
-    { value: 'hotel', label: t('form.places.hotel') },
     { value: 'myLocation', label: t('form.places.myLocation') },
   ];
 

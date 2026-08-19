@@ -58,10 +58,10 @@
     "offHours": "Fuera de horario +35€",
     "places": {
       "airport": "Alicante aeropuerto",
-      "office": "Oficina Guardamar del Segura",
-      "station": "Alicante estación de trenes +15€",
+      "stationAlic": "Estación Alicante",
+      "station": "Estación Guardamar",
+      "office": "Formentera del Segura",
       "camping": "La Marina Camping",
-      "hotel": "Hotel Poseidón Playas de Guardamar",
       "myLocation": "Mi ubicación"
     }
   },
@@ -310,7 +310,64 @@
       "subtitle": "Para reservar un coche, necesitas crear una cuenta."
     },
     "carCard": {
-      "selectDatesWarning": "Selecciona primero las fechas de alquiler"
+      "selectDatesWarning": "Selecciona primero las fechas de alquiler",
+
+      "transmission": "Transmisión",
+
+      "insurance": {
+        "title": "Seguro \"Full Cover\"",
+        "description": "El seguro a todo riesgo cubre el vehículo."
+      },
+
+      "fuel": {
+        "title": "Depósito lleno",
+        "description": "Recibe el vehículo con el depósito lleno."
+      },
+
+      "secondDriver": {
+        "title": "Segundo conductor",
+        "description": "Añade un segundo conductor gratis."
+      },
+
+      "total": "Total",
+      "perDay": "día",
+
+      "book": "Reservar",
+
+      "status": {
+        "available": "Disponible",
+        "booked": "Reservado",
+        "reserved": "Reservado",
+        "rented": "Alquilado",
+        "maintenance": "Mantenimiento",
+        "inactive": "No disponible"
+      },
+
+      "fuelTypes": {
+        "petrol": "Gasolina",
+        "diesel": "Diésel",
+        "hybrid": "Híbrido",
+        "electric": "Eléctrico"
+      },
+
+      "transmissions": {
+        "automatic": "Transmisión automática",
+        "manual": "Transmisión manual"
+      },
+
+      "technicalData": {
+        "title": "Datos técnicos",
+        "noImage": "No hay imagen disponible",
+        "transmissionType": "Tipo de transmisión:",
+        "engineDisplacement": "Cilindrada del motor (cm³):",
+        "engineType": "Tipo de motor",
+        "luggageCapacity": "Capacidad del maletero",
+        "fuelConsumption": "Consumo de combustible",
+        "equipment": "Equipamiento",
+        "closeAria": "Cerrar",
+        "previousImageAria": "Imagen anterior",
+        "nextImageAria": "Siguiente imagen"
+      }
     }
   },
   "booking": {

@@ -7,6 +7,7 @@ import { LANGS } from '../../i18n/types';
 import styles from './LanguageSwitcher.module.scss';
 import { BsChevronDown } from 'react-icons/bs';
 import clsx from 'clsx';
+import { LANG_SWITCH_SCROLL_KEY } from '../ScrollRestorer/ScrollRestorer';
 
 const LABELS: Record<Lang, { label: string; flag: string }> = {
   en: { label: 'English', flag: '/images/flag-ukingdom.png' },
@@ -20,15 +21,18 @@ export default function LanguageSwitcher({ lang }: LanguageSwitcherProps) {
   const pathname = usePathname();
   const router = useRouter();
 
-  const current = LABELS[lang] ?? LABELS.en; // фолбэк — от бага из прошлого раза
+  const current = LABELS[lang] ?? LABELS.en;
 
   const handleSelect = (newLang: Lang) => {
     setOpen(false);
     if (newLang === lang) return;
 
+    sessionStorage.setItem(LANG_SWITCH_SCROLL_KEY, String(window.scrollY));
+
     const segments = pathname.split('/');
-    segments[1] = newLang; // segments[0] = '', segments[1] = текущий lang
-    router.push(segments.join('/') || `/${newLang}`);
+    segments[1] = newLang;
+
+    router.push(segments.join('/') || `/${newLang}`, { scroll: false });
   };
 
   return (

@@ -58,10 +58,10 @@
     "offHours": "Off-hours +35€",
     "places": {
       "airport": "Alicante airport",
-      "office": "Guardamar del Segura office",
-      "station": "Alicante train station +15€",
+      "stationAlic": "Alicante bus station",
+      "station": "Guardamar bus station",
+      "office": "Formentera del Segura",
       "camping": "La Marina Camping",
-      "hotel": "Hotel Poseidón Guardamar beaches",
       "myLocation": "My location"
     }
   },
@@ -310,7 +310,64 @@
       "subtitle": "To book a car, you need to create an account."
     },
     "carCard": {
-      "selectDatesWarning": "Please select rental dates first"
+      "selectDatesWarning": "Please select rental dates first",
+
+      "transmission": "Transmission",
+
+      "insurance": {
+        "title": "\"Full Cover\" insurance",
+        "description": "Full cover insurance covers the vehicle."
+      },
+
+      "fuel": {
+        "title": "Full fuel tank",
+        "description": "Get a vehicle with a full tank of fuel."
+      },
+
+      "secondDriver": {
+        "title": "Second driver",
+        "description": "Add a free second driver."
+      },
+
+      "total": "Total",
+      "perDay": "day",
+
+      "book": "Book",
+
+      "status": {
+        "available": "Available",
+        "booked": "Booked",
+        "reserved": "Reserved",
+        "rented": "Rented",
+        "maintenance": "Maintenance",
+        "inactive": "Inactive"
+      },
+
+      "fuelTypes": {
+        "petrol": "Petrol",
+        "diesel": "Diesel",
+        "hybrid": "Hybrid",
+        "electric": "Electric"
+      },
+
+      "transmissions": {
+        "automatic": "Automatic Transmission",
+        "manual": "Manual Transmission"
+      },
+
+      "technicalData": {
+        "title": "Technical Data",
+        "noImage": "No image available",
+        "transmissionType": "Transmission type:",
+        "engineDisplacement": "Engine displacement (cm³):",
+        "engineType": "Engine type",
+        "luggageCapacity": "Luggage capacity",
+        "fuelConsumption": "Fuel consumption",
+        "equipment": "Equipment",
+        "closeAria": "Close",
+        "previousImageAria": "Previous image",
+        "nextImageAria": "Next image"
+      }
     }
   },
   "booking": {

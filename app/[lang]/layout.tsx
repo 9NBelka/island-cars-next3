@@ -3,8 +3,8 @@ import type { ReactNode } from 'react';
 import { LANGS } from '../i18n/types';
 import type { Lang } from '../i18n/types';
 import Footer from '../components/Footer/Footer';
-import '../globals.scss';
 import IslandCarsClient from '../components/Home/IslandCarsClient';
+import SyncHtmlLang from '../components/SyncHtmlLang/SyncHtmlLang';
 import { buildMetadata } from '../lib/buildMetadata';
 
 export function generateStaticParams() {
@@ -44,7 +44,7 @@ type LayoutProps = {
   }>;
 };
 
-export default async function RootLayout({ children, params }: LayoutProps) {
+export default async function LangLayout({ children, params }: LayoutProps) {
   const { lang } = await params;
 
   if (!LANGS.includes(lang as Lang)) {
@@ -54,12 +54,11 @@ export default async function RootLayout({ children, params }: LayoutProps) {
   const currentLang = lang as Lang;
 
   return (
-    <html lang={lang}>
-      <body suppressHydrationWarning>
-        <IslandCarsClient currentLang={currentLang} />
-        <main>{children}</main>
-        <Footer lang={currentLang} />
-      </body>
-    </html>
+    <>
+      <SyncHtmlLang lang={currentLang} />
+      <IslandCarsClient currentLang={currentLang} />
+      <main>{children}</main>
+      <Footer lang={currentLang} />
+    </>
   );
 }

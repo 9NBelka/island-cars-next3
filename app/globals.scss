@@ -34,7 +34,17 @@
   box-sizing: border-box;
 }
 
+html.scroll-restoring body {
+  opacity: 0;
+  pointer-events: none;
+}
+
+html.no-transition body {
+  transition: none !important;
+}
+
 body {
+  transition: opacity 0.25s ease;
   margin: 0;
   padding: 0;
   width: 100%;

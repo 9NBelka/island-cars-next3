@@ -23,6 +23,6 @@ export const RENTAL_RATES = [
   {
     minDays: 30,
     maxDays: Infinity,
-    discountPercent: 33.33,
+    discountPercent: 30,
   },
 ];

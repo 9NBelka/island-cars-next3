@@ -34,12 +34,22 @@ export async function createBooking(params: CreateBookingParams) {
       total_price: params.totalPrice,
       payment_method: params.paymentMethod,
     })
-    .select()
+    .select('*, car:cars(*)')
     .single();
 
   if (error) throw error;
 
-  return data;
+  // Уведомляем n8n асинхронно — не блокируем и не ломаем UX бронирования,
+  // если вебхук временно недоступен или отвечает с ошибкой.
+  fetch('/api/booking-webhook', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ bookingId: data.id }),
+  }).catch((err) => {
+    console.error('Failed to notify booking webhook:', err);
+  });
+
+  return data as Booking;
 }
 
 export async function getMyBookings(): Promise<Booking[]> {

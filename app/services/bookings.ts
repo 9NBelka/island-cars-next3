@@ -53,9 +53,18 @@ export async function createBooking(params: CreateBookingParams) {
 }
 
 export async function getMyBookings(): Promise<Booking[]> {
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) {
+    throw new Error('NOT_AUTHENTICATED');
+  }
+
   const { data, error } = await supabase
     .from('bookings')
     .select('*, car:cars(*)')
+    .eq('user_id', user.id)
     .order('created_at', { ascending: false });
 
   if (error) throw error;

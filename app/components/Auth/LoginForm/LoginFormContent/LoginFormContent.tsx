@@ -16,7 +16,6 @@ import { getT } from '@/app/i18n/getT';
 import { Lang } from '@/app/i18n/types';
 import FormField from '../../FormField/FormField';
 import LangLink from '@/app/components/LangLink/LangLink';
-import { processPendingBooking } from '@/app/services/pendingBooking';
 
 type LoginFormContentProps = {
   lang: Lang;
@@ -43,15 +42,6 @@ export default function LoginFormContent({ lang, onForgotPassword }: LoginFormCo
       await login(values);
 
       setSuccessMessage('Login successful.');
-
-      // Если перед логином пользователь начал бронирование,
-      // создаём его сразу после успешной авторизации.
-      const bookingCreated = await processPendingBooking();
-
-      if (bookingCreated) {
-        window.location.href = `/${lang}/profile?tab=bookings`;
-        return;
-      }
 
       window.location.href = `/${lang}/profile?tab=bookings`;
     } catch (error: unknown) {

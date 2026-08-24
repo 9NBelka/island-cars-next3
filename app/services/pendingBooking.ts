@@ -14,8 +14,7 @@ export async function processPendingBooking(): Promise<boolean> {
     return false;
   }
 
-  // Защита от двойного создания брони.
-  // Особенно важно в development из-за React Strict Mode.
+  // Защита от двойного создания
   if (sessionStorage.getItem(PROCESSING_KEY) === 'true') {
     return false;
   }
@@ -23,6 +22,8 @@ export async function processPendingBooking(): Promise<boolean> {
   sessionStorage.setItem(PROCESSING_KEY, 'true');
 
   try {
+    console.log('📦 Creating pending booking:', pendingBooking);
+
     await createBooking({
       carId: pendingBooking.carId,
       pickupPlace: pendingBooking.pickupPlace,
@@ -33,14 +34,15 @@ export async function processPendingBooking(): Promise<boolean> {
       paymentMethod: pendingBooking.paymentMethod,
     });
 
-    // Бронь успешно создана — удаляем отложенную.
+    console.log('✅ Pending booking created');
+
     clearPendingBooking();
 
     return true;
   } catch (error) {
-    console.error('Failed to create pending booking:', error);
+    console.error('❌ Failed to create pending booking:', error);
 
-    // Если создание не удалось, оставляем pending_booking,
+    // Не удаляем pending_booking,
     // чтобы пользователь не потерял бронь.
     return false;
   } finally {

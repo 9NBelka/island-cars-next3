@@ -85,7 +85,7 @@ export default function CarCard({ car, searchParams, lang }: CarCardProps) {
   // ---------------------------------------
 
   const handleBook = async () => {
-    if (!canBook || !searchParams) {
+    if (!canBook) {
       return;
     }
 
@@ -94,23 +94,24 @@ export default function CarCard({ car, searchParams, lang }: CarCardProps) {
         data: { user },
       } = await supabase.auth.getUser();
 
+      // Пользователь НЕ авторизован
       if (!user) {
-        // Сохраняем параметры брони — используем их сразу после появления сессии,
-        // независимо от того, авто-логин это или подтверждение через письмо.
         savePendingBooking({
           carId: car.id,
-          pickupPlace: searchParams.pickupPlace,
-          returnPlace: searchParams.returnPlace,
-          startAt: searchParams.startAt,
-          endAt: searchParams.endAt,
+          pickupPlace: searchParams!.pickupPlace,
+          returnPlace: searchParams!.returnPlace,
+          startAt: searchParams!.startAt,
+          endAt: searchParams!.endAt,
           totalPrice: rentalPrice.totalPrice,
-          paymentMethod: 'cash', // сейчас на сайте выбор один — наличные
+          paymentMethod: 'cash',
         });
 
         setIsRegisterPopupOpen(true);
+
         return;
       }
 
+      // Пользователь авторизован
       setIsBookingOpen(true);
     } catch (error) {
       console.error('Failed to check authentication:', error);

@@ -282,11 +282,14 @@
       },
       "paymentStatuses": {
         "paid": "Pagado",
-        "unpaid": "No pagado"
+        "unpaid": "No pagado",
+        "pending": "Pendiente de pago",
+        "refunded": "Reembolsado"
       },
       "statuses": {
         "pending": "Pendiente",
         "confirmed": "Confirmada",
+        "active": "Activa",
         "cancelled": "Cancelada",
         "completed": "Completada"
       },

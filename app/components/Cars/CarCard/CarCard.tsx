@@ -6,6 +6,7 @@ import { calculateRentalPrice } from '@/app/services/rentalPricing';
 import styles from './CarCard.module.scss';
 import { useState } from 'react';
 import TechnicalDataModal from './TechnicalDataModal/TechnicalDataModal';
+import { savePendingBooking } from '@/app/utils/pendingBooking';
 
 import type { Lang } from '@/app/i18n/types';
 import { getT } from '@/app/i18n/getT';
@@ -84,7 +85,7 @@ export default function CarCard({ car, searchParams, lang }: CarCardProps) {
   // ---------------------------------------
 
   const handleBook = async () => {
-    if (!canBook) {
+    if (!canBook || !searchParams) {
       return;
     }
 
@@ -93,18 +94,22 @@ export default function CarCard({ car, searchParams, lang }: CarCardProps) {
         data: { user },
       } = await supabase.auth.getUser();
 
-      // ---------------------------------------
-      // Пользователь НЕ авторизован
-      // ---------------------------------------
-
       if (!user) {
+        // Сохраняем параметры брони — используем их сразу после появления сессии,
+        // независимо от того, авто-логин это или подтверждение через письмо.
+        savePendingBooking({
+          carId: car.id,
+          pickupPlace: searchParams.pickupPlace,
+          returnPlace: searchParams.returnPlace,
+          startAt: searchParams.startAt,
+          endAt: searchParams.endAt,
+          totalPrice: rentalPrice.totalPrice,
+          paymentMethod: 'cash', // сейчас на сайте выбор один — наличные
+        });
+
         setIsRegisterPopupOpen(true);
         return;
       }
-
-      // ---------------------------------------
-      // Пользователь авторизован
-      // ---------------------------------------
 
       setIsBookingOpen(true);
     } catch (error) {

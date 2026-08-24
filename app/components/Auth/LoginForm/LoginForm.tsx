@@ -28,6 +28,7 @@ export default function LoginForm({ lang }: LoginFormProps) {
 
         <LoginFormContent lang={lang} onForgotPassword={() => setIsForgotPasswordOpen(true)} />
       </div>
+
       <ForgotPasswordModal
         lang={lang}
         isOpen={isForgotPasswordOpen}

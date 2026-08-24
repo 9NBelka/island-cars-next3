@@ -282,11 +282,14 @@
       },
       "paymentStatuses": {
         "paid": "Paid",
-        "unpaid": "Unpaid"
+        "unpaid": "Unpaid",
+        "pending": "Payment pending",
+        "refunded": "Refunded"
       },
       "statuses": {
         "pending": "Pending",
         "confirmed": "Confirmed",
+        "active": "Active",
         "cancelled": "Cancelled",
         "completed": "Completed"
       },
